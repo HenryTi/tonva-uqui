@@ -8,14 +8,15 @@ import { VEdit } from "./VEdit";
 import { VView } from "./VView";
 
 export class CID<T extends IDBase> extends Controller {
+	item:any = null;
 	mid: MidID<T>;
 	idList: CIDList<any>;
 	constructor(mid:MidID<T>, res?:any) {
 		super(res);
-		this.mid = mid;
 		makeObservable(this, {
 			item: observable,
 		});
+		this.mid = mid;
 	}
 
 	protected async internalStart() {
@@ -30,7 +31,6 @@ export class CID<T extends IDBase> extends Controller {
 	}
 
 	renderItem: (item:any, index:number) => JSX.Element;
-	item:any;
 	onItemClick: (item:any) => void = (item:any) => {
 		runInAction(() => {
 			this.item = item;

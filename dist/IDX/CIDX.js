@@ -62,6 +62,8 @@ var CIDX = /** @class */ (function (_super) {
     __extends(CIDX, _super);
     function CIDX(mid, res) {
         var _this = _super.call(this, res) || this;
+        _this.timeSpan = null;
+        _this.spanValues = null;
         _this.onItemClick = function (item) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -81,12 +83,12 @@ var CIDX = /** @class */ (function (_super) {
                 return [2 /*return*/];
             });
         }); };
-        _this.mid = mid;
-        _this.historyPageItems = new tools_1.HistoryPageItems(mid.historyPageItems);
         mobx_1.makeObservable(_this, {
             timeSpan: mobx_1.observable,
             spanValues: mobx_1.observable,
         });
+        _this.mid = mid;
+        _this.historyPageItems = new tools_1.HistoryPageItems(mid.historyPageItems);
         return _this;
     }
     CIDX.prototype.internalStart = function () {

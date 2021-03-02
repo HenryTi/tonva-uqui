@@ -1422,8 +1422,8 @@
         "affectsGlobalScope": false
       },
       "./src/id/cid.ts": {
-        "version": "230c2d71de56bafd32b111029987daf48d98bff3fd62c40c4ae3e0607690a94f",
-        "signature": "0f55fe92fef7806df0cc51cbf420987d703bb95388ee886009b44a149f4ecb50",
+        "version": "a26a47a67db560f48e75a18d8e0a162013fd8a3ccf686d72f070dcc86e8b5fc9",
+        "signature": "ddf53b2639df7d05b8146783e92ee28f4161651b73470c481daa403bb8fe2971",
         "affectsGlobalScope": false
       },
       "./src/id/index.ts": {
@@ -1477,8 +1477,8 @@
         "affectsGlobalScope": false
       },
       "./src/idx/cidx.ts": {
-        "version": "78398e8e80becc1055569a9d82209aed9d3dad43f674afd405f338f26876c28e",
-        "signature": "1222795c8129c8748494c194146861347f42e818803eced2c684783fd314950c",
+        "version": "586e1346444b0d4fc8f76f86785589109e3fe88f5d89337a003215015434022d",
+        "signature": "0fc0eedd520aee58c72d655e2ee698df4c03468e5e0a215c943ce1d5486464d6",
         "affectsGlobalScope": false
       },
       "./src/idx/index.ts": {
@@ -1567,7 +1567,7 @@
         "affectsGlobalScope": false
       },
       "./src/sheet/csheet.ts": {
-        "version": "1c018250b2846cfbe8cb2ffb5a3f8f6b20ae3445c00f7a6e6654561e76ae2052",
+        "version": "3898651794e6911e389f98b3e9293c4d4d13319ce1b11f90273dc4bbde6c1bc5",
         "signature": "5d68cd3c85edeebe74a07338c886c69a545727d669277db325fdbd5465411228",
         "affectsGlobalScope": false
       },
@@ -1646,11 +1646,6 @@
         "signature": "cfc1e3b21a2478a46c00605d7ae273f3f4a4d95a717107ad39b2938280cea6e0",
         "affectsGlobalScope": false
       },
-      "./src/index.ts": {
-        "version": "595a4adcefc987d741d8e06151712911ee524b13fb9e8880d4147bf78567dbdd",
-        "signature": "595a4adcefc987d741d8e06151712911ee524b13fb9e8880d4147bf78567dbdd",
-        "affectsGlobalScope": false
-      },
       "./src/roles/vroles.tsx": {
         "version": "9cb9f6ec50c5a403a9ff677f53e7f58a11e7ac91a6d3c756ed4782c92432b1c0",
         "signature": "1b86c0f88f974ec60085bcf24292e507d9ff1a04cfb38b58fb95fe83e64c2b24",
@@ -1684,6 +1679,11 @@
       "./src/roles/index.ts": {
         "version": "8cec1f702d1b240b6ab7a2cf49cbf2c63af0d3b2c6ba12d06bf5e474759bc853",
         "signature": "8cec1f702d1b240b6ab7a2cf49cbf2c63af0d3b2c6ba12d06bf5e474759bc853",
+        "affectsGlobalScope": false
+      },
+      "./src/index.ts": {
+        "version": "c9badc1866bace3e6bd809ce2b098f5ce64b8d448729f7c65f1cd0b4e44cd695",
+        "signature": "c9badc1866bace3e6bd809ce2b098f5ce64b8d448729f7c65f1cd0b4e44cd695",
         "affectsGlobalScope": false
       },
       "./src/select/midselect.ts": {
@@ -3846,6 +3846,7 @@
         "./src/id/index.ts",
         "./src/idx/index.ts",
         "./src/ix/index.ts",
+        "./src/roles/index.ts",
         "./src/sheet/index.ts",
         "./src/tag/index.ts"
       ],
@@ -6062,6 +6063,7 @@
         "./src/id/cid.ts"
       ],
       "./src/idx/cidx.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/idx/mid.ts",
         "./src/tools/index.ts"
       ],
@@ -6094,6 +6096,7 @@
         "./src/id/index.ts",
         "./src/idx/index.ts",
         "./src/ix/index.ts",
+        "./src/roles/index.ts",
         "./src/sheet/index.ts",
         "./src/tag/index.ts"
       ],

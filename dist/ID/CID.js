@@ -71,6 +71,7 @@ var CID = /** @class */ (function (_super) {
     __extends(CID, _super);
     function CID(mid, res) {
         var _this = _super.call(this, res) || this;
+        _this.item = null;
         _this.onItemClick = function (item) {
             mobx_1.runInAction(function () {
                 _this.item = item;
@@ -80,10 +81,10 @@ var CID = /** @class */ (function (_super) {
         _this.onItemEdit = function () {
             _this.openVPage(VEdit_1.VEdit);
         };
-        _this.mid = mid;
         mobx_1.makeObservable(_this, {
             item: mobx_1.observable,
         });
+        _this.mid = mid;
         return _this;
     }
     CID.prototype.internalStart = function () {

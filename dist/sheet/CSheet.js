@@ -57,7 +57,9 @@ var CSheet = /** @class */ (function (_super) {
     __extends(CSheet, _super);
     function CSheet(mid) {
         var _this = _super.call(this, mid.res) || this;
+        _this.master = null;
         _this.details = [];
+        _this.detail = null;
         _this.serial = 1;
         _this.editDetail = function (detail) { return __awaiter(_this, void 0, void 0, function () {
             var _a, uq, detailFormUI, ID, fields, uiForm, i, field, ID_1, cForm;
@@ -113,11 +115,11 @@ var CSheet = /** @class */ (function (_super) {
                 }
             });
         }); };
-        _this.mid = mid;
         mobx_1.makeObservable(_this, {
             master: mobx_1.observable,
             details: mobx_1.observable,
         });
+        _this.mid = mid;
         return _this;
     }
     CSheet.prototype.load = function (id) {

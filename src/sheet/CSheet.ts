@@ -7,17 +7,17 @@ import { MidSheet } from "./MidSheet";
 export abstract class CSheet<M extends Master, D extends Detail> extends Controller {
 	readonly mid: MidSheet<M, D>;
 	id: number;
-	master: M;
+	master: M = null;
 	details: D[] = [];
-	detail: D;
+	detail: D = null;
 
 	constructor(mid: MidSheet<M, D>) {
 		super(mid.res);
-		this.mid = mid;
 		makeObservable(this, {
 			master: observable,
 			details: observable,
 		});
+		this.mid = mid;
 	}
 
 	protected async load(id:number) {

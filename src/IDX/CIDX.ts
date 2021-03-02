@@ -9,16 +9,18 @@ import { VHistory } from "./VHistory";
 import { VView } from "./VView";
 
 export class CIDX extends Controller {
+	timeSpan:TimeSpan = null;
+	spanValues: any = null;
 	mid: MidIDX;
 	private historyPageItems: HistoryPageItems<any>
 	constructor(mid:MidIDX, res?:any) {
 		super(res);
-		this.mid = mid;
-		this.historyPageItems = new HistoryPageItems<any>(mid.historyPageItems);
 		makeObservable(this, {
 			timeSpan: observable,
 			spanValues: observable,
 		});
+		this.mid = mid;
+		this.historyPageItems = new HistoryPageItems<any>(mid.historyPageItems);
 	}
 
 	protected async internalStart() {
@@ -42,8 +44,6 @@ export class CIDX extends Controller {
 		this.openVPage(VEdit);
 	}
 
-	timeSpan:TimeSpan;
-	spanValues: any;
 	async setTimeSpan(span: 'day'|'week'|'month'|'year') {
 		let timeSpan = TimeSpan.create(span);
 		runInAction(async () => {

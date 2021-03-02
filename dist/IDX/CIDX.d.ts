@@ -2,6 +2,8 @@ import { Controller, PageItems } from "tonva-react";
 import { TimeSpan } from "../tools";
 import { MidIDX } from "./Mid";
 export declare class CIDX extends Controller {
+    timeSpan: TimeSpan;
+    spanValues: any;
     mid: MidIDX;
     private historyPageItems;
     constructor(mid: MidIDX, res?: any);
@@ -9,8 +11,6 @@ export declare class CIDX extends Controller {
     item: any;
     onItemClick: (item: any) => void;
     onItemEdit: () => Promise<void>;
-    timeSpan: TimeSpan;
-    spanValues: any;
     setTimeSpan(span: 'day' | 'week' | 'month' | 'year'): Promise<void>;
     private loadSum;
     prevTimeSpan(): Promise<void>;
