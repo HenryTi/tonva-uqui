@@ -71,6 +71,7 @@ var CID = /** @class */ (function (_super) {
     __extends(CID, _super);
     function CID(mid, res) {
         var _this = _super.call(this, res) || this;
+        _this.item = null;
         _this.onItemClick = function (item) {
             mobx_1.runInAction(function () {
                 _this.item = item;

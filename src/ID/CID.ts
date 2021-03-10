@@ -8,7 +8,7 @@ import { VEdit } from "./VEdit";
 import { VView } from "./VView";
 
 export class CID<T extends IDBase> extends Controller {
-	item:any;
+	item:T = null;
 	mid: MidID<T>;
 	idList: CIDList<any>;
 	constructor(mid:MidID<T>, res?:any) {
@@ -30,8 +30,8 @@ export class CID<T extends IDBase> extends Controller {
 		await this.idList.start();
 	}
 
-	renderItem: (item:any, index:number) => JSX.Element;
-	onItemClick: (item:any) => void = (item:any) => {
+	renderItem: (item:T, index:number) => JSX.Element;
+	onItemClick: (item: T) => void = (item:any) => {
 		runInAction(() => {
 			this.item = item;
 			this.onItemView();	

@@ -1447,8 +1447,8 @@
         "affectsGlobalScope": false
       },
       "./src/id/cid.ts": {
-        "version": "fb8eece25891ab3581f2b0438bacc87492d93824b205755cd14f9912a86ce8cc",
-        "signature": "e4486e3dd70e887025c30fad7f36b66c724f2445e9eb756768aae24c2f9e55e1",
+        "version": "a07d93321644c79e5e98212a7bb1c1de2d25c09573572d53c69cc9a7be0dbc8d",
+        "signature": "67c6eba34605220f9099779450fb571e1038813380f7163ef4f0e18b070bd6ed",
         "affectsGlobalScope": false
       },
       "./src/id/index.ts": {
@@ -1497,7 +1497,7 @@
         "affectsGlobalScope": false
       },
       "./src/idx/cidx.ts": {
-        "version": "7d624497bafcf3d4602fc2473e2497bbb8c6e432c70f50dc71dc6cffb30fa527",
+        "version": "905b5f690e18192059e36902cc04dbbf43e58ab1a2fcdc94b7c5ca9508d3bcb5",
         "signature": "96483e36e60e3438d8c10fbe955b638fd5bb424ffa550b553258bfd87746042f",
         "affectsGlobalScope": false
       },
@@ -1689,11 +1689,6 @@
       "./src/index.ts": {
         "version": "c9badc1866bace3e6bd809ce2b098f5ce64b8d448729f7c65f1cd0b4e44cd695",
         "signature": "c9badc1866bace3e6bd809ce2b098f5ce64b8d448729f7c65f1cd0b4e44cd695",
-        "affectsGlobalScope": false
-      },
-      "./src/idx/mid.ts": {
-        "version": "45080180c878e7c2b706679f13b87106a948cbe4b1ed1555e62c0f29a8c333e0",
-        "signature": "767a9b27298c382a3df63aab4cb9e4639046e0e68199dfad3cca324e604db82b",
         "affectsGlobalScope": false
       },
       "./src/form/createpickid.ts": {
@@ -3801,14 +3796,6 @@
         "./src/idx/cidxlist.ts",
         "./src/idx/mididx.ts",
         "./src/idx/mididxlist.ts"
-      ],
-      "./src/idx/mid.ts": [
-        "./node_modules/@types/node/base.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/react/jsx-runtime.d.ts",
-        "./node_modules/tonva-react/dist/index.d.ts",
-        "./src/base/index.ts",
-        "./src/tools/index.ts"
       ],
       "./src/idx/mididx.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -6123,10 +6110,6 @@
         "./src/idx/mididx.ts",
         "./src/idx/mididxlist.ts"
       ],
-      "./src/idx/mid.ts": [
-        "./src/base/index.ts",
-        "./src/tools/index.ts"
-      ],
       "./src/idx/mididx.ts": [
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
@@ -6620,35 +6603,6 @@
       "./src/idx/cidx.ts",
       "./src/idx/cidxlist.ts",
       "./src/idx/index.ts",
-      [
-        "./src/idx/mid.ts",
-        [
-          {
-            "file": "./src/idx/mid.ts",
-            "start": 169,
-            "length": 6,
-            "messageText": "Non-abstract class 'MidIDX' does not implement inherited abstract member 'init' from class 'Mid'.",
-            "category": 1,
-            "code": 2515
-          },
-          {
-            "file": "./src/idx/mid.ts",
-            "start": 2810,
-            "length": 56,
-            "code": 2322,
-            "category": 1,
-            "messageText": "Type 'Promise<Schema>' is not assignable to type 'Schema'."
-          },
-          {
-            "file": "./src/idx/mid.ts",
-            "start": 2817,
-            "length": 16,
-            "code": 2740,
-            "category": 1,
-            "messageText": "Type 'Promise<Schema>' is missing the following properties from type 'ItemSchema[]': length, pop, push, concat, and 28 more."
-          }
-        ]
-      ],
       "./src/idx/mididx.ts",
       "./src/idx/mididxlist.ts",
       "./src/idx/res/en.ts",

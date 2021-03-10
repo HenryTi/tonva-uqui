@@ -8,9 +8,9 @@ import { VHistory } from "./VHistory";
 import { VView } from "./VView";
 
 export class CIDX extends Controller {
-	timeSpan:TimeSpan;
-	spanValues: any;
-	dayValues: number[];
+	timeSpan:TimeSpan = null;
+	spanValues: any = null;
+	dayValues: number[] = null;
 	mid: MidIDX;
 	private historyPageItems: HistoryPageItems<any>
 	constructor(mid:MidIDX, res?:any) {
