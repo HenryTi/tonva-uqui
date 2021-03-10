@@ -5,6 +5,7 @@ export declare class MidIX extends Mid {
     readonly ID: ID;
     readonly id: number;
     constructor(uq: Uq, IX: IX, ID: ID, id: number, res?: any);
+    init(): Promise<void>;
 }
 export declare class CIX<P extends MidIX> extends Controller {
     protected readonly mid: P;

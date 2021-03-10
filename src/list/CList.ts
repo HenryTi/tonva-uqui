@@ -36,8 +36,9 @@ export abstract class CList<T> extends Controller {
 		this.midList.onItemClick(item);
 	}
 
-	protected renderRight():JSX.Element {
+	protected renderRight():JSX.Element {		
 		let {renderRight, onRightClick} = this.midList;
+		if (!onRightClick) return null;
 		return (renderRight ?? listRight)(onRightClick);
 	}
 

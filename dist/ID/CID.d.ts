@@ -10,8 +10,8 @@ export declare class CID<T extends IDBase> extends Controller {
     protected internalStart(): Promise<void>;
     renderItem: (item: any, index: number) => JSX.Element;
     onItemClick: (item: any) => void;
-    onItemEdit: () => void;
+    onItemEdit: () => Promise<void>;
     onItemView(): void;
-    onItemNew(): void;
+    onItemNew(): Promise<void>;
     saveID(itemProps: any): Promise<number>;
 }

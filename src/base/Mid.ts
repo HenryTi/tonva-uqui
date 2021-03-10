@@ -1,4 +1,5 @@
-import { ButtonSchema, ID, Schema, UiButton, UiSchema, Uq } from "tonva-react";
+import { ButtonSchema, FieldItem, FieldItemId, FieldItemString, ID, Schema, UiButton, UiSchema, Uq } from "tonva-react";
+//import { createPickId } from "../select";
 
 export abstract class Mid {
 	readonly uq: Uq;
@@ -8,7 +9,9 @@ export abstract class Mid {
 		this.res = res;
 	}
 
-	buildItemSchema(ID: ID): Schema {
+	abstract init():Promise<void>;
+
+	protected async buildItemSchema(ID: ID): Promise<Schema> {
 		let ret:Schema = [];
 		let {fieldArr} = ID.ui;
 		for (let f of fieldArr) {
@@ -21,6 +24,11 @@ export abstract class Mid {
 			switch (type) {
 				default: ret.push(fieldItem); break;
 			}
+			let {ID} = fieldItem;
+			if (ID) {
+				let importSelect = await import('../select');
+				this.setIDUi(fieldItem, importSelect.createPickId(this.uq, ID), ID.render);
+			}
 		}
 		ret.push({
 			name: 'submit',
@@ -29,7 +37,7 @@ export abstract class Mid {
 		return ret;
 	}
 
-	buildUISchema(ID:ID):UiSchema {
+	protected buildUISchema(ID:ID):UiSchema {
 		let {fields} = ID.ui;
 		let items = {...fields as any};
 		let uiButton: UiButton = {
@@ -41,4 +49,24 @@ export abstract class Mid {
 		let ret = {items};
 		return ret;
 	}
+
+	protected setIDUi(fieldItem:FieldItem, pickId: () => Promise<any>, render: (values:any) => JSX.Element) {
+		if (fieldItem.type !== 'id') {
+			alert(`${fieldItem.name} is not id UI`);
+			return;
+		}
+		let idField = fieldItem as FieldItemId;
+		idField.widget = 'id';
+		idField.pickId = pickId;
+		(idField as any).Templet = render;
+	}
+
+	protected setNO(no:string, noFieldItem: FieldItem) {
+		if (!noFieldItem) return;
+		if (noFieldItem.type !== 'string') return;
+		let noField = noFieldItem as FieldItemString;
+		noField.readOnly = true;
+		noField.defaultValue = no;
+	}
+
 }

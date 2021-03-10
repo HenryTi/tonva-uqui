@@ -20,7 +20,7 @@ export class CIDTagList<T extends IDBase> extends CList<ItemTags<T>> {
 	}
 
 	async beforeStart():Promise<boolean> {
-		await this.midIDTagList.midTag.load();
+		await this.midIDTagList.midTag.init();
 		return true;
 	}
 

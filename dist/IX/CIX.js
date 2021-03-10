@@ -62,6 +62,13 @@ var MidIX = /** @class */ (function (_super) {
         _this.id = id;
         return _this;
     }
+    MidIX.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
     return MidIX;
 }(base_1.Mid));
 exports.MidIX = MidIX;

@@ -50,6 +50,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CSheetNew = void 0;
+var select_1 = require("../select");
 var form_1 = require("../form");
 var CSheet_1 = require("./CSheet");
 var VSheetEdit_1 = require("./VSheetEdit");
@@ -79,7 +80,7 @@ var CSheetNew = /** @class */ (function (_super) {
                                 field = fields[i];
                                 ID_1 = field.ID;
                                 if (ID_1) {
-                                    formProps.setIDUi(i, form_1.createPickId(uq, ID_1), ID_1.render);
+                                    formProps.setIDUi(i, select_1.createPickId(uq, ID_1), ID_1.render);
                                 }
                             }
                         }

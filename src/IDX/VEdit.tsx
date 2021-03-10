@@ -32,6 +32,8 @@ export class VEdit extends VPage<CIDX> {
 	private renderNumberProp(prop: NumberProp) {
 		let V = observer(() => {
 			let {name} = prop;
+			let {spanValues} = this.controller;
+			if (!spanValues) return null;
 			return <div key={name} className="px-3 py-2 bg-white mb-1 cursor-pointer" 
 				onClick={()=>this.openVPage(VEditNumberField, prop)}>
 				<LMR left={<b>{prop.label}</b>} 
@@ -107,12 +109,16 @@ class VEditNumberField extends VPage<CIDX> {
 	}
 
 	private onSave = async () => {
-		let date = this.dateInput.valueAsDate;
-		let dateTicks = this.dateInput.valueAsNumber;
-		let timeTicks = this.timeInput.valueAsNumber;
-		let t = dateTicks + timeTicks + date.getTimezoneOffset()*60*1000;
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		let time = new Date(t);
+		let t: number;
+		if (this.dateInput) {
+			let date = this.dateInput.valueAsDate;
+			let dateTicks = this.dateInput?.valueAsNumber;
+			let timeTicks = this.timeInput?.valueAsNumber;
+			t = dateTicks + timeTicks + date.getTimezoneOffset()*60*1000;
+		}
+		else {
+			t = Date.now();
+		}
 		await this.controller.saveFieldValue(this.prop.name, t, this.value);
 		this.closePage();
 	}

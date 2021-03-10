@@ -19,11 +19,9 @@ function buildGridProps(ui) {
     for (var _i = 0, fieldArr_1 = fieldArr; _i < fieldArr_1.length; _i++) {
         var f = fieldArr_1[_i];
         var prop = __assign({}, f);
-        ret.push(prop);
         /*
         let {name, type} = f;
         let required = (keys as any[])?.findIndex(v => v.name === name) >= 0;
-        let ex = (exFields as any[])?.find(v => v.field === name);
         let time = ex?.time;
         switch (type) {
             default: throw new Error(`schema type ${type} not implemented`);
@@ -59,6 +57,7 @@ function buildGridProps(ui) {
                 break;
         }
         */
+        ret.push(prop);
     }
     return ret;
 }

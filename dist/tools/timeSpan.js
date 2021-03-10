@@ -48,6 +48,27 @@ var TimeSpan = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    TimeSpan.prototype.getDayValues = function (dayValues) {
+        var days = this.getDayArray();
+        var ret = [];
+        var i = 0;
+        var dv = dayValues[i++];
+        for (var _i = 0, days_1 = days; _i < days_1.length; _i++) {
+            var day = days_1[_i];
+            if (dv) {
+                var t = dv.t, v = dv.v;
+                var d = new Date(t);
+                d.setMinutes(d.getMinutes() + d.getTimezoneOffset());
+                if (d.getTime() === day.getTime()) {
+                    ret.push(v);
+                    dv = dayValues[i++];
+                    continue;
+                }
+            }
+            ret.push(0);
+        }
+        return ret;
+    };
     return TimeSpan;
 }());
 exports.TimeSpan = TimeSpan;
@@ -85,6 +106,8 @@ var DaySpan = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    DaySpan.prototype.getDayArray = function () { return [this.date]; };
+    ;
     return DaySpan;
 }(TimeSpan));
 var enWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -95,6 +118,7 @@ var WeekSpan = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this.type = 'week';
         _this.firstDay = new Date();
+        _this.firstDay.setHours(0, 0, 0, 0);
         var day = _this.firstDay.getDay() || 7; // Get current day number, converting Sun. to 7
         if (day !== 1) { // Only manipulate the date if it isn't Mon.
             _this.firstDay.setHours(-24 * (day - 1)); // Set the hours to day number minus 1
@@ -138,6 +162,17 @@ var WeekSpan = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    WeekSpan.prototype.getDayArray = function () {
+        var d = new Date(this.firstDay);
+        var ret = [this.firstDay];
+        for (;;) {
+            d.setDate(d.getDate() + 1);
+            if (d >= this.lastDay)
+                break;
+            ret.push(new Date(d));
+        }
+        return ret;
+    };
     return WeekSpan;
 }(TimeSpan));
 var MonthSpan = /** @class */ (function (_super) {
@@ -181,6 +216,17 @@ var MonthSpan = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    MonthSpan.prototype.getDayArray = function () {
+        var d = new Date(this.firstDay);
+        var ret = [this.firstDay];
+        for (;;) {
+            d.setDate(d.getDate() + 1);
+            if (d >= this.lastDay)
+                break;
+            ret.push(new Date(d));
+        }
+        return ret;
+    };
     return MonthSpan;
 }(TimeSpan));
 var YearSpan = /** @class */ (function (_super) {
@@ -223,6 +269,17 @@ var YearSpan = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    YearSpan.prototype.getDayArray = function () {
+        var d = new Date(this.firstDay);
+        var ret = [this.firstDay];
+        for (;;) {
+            d.setDate(d.getDate() + 1);
+            if (d >= this.lastDay)
+                break;
+            ret.push(new Date(d));
+        }
+        return ret;
+    };
     return YearSpan;
 }(TimeSpan));
 //# sourceMappingURL=timeSpan.js.map

@@ -12,17 +12,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,33 +49,34 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VEdit = void 0;
-var jsx_runtime_1 = require("react/jsx-runtime");
-var tonva_react_1 = require("tonva-react");
-var VEdit = /** @class */ (function (_super) {
-    __extends(VEdit, _super);
-    function VEdit() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.onSubmit = function (name, context) { return __awaiter(_this, void 0, void 0, function () {
+exports.CIDSelectInPickId = exports.createPickId = void 0;
+var CIDSelect_1 = require("./CIDSelect");
+function createPickId(uq, ID) {
+    function pickId() {
+        return __awaiter(this, void 0, void 0, function () {
+            var mid, cIDSelect;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.controller.saveID(context.data)];
-                    case 1:
-                        _a.sent();
-                        this.closePage();
-                        return [2 /*return*/];
-                }
+                mid = new CIDSelect_1.MidIDSelectList(uq, ID);
+                cIDSelect = new CIDSelectInPickId(mid);
+                return [2 /*return*/, cIDSelect.call()];
             });
-        }); };
+        });
+    }
+    return pickId;
+}
+exports.createPickId = createPickId;
+var CIDSelectInPickId = /** @class */ (function (_super) {
+    __extends(CIDSelectInPickId, _super);
+    function CIDSelectInPickId(mid) {
+        var _this = _super.call(this, mid) || this;
+        _this.onSelectChange = function (item, isSelected) {
+            _this.closePage();
+            _this.returnCall(item);
+        };
+        mid.onSelectChange = _this.onSelectChange;
         return _this;
     }
-    VEdit.prototype.header = function () { return 'Edit'; };
-    VEdit.prototype.content = function () {
-        var _a = this.controller, item = _a.item, mid = _a.mid;
-        var itemSchema = mid.itemSchema, uiSchema = mid.uiSchema;
-        return jsx_runtime_1.jsx("div", __assign({ className: "p-3" }, { children: jsx_runtime_1.jsx(tonva_react_1.Form, { fieldLabelSize: 2, formData: item, schema: itemSchema, uiSchema: uiSchema, onButtonClick: this.onSubmit }, void 0) }), void 0);
-    };
-    return VEdit;
-}(tonva_react_1.VPage));
-exports.VEdit = VEdit;
-//# sourceMappingURL=VEdit.js.map
+    return CIDSelectInPickId;
+}(CIDSelect_1.CIDSelect));
+exports.CIDSelectInPickId = CIDSelectInPickId;
+//# sourceMappingURL=createPickId.js.map

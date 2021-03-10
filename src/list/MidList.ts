@@ -33,7 +33,7 @@ class IDListPageItems<T extends IDBase> extends ListPageItems<T> {
 	newItem(id:number, item:T):T {return {...item, id}}
 
 	update(id:number, item:T) {
-		let ret = this._items.findIndex(v => this.itemId(v) === id);
+		let ret = this._items.find(v => this.itemId(v) === id);
 		if (ret === undefined) {
 			let data = this.newItem(id, item);
 			this._items.unshift(data);

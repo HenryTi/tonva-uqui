@@ -52,6 +52,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CSheet = void 0;
 var mobx_1 = require("mobx");
 var tonva_react_1 = require("tonva-react");
+var select_1 = require("../select");
 var form_1 = require("../form");
 var CSheet = /** @class */ (function (_super) {
     __extends(CSheet, _super);
@@ -75,7 +76,7 @@ var CSheet = /** @class */ (function (_super) {
                                 field = fields[i];
                                 ID_1 = field.ID;
                                 if (ID_1) {
-                                    uiForm.setIDUi(i, form_1.createPickId(uq, ID_1), ID_1.render);
+                                    uiForm.setIDUi(i, select_1.createPickId(uq, ID_1), ID_1.render);
                                 }
                             }
                         }

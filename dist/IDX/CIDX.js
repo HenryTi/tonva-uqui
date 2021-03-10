@@ -53,7 +53,6 @@ exports.CIDX = void 0;
 var mobx_1 = require("mobx");
 var tonva_react_1 = require("tonva-react");
 var tools_1 = require("../tools");
-var CIDXList_1 = require("./CIDXList");
 var res_1 = require("./res");
 var VEdit_1 = require("./VEdit");
 var VHistory_1 = require("./VHistory");
@@ -62,8 +61,6 @@ var CIDX = /** @class */ (function (_super) {
     __extends(CIDX, _super);
     function CIDX(mid, res) {
         var _this = _super.call(this, res) || this;
-        _this.timeSpan = null;
-        _this.spanValues = null;
         _this.onItemClick = function (item) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -83,31 +80,49 @@ var CIDX = /** @class */ (function (_super) {
                 return [2 /*return*/];
             });
         }); };
+        _this.prevTimeSpan = function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.timeSpan.prev();
+                        return [4 /*yield*/, this.loadSum()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        _this.nextTimeSpan = function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.timeSpan.next();
+                        return [4 /*yield*/, this.loadSum()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         mobx_1.makeObservable(_this, {
             timeSpan: mobx_1.observable,
             spanValues: mobx_1.observable,
+            dayValues: mobx_1.observable,
         });
         _this.mid = mid;
         _this.historyPageItems = new tools_1.HistoryPageItems(mid.historyPageItems);
         return _this;
     }
-    CIDX.prototype.internalStart = function () {
+    CIDX.prototype.internalStart = function (item) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, uq, ID, IDX, midIDXList, idList;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
                         this.setRes(res_1.res);
-                        return [4 /*yield*/, this.mid.loadSchema()];
+                        return [4 /*yield*/, this.mid.init()];
                     case 1:
-                        _b.sent();
-                        _a = this.mid, uq = _a.uq, ID = _a.ID, IDX = _a.IDX;
-                        midIDXList = new CIDXList_1.MidIDXList(uq, ID, IDX);
-                        midIDXList.onItemClick = this.onItemClick;
-                        idList = new CIDXList_1.CIDXList(midIDXList);
-                        return [4 /*yield*/, idList.start()];
-                    case 2:
-                        _b.sent();
+                        _a.sent();
+                        this.onItemClick(item);
                         return [2 /*return*/];
                 }
             });
@@ -118,20 +133,20 @@ var CIDX = /** @class */ (function (_super) {
             var timeSpan;
             var _this = this;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        timeSpan = tools_1.TimeSpan.create(span);
-                        mobx_1.runInAction(function () { return __awaiter(_this, void 0, void 0, function () {
-                            return __generator(this, function (_a) {
+                timeSpan = tools_1.TimeSpan.create(span);
+                mobx_1.runInAction(function () { return __awaiter(_this, void 0, void 0, function () {
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
                                 this.timeSpan = timeSpan;
+                                return [4 /*yield*/, this.loadSum(timeSpan)];
+                            case 1:
+                                _a.sent();
                                 return [2 /*return*/];
-                            });
-                        }); });
-                        return [4 /*yield*/, this.loadSum(timeSpan)];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
+                        }
+                    });
+                }); });
+                return [2 /*return*/];
             });
         });
     };
@@ -151,34 +166,9 @@ var CIDX = /** @class */ (function (_super) {
                         mobx_1.runInAction(function () {
                             _this.spanValues = sum !== null && sum !== void 0 ? sum : {};
                         });
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    CIDX.prototype.prevTimeSpan = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.timeSpan.prev();
-                        return [4 /*yield*/, this.loadSum()];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    CIDX.prototype.nextTimeSpan = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.timeSpan.next();
-                        return [4 /*yield*/, this.loadSum()];
-                    case 1:
-                        _a.sent();
+                        return [4 /*yield*/, this.loadDayValues()];
+                    case 2:
+                        _b.sent();
                         return [2 /*return*/];
                 }
             });
@@ -195,7 +185,7 @@ var CIDX = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         this.field = field;
-                        return [4 /*yield*/, this.mid.loadSchema()];
+                        return [4 /*yield*/, this.mid.init()];
                     case 1:
                         _a.sent();
                         this.historyPageItems.first({
@@ -209,6 +199,30 @@ var CIDX = /** @class */ (function (_super) {
                 }
             });
         });
+    };
+    CIDX.prototype.loadDayValues = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a, far, near, ret, dayValues;
+            var _this = this;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this.timeSpan, far = _a.far, near = _a.near;
+                        return [4 /*yield*/, this.mid.loadDayValues(this.item.id, this.field, far, near)];
+                    case 1:
+                        ret = _b.sent();
+                        dayValues = this.timeSpan.getDayValues(ret);
+                        mobx_1.runInAction(function () {
+                            _this.dayValues = dayValues;
+                        });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    CIDX.prototype.setCurrentField = function (field) {
+        this.field = field;
+        this.loadDayValues();
     };
     CIDX.prototype.saveFieldValue = function (field, t, value) {
         return __awaiter(this, void 0, void 0, function () {

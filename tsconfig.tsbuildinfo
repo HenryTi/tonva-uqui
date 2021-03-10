@@ -1231,19 +1231,9 @@
         "signature": "cc881b759d668f87b85a37caa0649fb9395acbbda9a7dfd9ccc271aaac0af5d0",
         "affectsGlobalScope": false
       },
-      "./src/base/mid.ts": {
-        "version": "2bd17ece18a8d51997e706e52022998cbb850d7efb570e4d156e43dfe9268421",
-        "signature": "5194f3188ff267d59a8ad5d8435ad4a91c037d91fed8cb37bcde384d5e2226ed",
-        "affectsGlobalScope": false
-      },
       "./src/base/idbase.ts": {
         "version": "a672f1962d7ab24220626bce1cb9d248e1535cd70e3345e6ddb4d35bcaa0c67d",
         "signature": "48b27cad777199d41762fedf87646f8e820a4b56e541f0d607f0d679b332a427",
-        "affectsGlobalScope": false
-      },
-      "./src/base/index.ts": {
-        "version": "62515077b60ab26434f0f25d869b511553cc7015dc97854cf1b679bf34252ac9",
-        "signature": "62515077b60ab26434f0f25d869b511553cc7015dc97854cf1b679bf34252ac9",
         "affectsGlobalScope": false
       },
       "./src/tools/pageitems.ts": {
@@ -1252,13 +1242,13 @@
         "affectsGlobalScope": false
       },
       "./src/tools/buildgridprops.ts": {
-        "version": "9b13f9b0d92df61b8a0c1691f630dd26a70df3871f9f9ea048721dffec8381c1",
+        "version": "b4c8030ae8b5dd3972420e34070030873f1647e03d96888481f5c901a730542a",
         "signature": "3b4a00e223e978d7df96da5dabd76669edd7def2832a602b3a2d135d8387b387",
         "affectsGlobalScope": false
       },
       "./src/tools/timespan.ts": {
-        "version": "d645e23c8710b8ad8890fdbc6acace1acc054b7effabe0227760e7df601844f1",
-        "signature": "255e12d0a849472be7e5e125281b309606b0c768bd78d52b7ef932b024da5b03",
+        "version": "df908443fb24a075ede2304bd6a6f866cb639734de55f821d7e1a484e57a01ab",
+        "signature": "2166a79e2dd0857b93f7ddab498a1baff75b0dc9047f1493d0923115bbea7817",
         "affectsGlobalScope": false
       },
       "./src/tools/parts.tsx": {
@@ -1277,18 +1267,53 @@
         "affectsGlobalScope": false
       },
       "./src/list/midlist.ts": {
-        "version": "2303f597d231c3f967042bb303e7f814108bb6b60b03474a875f0d5ba0a802a6",
+        "version": "9ab97eb0f8ef3c298c5c28db45fa90c775738f0a12e3cb78959a733774d7d3d3",
         "signature": "da0775e6923834adacbf36ec3d61c4ca7a45352e5f90e46419cc9037d3d1340b",
         "affectsGlobalScope": false
       },
       "./src/list/clist.ts": {
-        "version": "d158733b3be05c47cd465975f21b3133514b2d7861ebb031b65c8948578254f4",
+        "version": "22c2c40a41e1b156873a2d1d75a2218eaffda4d4435b6f8a9f03391465d65936",
         "signature": "76c1549c59a43d61b21a6e3dfe078466ee286dea5700ab13e0ebdd4648846d11",
         "affectsGlobalScope": false
       },
       "./src/list/index.ts": {
         "version": "9e25962c2b82d278998146295894736a50c9e55376b1c6517890cf8bfe3990e2",
         "signature": "9e25962c2b82d278998146295894736a50c9e55376b1c6517890cf8bfe3990e2",
+        "affectsGlobalScope": false
+      },
+      "./src/select/parts.tsx": {
+        "version": "5033737f9f31880b9f71ba71adfbed65d3a36ed598d617eb39aa92666a4c3d73",
+        "signature": "27fdee4fb825fb2a7ffb88d9efc544e5f174bda560133b553f97e2610da68f4a",
+        "affectsGlobalScope": false
+      },
+      "./src/select/cidselect.ts": {
+        "version": "5cd0704497ac455ffdfada6ac85b537ec470f79130a97fe802efc32b13007d31",
+        "signature": "38bd876306d03da995f272d8868d1b384c06d76b1f7488055213e89fea7e10fd",
+        "affectsGlobalScope": false
+      },
+      "./src/select/cixselect.ts": {
+        "version": "6f1a5cc8fcea2a80901e0bef9aae11063009f264b75a038becce33b984fc855f",
+        "signature": "54dfe974bba2d18568c91a1a6f6538d3451b0e3d43529fa340b372bc6560da87",
+        "affectsGlobalScope": false
+      },
+      "./src/select/createpickid.ts": {
+        "version": "3ea145ef561fd946521374d308a3745a5b001dcf257fc162b548c98f510b5053",
+        "signature": "0935ad441b75b1a2ab55d5c740322689e3186f2959932afbc10fdedd27e4f0c0",
+        "affectsGlobalScope": false
+      },
+      "./src/select/index.ts": {
+        "version": "98a9794c574a9fa7c539751c4d56cb03eb4703ce9ddc18e5cda1f99b34c94071",
+        "signature": "98a9794c574a9fa7c539751c4d56cb03eb4703ce9ddc18e5cda1f99b34c94071",
+        "affectsGlobalScope": false
+      },
+      "./src/base/mid.ts": {
+        "version": "75a8de1dc0b43edab8c4c51b575a5fd242f5626541304c46f8673e9790290c0c",
+        "signature": "29a3c5d07c2f1406e3f7ea8421ffa72fb0a35bd49241c65a1ad5c719ef24fe93",
+        "affectsGlobalScope": false
+      },
+      "./src/base/index.ts": {
+        "version": "62515077b60ab26434f0f25d869b511553cc7015dc97854cf1b679bf34252ac9",
+        "signature": "62515077b60ab26434f0f25d869b511553cc7015dc97854cf1b679bf34252ac9",
         "affectsGlobalScope": false
       },
       "./src/id/mididlist.ts": {
@@ -1302,12 +1327,12 @@
         "affectsGlobalScope": false
       },
       "./src/id/midid.ts": {
-        "version": "ad87e560c8a8bf8ec1f35fb8bc0013dd641cdba3f65984c2455ebcb38f12970c",
-        "signature": "3edf1f14bb73ad0c40856898506b3b81cd084c67092b97f7ef73116bc123ca91",
+        "version": "a705cf2702d9824d584d0e0e2b66e49c02de83e21384ee717b84089533d06ed4",
+        "signature": "89c043a9f54eb7e53777b7d18f1e44904a1378783c0eced08d44a033fe1365f2",
         "affectsGlobalScope": false
       },
       "./src/id/vedit.tsx": {
-        "version": "4ec6e2617083a57c9f09544226ff363765e38a5463f57d3b3d6ceadb98319a5b",
+        "version": "7d8eb62df5243bc0fdcfb46213fce633cadf7723923816e3af67546bdfb28cd9",
         "signature": "3f5e2c76fdf4768f4c253e54834feee36a951a30a6033fe431f7b30afd976ad2",
         "affectsGlobalScope": false
       },
@@ -1422,8 +1447,8 @@
         "affectsGlobalScope": false
       },
       "./src/id/cid.ts": {
-        "version": "a26a47a67db560f48e75a18d8e0a162013fd8a3ccf686d72f070dcc86e8b5fc9",
-        "signature": "ddf53b2639df7d05b8146783e92ee28f4161651b73470c481daa403bb8fe2971",
+        "version": "fb8eece25891ab3581f2b0438bacc87492d93824b205755cd14f9912a86ce8cc",
+        "signature": "e4486e3dd70e887025c30fad7f36b66c724f2445e9eb756768aae24c2f9e55e1",
         "affectsGlobalScope": false
       },
       "./src/id/index.ts": {
@@ -1431,14 +1456,9 @@
         "signature": "7858d85a4efc72405a93bfb648b96e0bdcbdc87b4e4ef402bb28cec72124f85a",
         "affectsGlobalScope": false
       },
-      "./src/idx/cidxlist.ts": {
-        "version": "8fdd01625b3a38be4609d4e4714b4f515784e25f37ba6e09eaefb42679530007",
-        "signature": "d8d34bdd5b785efc0d8f2a9f402bcbad4c2ecadc5d968996130212a11c0d7c8e",
-        "affectsGlobalScope": false
-      },
-      "./src/idx/mid.ts": {
-        "version": "45080180c878e7c2b706679f13b87106a948cbe4b1ed1555e62c0f29a8c333e0",
-        "signature": "767a9b27298c382a3df63aab4cb9e4639046e0e68199dfad3cca324e604db82b",
+      "./src/idx/mididx.ts": {
+        "version": "d7623bdb3c823246d16b0bcd602aff5e4d6e64123ec24beef92baa8ece862dc2",
+        "signature": "e5730cfb012259f6639c6686a3a3a906bf44129a3829d12582bab069bdfe3b00",
         "affectsGlobalScope": false
       },
       "./src/idx/res/zh.ts": {
@@ -1457,7 +1477,7 @@
         "affectsGlobalScope": false
       },
       "./src/idx/vedit.tsx": {
-        "version": "5f1a1255c297dc8dada244ef304932b20f8d96e5fe64331cb983753eb14c7937",
+        "version": "8b73d1d71ff184f4ba28b24e51d91f1cdc01e1e49fdb10f6ddaf1af7ff1ba575",
         "signature": "307861747a2429be0a9f095f516103c8636da4eef6f312a901f06fefa2ca18ad",
         "affectsGlobalScope": false
       },
@@ -1472,18 +1492,28 @@
         "affectsGlobalScope": false
       },
       "./src/idx/vview.tsx": {
-        "version": "159132a26699569274342ed910fbdd44bd4be8f45613179ff6f1ada39e685e16",
+        "version": "4319953929e63e6628068c833b7b8b83b87634af2e22e0a17a3996eb446ebd48",
         "signature": "7a09b81036d9a120e50802c0f350378ac4541d0ecb6a6326861a1b68433b998f",
         "affectsGlobalScope": false
       },
       "./src/idx/cidx.ts": {
-        "version": "586e1346444b0d4fc8f76f86785589109e3fe88f5d89337a003215015434022d",
-        "signature": "0fc0eedd520aee58c72d655e2ee698df4c03468e5e0a215c943ce1d5486464d6",
+        "version": "7d624497bafcf3d4602fc2473e2497bbb8c6e432c70f50dc71dc6cffb30fa527",
+        "signature": "96483e36e60e3438d8c10fbe955b638fd5bb424ffa550b553258bfd87746042f",
+        "affectsGlobalScope": false
+      },
+      "./src/idx/mididxlist.ts": {
+        "version": "e560164a36a84953fc16d12ffc164d85d68011dde4078eeb339b7d69c7bfa6f8",
+        "signature": "7c580504c64095010567eb37daa0d4b547e706fc2894eeb2619c6f36b79e03ca",
+        "affectsGlobalScope": false
+      },
+      "./src/idx/cidxlist.ts": {
+        "version": "3e19e81695e8a12f771301a6bb96d439234f8d99e3e15c849a1aa4c117eb5f3e",
+        "signature": "57e8261fa79362e66b99d71c827a7ac26a2639bec7a7e549683b0d1abc45184e",
         "affectsGlobalScope": false
       },
       "./src/idx/index.ts": {
-        "version": "63fe87d2c74b77dc02e66bd20cb0de4f55b5b7a7e82a0eca18a0b77ee7c082c9",
-        "signature": "9a6ac8d8baecb08fe93e3ef4c25f0810211a5912a082d25ef956405761d84851",
+        "version": "d1ac0d61cd2f90fb9134b26af2db250db8c36c70fe9228df0de8a39a0b439313",
+        "signature": "68d6265c4ead47f65df66101281cf6565d32633388011ad04374a5a09beab236",
         "affectsGlobalScope": false
       },
       "./src/ix/cixlist.ts": {
@@ -1492,28 +1522,8 @@
         "affectsGlobalScope": false
       },
       "./src/ix/cix.ts": {
-        "version": "1fff94f7bc0e88790f89956f5f9bba753ba97c3642e1b3d81691753737929f0e",
-        "signature": "c7a81340cefec46c155ca6cd9523aa12d7185c00dbb48726734bd9fd1ff5c012",
-        "affectsGlobalScope": false
-      },
-      "./src/select/parts.tsx": {
-        "version": "5033737f9f31880b9f71ba71adfbed65d3a36ed598d617eb39aa92666a4c3d73",
-        "signature": "27fdee4fb825fb2a7ffb88d9efc544e5f174bda560133b553f97e2610da68f4a",
-        "affectsGlobalScope": false
-      },
-      "./src/select/cidselect.ts": {
-        "version": "c4a7e9ba5f0eec887e0ef827c30fbaf4ac948782701f822be1ac1407eb47f683",
-        "signature": "5369626c6bcf36793cb6fb29029566b35eb51c9a62d32418034fcf983900dceb",
-        "affectsGlobalScope": false
-      },
-      "./src/select/cixselect.ts": {
-        "version": "6f1a5cc8fcea2a80901e0bef9aae11063009f264b75a038becce33b984fc855f",
-        "signature": "54dfe974bba2d18568c91a1a6f6538d3451b0e3d43529fa340b372bc6560da87",
-        "affectsGlobalScope": false
-      },
-      "./src/select/index.ts": {
-        "version": "5c5f4dea4f7bdfcd97f6c7729176443290fb89d37807bdac9c160fa71d00943b",
-        "signature": "5c5f4dea4f7bdfcd97f6c7729176443290fb89d37807bdac9c160fa71d00943b",
+        "version": "5b5b44b8201beb3c52d5faf587073ab1eae2be174e9806b0477e04e6108fc4c8",
+        "signature": "0814e53be92a16f6315258a345af0edd4bd0e8e34f5bea54c38942630c8cd96f",
         "affectsGlobalScope": false
       },
       "./src/ix/cixedit.ts": {
@@ -1527,8 +1537,8 @@
         "affectsGlobalScope": false
       },
       "./src/sheet/midsheet.ts": {
-        "version": "a6a5d0d56f90d47108226868daed8c01f37000b007e987f0f2bcd0b2a6c50541",
-        "signature": "c6c5c18051db26e73575e69c889dfd2823ca4685c7a27e65154274dc39bbe5a7",
+        "version": "b6156748319634f99b378b7894d1cd9f36bc9cf4a0531dd1dce82227826cecf0",
+        "signature": "21cc4044d13ee3cc1c7e1059228852208b3ee26826f4cdddd2eba64aaf3586f0",
         "affectsGlobalScope": false
       },
       "./src/form/formprops.ts": {
@@ -1556,18 +1566,13 @@
         "signature": "5417d76b6129c6f41ff1f1c3b03f0e3378a5da36fcf40e20d9714e92e49ae41a",
         "affectsGlobalScope": false
       },
-      "./src/form/createpickid.ts": {
-        "version": "940c0c944d565c1c5bac31dfa8faf426c3b02b26079f45d6ec7456e481b0177e",
-        "signature": "2b0d24a98781ec096c418cc8579c283442b9f87d8ea718c61b3ccf0202b93323",
-        "affectsGlobalScope": false
-      },
       "./src/form/index.ts": {
-        "version": "c5607b55388f017aeeca891339332801445aa7383b8a3d09db188fd0469f3671",
-        "signature": "c5607b55388f017aeeca891339332801445aa7383b8a3d09db188fd0469f3671",
+        "version": "6ea6206a06b1c1ad7d62474aa13bf72ebbb2a4bf0b72512c71c7c96a2839e114",
+        "signature": "6ea6206a06b1c1ad7d62474aa13bf72ebbb2a4bf0b72512c71c7c96a2839e114",
         "affectsGlobalScope": false
       },
       "./src/sheet/csheet.ts": {
-        "version": "3898651794e6911e389f98b3e9293c4d4d13319ce1b11f90273dc4bbde6c1bc5",
+        "version": "8c8cc72f993d6a199e0014d68694521161d24a9bbd42bde2a90eb01ebe34dc04",
         "signature": "5d68cd3c85edeebe74a07338c886c69a545727d669277db325fdbd5465411228",
         "affectsGlobalScope": false
       },
@@ -1582,7 +1587,7 @@
         "affectsGlobalScope": false
       },
       "./src/sheet/csheetnew.ts": {
-        "version": "156692aa0c11fc1bb101c63b069d222dbc9856653d2a1d7d18cce1d791c8d5e5",
+        "version": "ace47797d2da44df97c0150e941b8cb537d4d71ef398f74ddc13b540f9b5ea1b",
         "signature": "39ddc9f7b72572970dbd291f03d3dd9dcb6869e898fa69b8e8531646a347930e",
         "affectsGlobalScope": false
       },
@@ -1602,8 +1607,8 @@
         "affectsGlobalScope": false
       },
       "./src/tag/midtag.ts": {
-        "version": "bc4f0e241572dd96f14e849b6515e2d1601b33b5db7de8d4aa3f419d82d61799",
-        "signature": "94c1abc64d13045642828a8f2aed727414056e18d3823c6d183b30bf7873fb73",
+        "version": "74ff3756070f44d7a12978f583467b79015ef00f89ce8fffb3095f0937445d1a",
+        "signature": "f860d2855fb3f4aaa049fb92b08a4064710c43f8d517752aa22371b465d08d38",
         "affectsGlobalScope": false
       },
       "./src/tag/select/vselect.tsx": {
@@ -1627,7 +1632,7 @@
         "affectsGlobalScope": false
       },
       "./src/tag/cidtaglist.ts": {
-        "version": "0f84cd8c2841252615c347666bf2b72fa8203d505664833af3bcc8f48a8fc3e9",
+        "version": "28d02721a8ff1c5f014759432d9ab2edb83ae01b33c4aaed5715e32b9e4307d0",
         "signature": "68e1c1b1a8a48b899540767db33f8b3f6c8cda2cd2c3595c991c8c06e6f726ed",
         "affectsGlobalScope": false
       },
@@ -1637,7 +1642,7 @@
         "affectsGlobalScope": false
       },
       "./src/tag/ctagidlist.ts": {
-        "version": "628a4c44a7c346f20b27ede594279cf85b6686a9532808badb519de0ee00a40e",
+        "version": "633cfe62c249f026354f08807a0a9eb707dc71f94f648f9ff36a8eb039f725a9",
         "signature": "6299cdf522bd361772c184032ea0c1e820a566ba0bb535d03af28c003fc5a156",
         "affectsGlobalScope": false
       },
@@ -1684,6 +1689,16 @@
       "./src/index.ts": {
         "version": "c9badc1866bace3e6bd809ce2b098f5ce64b8d448729f7c65f1cd0b4e44cd695",
         "signature": "c9badc1866bace3e6bd809ce2b098f5ce64b8d448729f7c65f1cd0b4e44cd695",
+        "affectsGlobalScope": false
+      },
+      "./src/idx/mid.ts": {
+        "version": "45080180c878e7c2b706679f13b87106a948cbe4b1ed1555e62c0f29a8c333e0",
+        "signature": "767a9b27298c382a3df63aab4cb9e4639046e0e68199dfad3cca324e604db82b",
+        "affectsGlobalScope": false
+      },
+      "./src/form/createpickid.ts": {
+        "version": "940c0c944d565c1c5bac31dfa8faf426c3b02b26079f45d6ec7456e481b0177e",
+        "signature": "2b0d24a98781ec096c418cc8579c283442b9f87d8ea718c61b3ccf0202b93323",
         "affectsGlobalScope": false
       },
       "./src/select/midselect.ts": {
@@ -3643,7 +3658,8 @@
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
-        "./node_modules/tonva-react/dist/index.d.ts"
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/select/index.ts"
       ],
       "./src/form/cdialog.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -3679,7 +3695,6 @@
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./src/form/cdialog.ts",
         "./src/form/cform.ts",
-        "./src/form/createpickid.ts",
         "./src/form/formprops.ts"
       ],
       "./src/form/vdialog.tsx": [
@@ -3763,8 +3778,7 @@
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./node_modules/mobx/dist/mobx.d.ts",
         "./node_modules/tonva-react/dist/index.d.ts",
-        "./src/idx/cidxlist.ts",
-        "./src/idx/mid.ts",
+        "./src/idx/mididx.ts",
         "./src/idx/res/index.ts",
         "./src/idx/vedit.tsx",
         "./src/idx/vhistory.tsx",
@@ -3775,8 +3789,8 @@
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
-        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
+        "./src/idx/mididxlist.ts",
         "./src/list/index.ts"
       ],
       "./src/idx/index.ts": [
@@ -3784,7 +3798,9 @@
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./src/idx/cidx.ts",
-        "./src/idx/mid.ts"
+        "./src/idx/cidxlist.ts",
+        "./src/idx/mididx.ts",
+        "./src/idx/mididxlist.ts"
       ],
       "./src/idx/mid.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -3793,6 +3809,22 @@
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
         "./src/tools/index.ts"
+      ],
+      "./src/idx/mididx.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/base/index.ts",
+        "./src/tools/index.ts"
+      ],
+      "./src/idx/mididxlist.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/base/index.ts",
+        "./src/list/index.ts"
       ],
       "./src/idx/res/en.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -3973,7 +4005,7 @@
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./node_modules/tonva-react/dist/index.d.ts",
-        "./src/base/index.ts",
+        "./src/base/idbase.ts",
         "./src/list/index.ts",
         "./src/select/parts.tsx",
         "./src/tools/index.ts"
@@ -3987,12 +4019,20 @@
         "./src/select/cidselect.ts",
         "./src/tools/index.ts"
       ],
+      "./src/select/createpickid.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/select/cidselect.ts"
+      ],
       "./src/select/index.ts": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./src/select/cidselect.ts",
-        "./src/select/cixselect.ts"
+        "./src/select/cixselect.ts",
+        "./src/select/createpickid.ts"
       ],
       "./src/select/midselect.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -4013,6 +4053,7 @@
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
         "./src/form/index.ts",
+        "./src/select/index.ts",
         "./src/sheet/midsheet.ts"
       ],
       "./src/sheet/csheetedit.ts": [
@@ -4029,6 +4070,7 @@
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./src/base/index.ts",
         "./src/form/index.ts",
+        "./src/select/index.ts",
         "./src/sheet/csheet.ts",
         "./src/sheet/vsheetedit.tsx"
       ],
@@ -6007,6 +6049,9 @@
         "./src/base/idbase.ts",
         "./src/base/mid.ts"
       ],
+      "./src/base/mid.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts"
+      ],
       "./src/form/cdialog.ts": [
         "./src/form/cform.ts"
       ],
@@ -6019,7 +6064,6 @@
       "./src/form/index.ts": [
         "./src/form/cdialog.ts",
         "./src/form/cform.ts",
-        "./src/form/createpickid.ts",
         "./src/form/formprops.ts"
       ],
       "./src/form/vdialog.tsx": [
@@ -6048,6 +6092,7 @@
         "./src/id/mididlist.ts"
       ],
       "./src/id/midid.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts"
       ],
       "./src/id/mididlist.ts": [
@@ -6064,20 +6109,33 @@
       ],
       "./src/idx/cidx.ts": [
         "./node_modules/tonva-react/dist/index.d.ts",
-        "./src/idx/mid.ts",
+        "./src/idx/mididx.ts",
         "./src/tools/index.ts"
       ],
       "./src/idx/cidxlist.ts": [
         "./src/base/index.ts",
+        "./src/idx/mididxlist.ts",
         "./src/list/index.ts"
       ],
       "./src/idx/index.ts": [
         "./src/idx/cidx.ts",
-        "./src/idx/mid.ts"
+        "./src/idx/cidxlist.ts",
+        "./src/idx/mididx.ts",
+        "./src/idx/mididxlist.ts"
       ],
       "./src/idx/mid.ts": [
         "./src/base/index.ts",
         "./src/tools/index.ts"
+      ],
+      "./src/idx/mididx.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/base/index.ts",
+        "./src/tools/index.ts"
+      ],
+      "./src/idx/mididxlist.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/base/index.ts",
+        "./src/list/index.ts"
       ],
       "./src/idx/vedit.tsx": [
         "./node_modules/tonva-react/dist/index.d.ts",
@@ -6149,16 +6207,22 @@
         "./src/roles/croles.ts"
       ],
       "./src/select/cidselect.ts": [
-        "./src/base/index.ts",
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/base/idbase.ts",
         "./src/list/index.ts"
       ],
       "./src/select/cixselect.ts": [
         "./src/base/index.ts",
         "./src/select/cidselect.ts"
       ],
+      "./src/select/createpickid.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/select/cidselect.ts"
+      ],
       "./src/select/index.ts": [
         "./src/select/cidselect.ts",
-        "./src/select/cixselect.ts"
+        "./src/select/cixselect.ts",
+        "./src/select/createpickid.ts"
       ],
       "./src/select/midselect.ts": [
         "./src/base/index.ts"
@@ -6187,6 +6251,7 @@
         "./src/sheet/midsheet.ts"
       ],
       "./src/sheet/midsheet.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts"
       ],
       "./src/sheet/parts.tsx": [
@@ -6555,7 +6620,37 @@
       "./src/idx/cidx.ts",
       "./src/idx/cidxlist.ts",
       "./src/idx/index.ts",
-      "./src/idx/mid.ts",
+      [
+        "./src/idx/mid.ts",
+        [
+          {
+            "file": "./src/idx/mid.ts",
+            "start": 169,
+            "length": 6,
+            "messageText": "Non-abstract class 'MidIDX' does not implement inherited abstract member 'init' from class 'Mid'.",
+            "category": 1,
+            "code": 2515
+          },
+          {
+            "file": "./src/idx/mid.ts",
+            "start": 2810,
+            "length": 56,
+            "code": 2322,
+            "category": 1,
+            "messageText": "Type 'Promise<Schema>' is not assignable to type 'Schema'."
+          },
+          {
+            "file": "./src/idx/mid.ts",
+            "start": 2817,
+            "length": 16,
+            "code": 2740,
+            "category": 1,
+            "messageText": "Type 'Promise<Schema>' is missing the following properties from type 'ItemSchema[]': length, pop, push, concat, and 28 more."
+          }
+        ]
+      ],
+      "./src/idx/mididx.ts",
+      "./src/idx/mididxlist.ts",
       "./src/idx/res/en.ts",
       "./src/idx/res/index.ts",
       "./src/idx/res/zh.ts",
@@ -6580,6 +6675,7 @@
       "./src/roles/vroles.tsx",
       "./src/select/cidselect.ts",
       "./src/select/cixselect.ts",
+      "./src/select/createpickid.ts",
       "./src/select/index.ts",
       "./src/select/midselect.ts",
       "./src/select/parts.tsx",

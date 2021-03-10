@@ -1,5 +1,6 @@
+import { createPickId } from "../select";
 import { Detail, Master } from "../base";
-import { CDialog, createPickId, FormProps } from "../form";
+import { CDialog, FormProps } from "../form";
 import { CSheet } from "./CSheet";
 import { VSheetEdit } from "./VSheetEdit";
 

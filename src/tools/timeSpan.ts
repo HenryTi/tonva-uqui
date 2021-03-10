@@ -20,10 +20,33 @@ export abstract class TimeSpan {
 	abstract next():void;
 	abstract get title():string;
 	abstract get labels():string[];
+	protected abstract getDayArray(): Date[];
+
 	get canNext():boolean {
 		return this.near < this.firstNear;
 	}
 	get canPrev():boolean {return true;}
+
+	getDayValues(dayValues:{t:string;v:number}[]): number[] {
+		let days = this.getDayArray();
+		let ret:number[] = [];
+		let i = 0;
+		let dv = dayValues[i++];
+		for (let day of days) {
+			if (dv) {
+				let {t, v} = dv;
+				let d = new Date(t);
+				d.setMinutes(d.getMinutes() + d.getTimezoneOffset());
+				if (d.getTime() === day.getTime()) {
+					ret.push(v);
+					dv = dayValues[i++];
+					continue;
+				}
+			}
+			ret.push(0);
+		}
+		return ret;
+	}
 }
 
 class DaySpan extends TimeSpan {
@@ -50,6 +73,7 @@ class DaySpan extends TimeSpan {
 		return this.date.toLocaleDateString();
 	}
 	get labels():string[] {return this._labels}
+	protected getDayArray(): Date[] {return [this.date]};
 }
 
 
@@ -63,6 +87,7 @@ class WeekSpan extends TimeSpan {
 		super();
 		this.type = 'week';
 		this.firstDay = new Date();
+		this.firstDay.setHours(0, 0, 0, 0);
 		let day = this.firstDay.getDay() || 7; // Get current day number, converting Sun. to 7
 		if (day !== 1) {                // Only manipulate the date if it isn't Mon.
 			this.firstDay.setHours(-24 * (day - 1));   // Set the hours to day number minus 1
@@ -93,6 +118,16 @@ class WeekSpan extends TimeSpan {
 		return this.firstDay.toLocaleDateString();
 	}
 	get labels():string[] {return this._labels}
+	protected getDayArray(): Date[] {
+		let d = new Date(this.firstDay);
+		let ret: Date[] = [this.firstDay];
+		for (;;) {
+			d.setDate(d.getDate() + 1);
+			if (d >= this.lastDay) break;
+			ret.push(new Date(d));
+		}
+		return ret;
+	}
 }
 
 class MonthSpan extends TimeSpan {
@@ -128,6 +163,16 @@ class MonthSpan extends TimeSpan {
 		return this.firstDay.toLocaleDateString();
 	}
 	get labels():string[] {return this._labels}
+	protected getDayArray(): Date[] {
+		let d = new Date(this.firstDay);
+		let ret: Date[] = [this.firstDay];
+		for (;;) {
+			d.setDate(d.getDate() + 1);
+			if (d >= this.lastDay) break;
+			ret.push(new Date(d));
+		}
+		return ret;
+	}
 }
 
 class YearSpan extends TimeSpan {
@@ -161,4 +206,14 @@ class YearSpan extends TimeSpan {
 		return this.firstDay.toLocaleDateString();
 	}
 	get labels():string[] {return this._labels}
+	protected getDayArray(): Date[] {
+		let d = new Date(this.firstDay);
+		let ret: Date[] = [this.firstDay];
+		for (;;) {
+			d.setDate(d.getDate() + 1);
+			if (d >= this.lastDay) break;
+			ret.push(new Date(d));
+		}
+		return ret;
+	}
 }

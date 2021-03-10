@@ -13,6 +13,9 @@ export class MidIX extends Mid {
 		this.ID = ID;
 		this.id = id;
 	}
+
+	async init(): Promise<void> {
+	}
 }
 
 export class CIX<P extends MidIX> extends Controller {

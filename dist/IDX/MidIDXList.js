@@ -12,17 +12,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,33 +49,49 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VEdit = void 0;
-var jsx_runtime_1 = require("react/jsx-runtime");
-var tonva_react_1 = require("tonva-react");
-var VEdit = /** @class */ (function (_super) {
-    __extends(VEdit, _super);
-    function VEdit() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.onSubmit = function (name, context) { return __awaiter(_this, void 0, void 0, function () {
+exports.MidIDXList = void 0;
+var list_1 = require("../list");
+var MidIDXList = /** @class */ (function (_super) {
+    __extends(MidIDXList, _super);
+    function MidIDXList(uq, ID, IDX) {
+        var _this = _super.call(this, uq) || this;
+        _this.ID = ID;
+        _this.IDX = IDX;
+        return _this;
+    }
+    MidIDXList.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.controller.saveID(context.data)];
+                    case 0: return [4 /*yield*/, Promise.all([
+                            this.ID.loadSchema(),
+                            this.IDX.loadSchema(),
+                        ])];
                     case 1:
                         _a.sent();
-                        this.closePage();
                         return [2 /*return*/];
                 }
             });
-        }); };
-        return _this;
-    }
-    VEdit.prototype.header = function () { return 'Edit'; };
-    VEdit.prototype.content = function () {
-        var _a = this.controller, item = _a.item, mid = _a.mid;
-        var itemSchema = mid.itemSchema, uiSchema = mid.uiSchema;
-        return jsx_runtime_1.jsx("div", __assign({ className: "p-3" }, { children: jsx_runtime_1.jsx(tonva_react_1.Form, { fieldLabelSize: 2, formData: item, schema: itemSchema, uiSchema: uiSchema, onButtonClick: this.onSubmit }, void 0) }), void 0);
+        });
     };
-    return VEdit;
-}(tonva_react_1.VPage));
-exports.VEdit = VEdit;
-//# sourceMappingURL=VEdit.js.map
+    MidIDXList.prototype.loadPageItems = function (pageStart, pageSize) {
+        return __awaiter(this, void 0, void 0, function () {
+            var ret;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.uq.ID({
+                            IDX: this.ID,
+                            id: undefined,
+                            page: { start: pageStart, size: pageSize },
+                        })];
+                    case 1:
+                        ret = _a.sent();
+                        return [2 /*return*/, ret];
+                }
+            });
+        });
+    };
+    return MidIDXList;
+}(list_1.MidIDListBase));
+exports.MidIDXList = MidIDXList;
+//# sourceMappingURL=MidIDXList.js.map

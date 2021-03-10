@@ -14,7 +14,7 @@ export class CTagIDList<T extends IDBase> extends  Controller {
 	}
 
 	protected async internalStart() {
-		await this.midTag.load();
+		await this.midTag.init();
 		this.openVPage(VTags);
 	}
 
@@ -53,7 +53,7 @@ class CShowTagIDList<T extends IDBase> extends CIDList<T> {
 	}
 
 	async beforeStart():Promise<boolean> {
-		await this.midIDList.midTag.load();
+		await this.midIDList.midTag.init();
 		return true;
 	}
 
@@ -69,7 +69,7 @@ class CShowTagIDList<T extends IDBase> extends CIDList<T> {
 	protected async onItemClick(item:any):Promise<void> {
 		let {midTag} = this.midIDList;
 		let mid = new MidID(midTag.uq, midTag.ID);
-		await mid.loadSchema();
+		await mid.init();
 		let cID = new CID(mid, this.res);
 		cID.onItemClick(item);
 		//let cSelect = new CSelect(this, item, midTag, this.res);

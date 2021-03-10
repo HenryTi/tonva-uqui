@@ -60,6 +60,13 @@ var MidSheet = /** @class */ (function (_super) {
         _this.detail = detail;
         return _this;
     }
+    MidSheet.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
     MidSheet.prototype.load = function (id) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {

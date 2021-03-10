@@ -39,7 +39,11 @@ export class MidTag extends Mid {
 		this.type = type;
 	}
 
-	async load(): Promise<void> {
+	async init():Promise<void> {
+		await this.load();
+	}
+
+	protected async load(): Promise<void> {
 		if (this.typeArr) return;
 		let ret = await Promise.all([
 			this.ID.loadSchema(),
@@ -83,6 +87,7 @@ export class MidTag extends Mid {
 		}
 		this.typeArr = [];
 		this.typeColl = {};
+		if (!root) return;
 		for (let i in root.sub) {
 			let tree = root.sub[i];
 			let {id, name} = tree;

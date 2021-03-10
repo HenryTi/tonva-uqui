@@ -59,6 +59,47 @@ var MidID = /** @class */ (function (_super) {
         _this.ID = ID;
         return _this;
     }
+    MidID.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.loadSchema()];
+                    case 1:
+                        _b.sent();
+                        _a = this;
+                        return [4 /*yield*/, this.buildItemSchema(this.ID)];
+                    case 2:
+                        _a._itemSchema = _b.sent();
+                        return [4 /*yield*/, this.setDefaultNo()];
+                    case 3:
+                        _b.sent();
+                        this._uiSchema = this.buildUISchema(this.ID);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MidID.prototype.buildUISchema = function (ID) {
+        var items = {};
+        this._uiSchema = { items: items };
+        var fields = ID.ui.fields;
+        if (fields) {
+            for (var _i = 0, _a = this._itemSchema; _i < _a.length; _i++) {
+                var f = _a[_i];
+                var name_1 = f.name;
+                Object.assign(f, fields[name_1]);
+                items[name_1] = f;
+            }
+        }
+        var uiButton = {
+            label: '提交',
+            className: 'btn btn-primary',
+            widget: 'button',
+        };
+        items['submit'] = uiButton;
+        return this._uiSchema;
+    };
     MidID.prototype.loadSchema = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -109,18 +150,18 @@ var MidID = /** @class */ (function (_super) {
     };
     Object.defineProperty(MidID.prototype, "itemSchema", {
         get: function () {
-            if (this._itemSchema !== undefined)
-                return this._itemSchema;
-            return this._itemSchema = this.buildItemSchema(this.ID);
+            //if (this._itemSchema !== undefined) 
+            return this._itemSchema;
+            //return this._itemSchema = this.buildItemSchema(this.ID);
         },
         enumerable: false,
         configurable: true
     });
     Object.defineProperty(MidID.prototype, "uiSchema", {
         get: function () {
-            if (this._uiSchema !== undefined)
-                return this._uiSchema;
-            return this._uiSchema = this.buildUISchema(this.ID);
+            //if (this._uiSchema !== undefined) 
+            return this._uiSchema;
+            //return this._uiSchema = this.buildUISchema(this.ID);
         },
         enumerable: false,
         configurable: true
@@ -134,6 +175,31 @@ var MidID = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    MidID.prototype.setDefaultNo = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _i, _a, fieldItem, no;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _i = 0, _a = this._itemSchema;
+                        _b.label = 1;
+                    case 1:
+                        if (!(_i < _a.length)) return [3 /*break*/, 4];
+                        fieldItem = _a[_i];
+                        if (!(fieldItem.name === 'no')) return [3 /*break*/, 3];
+                        return [4 /*yield*/, this.uq.IDNO({ ID: this.ID })];
+                    case 2:
+                        no = _b.sent();
+                        this.setNO(no, fieldItem);
+                        _b.label = 3;
+                    case 3:
+                        _i++;
+                        return [3 /*break*/, 1];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
     return MidID;
 }(base_1.Mid));
 exports.MidID = MidID;

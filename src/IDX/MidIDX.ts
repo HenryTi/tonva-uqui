@@ -5,17 +5,36 @@ import { Mid } from "../base";
 export class MidIDX extends Mid {
 	readonly IDX: IDX;
 	readonly ID: ID;
-	constructor(uq: Uq, IDX: IDX, ID: ID) {
+	readonly timeZone: number;
+	constructor(uq: Uq, IDX: IDX, ID: ID, timeZone:number) {
 		super(uq);
 		this.IDX = IDX;
 		this.ID = ID;
+		this.timeZone = timeZone;
+	}
+	
+	async init():Promise<void> {
+		await this.loadSchema();
 	}
 
-	async loadSchema() {
+	protected async loadSchema() {
 		await Promise.all([
 			this.IDX.loadSchema(),
 			this.ID.loadSchema(),
 		]);
+		this._itemSchema = await this.buildItemSchema(this.ID);
+		this._uiSchema = this.buildUISchema(this.ID);
+		this._props = buildGridProps(this.IDX.ui);
+		let {exFields} = this.IDX.schema;
+		for (let prop of this._props) {
+			let {name} = prop as any;
+			if (!name) continue;
+			let ex = (exFields as any[])?.find(v => v.field === name);
+			let time = ex?.time;
+			if (!time) continue;
+			(prop as any).time = time;
+		}
+
 	}
 
 	async load(id:number): Promise<any[]> {
@@ -27,16 +46,6 @@ export class MidIDX extends Mid {
 		return ret;
 	}
 
-	/*
-	comPageItems = async (start:number, size:number):Promise<any[]> => {
-		let ret = await this.uq.ID({
-			IDX: [this.ID, this.IDX],
-			id: undefined,
-			page: {start, size:size+1},
-		});
-		return ret;
-	}
-	*/
 	historyPageItems = async (id:number, field:string, far:number, near:number, pageStart:any, pageSize:number):Promise<any[]> => {
 		let ret = await this.uq.IDLog({
 			IDX: this.IDX,
@@ -116,62 +125,37 @@ export class MidIDX extends Mid {
 		]);
 	}
 
-	private _itemSchema: Schema;
-	get itemSchema(): Schema {
-		if (this._itemSchema !== undefined) return this._itemSchema;
-		return this._itemSchema = this.buildItemSchema(this.ID);
-	}
-	/*
-	protected buildItemSchema(): Schema {
-		let ret:Schema = [];
-		let {schema} = this.ID;
-		let {keys, fields} = schema;
-		for (let f of fields) {
-			let {name, type} = f;
-			let required = (keys as any[]).findIndex(v => v.name === name) >= 0;
-			switch (type) {
-				default: throw new Error(`schema type ${type} not implemented`);
-				case 'id':
-					break;
-				case 'char':
-					ret.push({
-						name,
-						type: 'string',
-						required,
-						maxLength: f.size,
-					} as StringSchema);
-					break;
-				case 'number':
-					ret.push({
-						name,
-						type: 'number',
-						required,
-					} as NumSchema);
-					break;
+	async loadDayValues(id:number, field: string, far:number, near:number):Promise<any[]> {
+		if (!field) {
+			field = (this._props[0] as any)?.name;
+			if (!field) {
+				debugger;
+				alert('no field in loadDayValues');
 			}
 		}
-		ret.push({
-			name: 'submit',
-			type: 'submit',
-		} as ButtonSchema);
+		let ret = await this.uq.IDLog({
+			IDX: this.IDX,
+			field,
+			log: 'day',
+			timeZone: this.timeZone,
+			id,
+			far,
+			near,
+			page: {
+				start: near,
+				end: far,
+				size: 100,
+			}
+		});
 		return ret;
 	}
-	*/
-	private _uiSchema: UiSchema;
-	get uiSchema(): UiSchema {
-		if (this._uiSchema !== undefined) return this._uiSchema;
-		return this._uiSchema = this.buildUISchema(this.ID);
-	}
 
-	/*
-	protected buildUISchema():UiSchema {
-		return;
-	}
-	*/
+	private _itemSchema: Schema;
+	get itemSchema(): Schema { return this._itemSchema; }
+
+	private _uiSchema: UiSchema;
+	get uiSchema(): UiSchema { return this._uiSchema; }
 
 	private _props: Prop[];
-	get props():Prop[] {
-		if (this._props !== undefined) return this._props;
-		return this._props = buildGridProps(this.IDX.ui);
-	}
+	get props():Prop[] { return this._props; }
 }

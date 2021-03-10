@@ -61,6 +61,18 @@ var MidTag = /** @class */ (function (_super) {
         _this.type = type;
         return _this;
     }
+    MidTag.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.load()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     MidTag.prototype.load = function () {
         return __awaiter(this, void 0, void 0, function () {
             var ret;
@@ -118,6 +130,8 @@ var MidTag = /** @class */ (function (_super) {
         }
         this.typeArr = [];
         this.typeColl = {};
+        if (!root)
+            return;
         for (var i in root.sub) {
             var tree_1 = root.sub[i];
             var id = tree_1.id, name_2 = tree_1.name;

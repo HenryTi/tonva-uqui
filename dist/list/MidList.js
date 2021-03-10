@@ -102,7 +102,7 @@ var IDListPageItems = /** @class */ (function (_super) {
     IDListPageItems.prototype.newItem = function (id, item) { return __assign(__assign({}, item), { id: id }); };
     IDListPageItems.prototype.update = function (id, item) {
         var _this = this;
-        var ret = this._items.findIndex(function (v) { return _this.itemId(v) === id; });
+        var ret = this._items.find(function (v) { return _this.itemId(v) === id; });
         if (ret === undefined) {
             var data = this.newItem(id, item);
             this._items.unshift(data);

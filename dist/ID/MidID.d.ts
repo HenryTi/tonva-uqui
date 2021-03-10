@@ -3,7 +3,9 @@ import { IDBase, Mid } from "../base";
 export declare class MidID<T extends IDBase> extends Mid {
     readonly ID: ID;
     constructor(uq: Uq, ID: ID);
-    loadSchema(): Promise<void>;
+    init(): Promise<void>;
+    protected buildUISchema(ID: ID): UiSchema;
+    protected loadSchema(): Promise<void>;
     load(id: number): Promise<T[]>;
     saveID(data: any): Promise<number>;
     private _itemSchema;
@@ -12,4 +14,5 @@ export declare class MidID<T extends IDBase> extends Mid {
     get uiSchema(): UiSchema;
     private _props;
     get props(): Prop[];
+    protected setDefaultNo(): Promise<void>;
 }

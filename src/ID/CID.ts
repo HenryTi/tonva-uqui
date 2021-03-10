@@ -8,7 +8,7 @@ import { VEdit } from "./VEdit";
 import { VView } from "./VView";
 
 export class CID<T extends IDBase> extends Controller {
-	item:any = null;
+	item:any;
 	mid: MidID<T>;
 	idList: CIDList<any>;
 	constructor(mid:MidID<T>, res?:any) {
@@ -23,7 +23,7 @@ export class CID<T extends IDBase> extends Controller {
 		let {uq, ID} = this.mid;
 		let midIDList = new MidIDList(uq, ID);
 		midIDList.onRightClick = this.onItemEdit;
-		midIDList.renderItem = undefined;
+		midIDList.renderItem = this.renderItem;
 		midIDList.onItemClick = this.onItemClick;
 		midIDList.renderRight = undefined;
 		this.idList = new CIDList(midIDList);
@@ -38,7 +38,8 @@ export class CID<T extends IDBase> extends Controller {
 		});
 	}
 
-	onItemEdit = (): void => {
+	onItemEdit = async (): Promise<void> => {
+		await this.mid.init();
 		this.openVPage(VEdit);
 	}
 
@@ -46,8 +47,9 @@ export class CID<T extends IDBase> extends Controller {
 		this.openVPage(VView);
 	}
 
-	onItemNew():void {
+	async onItemNew(): Promise<void> {
 		this.item = undefined;
+		await this.mid.init();
 		this.openVPage(VEdit);
 	}
 
@@ -61,7 +63,10 @@ export class CID<T extends IDBase> extends Controller {
 		if (ret) id = ret;
 		this.idList.update(id, item);
 		runInAction(() => {
-			Object.assign(this.item, item);
+			if (this.item)
+				Object.assign(this.item, item);
+			else
+				this.item = item;
 		});
 		return ret;
 	}

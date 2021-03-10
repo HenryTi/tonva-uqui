@@ -8,6 +8,11 @@ export declare abstract class TimeSpan {
     abstract next(): void;
     abstract get title(): string;
     abstract get labels(): string[];
+    protected abstract getDayArray(): Date[];
     get canNext(): boolean;
     get canPrev(): boolean;
+    getDayValues(dayValues: {
+        t: string;
+        v: number;
+    }[]): number[];
 }

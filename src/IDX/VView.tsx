@@ -7,6 +7,13 @@ import { CIDX } from "./CIDX";
 
 const spans = ['week', 'month'];
 
+const graphOptions = {
+	title: {
+		display: false,
+	},
+	maintainAspectRatio: false,
+}
+
 export class VView extends VPage<CIDX> {
 	currentIndex: number = 0;
 	constructor(controller:CIDX) {
@@ -26,34 +33,31 @@ export class VView extends VPage<CIDX> {
 	}
 	content() {		
 		let V = observer(() => {
+			let {spanValues, mid, timeSpan, prevTimeSpan, nextTimeSpan, dayValues} = this.controller;
+			if (spanValues === undefined) return null; 
+			let {props} = mid;
 			const data = {
-				labels: this.controller.timeSpan.labels,
+				labels: timeSpan.labels,
 				datasets: [{
 					label: '',
-					data: [12, 19, 3, 5, 2, 3],
+					data: dayValues,
 					backgroundColor: 'lightgreen',
 					borderWidth: 1
 				}],
 			};
-			const options = {
-				title: {
-					display: false,
-				},
-				maintainAspectRatio: false,
-			}
-			let {spanValues, mid: com, timeSpan} = this.controller;
-			let {props} = com;
 			let curProp = props[this.currentIndex] as NumberProp;
 			let {label, name} = curProp;
-			let left = <div className="cursor-pointer" onClick={()=>this.controller.prevTimeSpan()}>
-				<FA name="chevron-left" />
-			</div>;
-			let right = timeSpan.canNext === true?			
-				<div className="cursor-pointer" onClick={()=>this.controller.nextTimeSpan()}>
-					<FA name="chevron-right" />
-				</div>
+			let moveStep = (icon:string, spanStep: ()=>Promise<void>) => <div 
+				className={'p-3 ' + (spanStep? 'cursor-pointer' : 'text-muted')} 
+				onClick={spanStep}>
+					<FA name={icon} />
+				</div>;
+			let left = moveStep('chevron-left', prevTimeSpan);
+			let right = timeSpan.canNext === true?
+				moveStep('chevron-right', nextTimeSpan)
 				:
-				<div><FA className="text-muted" name="square-o" /></div>;
+				moveStep('square-o', undefined);
+				//<div><FA className="text-muted" name="square-o" /></div>;
 			return <div className="py-3">
 				<div className="container">
 					<div className="row">
@@ -76,10 +80,8 @@ export class VView extends VPage<CIDX> {
 						})}
 					</div>
 				</div>
-				<LMR className="text-center m-3" 
-					left={left} 
-					right={right}>
-					{this.controller.timeSpan.title}
+				<LMR className="text-center align-items-center" left={left} right={right} >
+					{timeSpan.title}
 				</LMR>
 				<div className="mt-3 mx-3 text-center cursor-pointer"
 					onClick={() => this.onFieldHistory(name)}>
@@ -87,7 +89,7 @@ export class VView extends VPage<CIDX> {
 					<span className="text-info small"> <FA name="angle-double-right" /> 查看明细</span>
 				</div>
 				<div className="p-3 h-12c">
-					<Bar data={data} width={100} height={50} options={options} />
+					<Bar data={data} width={100} height={50} options={graphOptions} />
 				</div>
 				<div className="d-flex flex-wrap p-1"> 
 					{props.map((v, index) => {
@@ -114,9 +116,20 @@ export class VView extends VPage<CIDX> {
 		this.controller.setTimeSpan(span);
 	}
 
-	private onFieldClick(prop:Prop, index:number) {
+	private async onFieldClick(prop:Prop, index:number) {
+		let {mid} = this.controller;
+		let {props} = mid;
+		if (this.currentIndex === index) {
+			let curProp = props[this.currentIndex] as NumberProp;
+			let {name} = curProp;
+			await this.controller.onFieldHistory(name);
+			return;
+		}
 		runInAction(() => {
 			this.currentIndex = index;
+			let curProp = props[this.currentIndex] as NumberProp;
+			let {name} = curProp;
+			this.controller.setCurrentField(name);
 		});
 	}
 

@@ -13,5 +13,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./CForm"), exports);
 __exportStar(require("./CDialog"), exports);
 __exportStar(require("./FormProps"), exports);
-__exportStar(require("./createPickId"), exports);
 //# sourceMappingURL=index.js.map

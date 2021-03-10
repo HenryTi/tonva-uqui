@@ -94,6 +94,9 @@ var VEdit = /** @class */ (function (_super) {
         var _this = this;
         var V = mobx_react_1.observer(function () {
             var name = prop.name;
+            var spanValues = _this.controller.spanValues;
+            if (!spanValues)
+                return null;
             return jsx_runtime_1.jsx("div", __assign({ className: "px-3 py-2 bg-white mb-1 cursor-pointer", onClick: function () { return _this.openVPage(VEditNumberField, prop); } }, { children: jsx_runtime_1.jsx(tonva_react_1.LMR, __assign({ left: jsx_runtime_1.jsx("b", { children: prop.label }, void 0), right: jsx_runtime_1.jsx(tonva_react_1.FA, { name: "pencil-square-o", className: "align-self-center" }, void 0) }, { children: jsx_runtime_1.jsx("div", __assign({ className: "mr-5 text-right" }, { children: _this.controller.spanValues[name] }), void 0) }), void 0) }), name);
         });
         return jsx_runtime_1.jsx(V, {}, void 0);
@@ -114,18 +117,23 @@ var VEditNumberField = /** @class */ (function (_super) {
                 _this.value = n;
         };
         _this.onSave = function () { return __awaiter(_this, void 0, void 0, function () {
-            var date, dateTicks, timeTicks, t, time;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var t, date, dateTicks, timeTicks;
+            var _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        date = this.dateInput.valueAsDate;
-                        dateTicks = this.dateInput.valueAsNumber;
-                        timeTicks = this.timeInput.valueAsNumber;
-                        t = dateTicks + timeTicks + date.getTimezoneOffset() * 60 * 1000;
-                        time = new Date(t);
+                        if (this.dateInput) {
+                            date = this.dateInput.valueAsDate;
+                            dateTicks = (_a = this.dateInput) === null || _a === void 0 ? void 0 : _a.valueAsNumber;
+                            timeTicks = (_b = this.timeInput) === null || _b === void 0 ? void 0 : _b.valueAsNumber;
+                            t = dateTicks + timeTicks + date.getTimezoneOffset() * 60 * 1000;
+                        }
+                        else {
+                            t = Date.now();
+                        }
                         return [4 /*yield*/, this.controller.saveFieldValue(this.prop.name, t, this.value)];
                     case 1:
-                        _a.sent();
+                        _c.sent();
                         this.closePage();
                         return [2 /*return*/];
                 }

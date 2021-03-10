@@ -67,6 +67,12 @@ var mobx_react_1 = require("mobx-react");
 var react_chartjs_2_1 = require("react-chartjs-2");
 var tonva_react_1 = require("tonva-react");
 var spans = ['week', 'month'];
+var graphOptions = {
+    title: {
+        display: false,
+    },
+    maintainAspectRatio: false,
+};
 var VView = /** @class */ (function (_super) {
     __extends(VView, _super);
     function VView(controller) {
@@ -85,30 +91,28 @@ var VView = /** @class */ (function (_super) {
     VView.prototype.content = function () {
         var _this = this;
         var V = mobx_react_1.observer(function () {
+            var _a = _this.controller, spanValues = _a.spanValues, mid = _a.mid, timeSpan = _a.timeSpan, prevTimeSpan = _a.prevTimeSpan, nextTimeSpan = _a.nextTimeSpan, dayValues = _a.dayValues;
+            if (spanValues === undefined)
+                return null;
+            var props = mid.props;
             var data = {
-                labels: _this.controller.timeSpan.labels,
+                labels: timeSpan.labels,
                 datasets: [{
                         label: '',
-                        data: [12, 19, 3, 5, 2, 3],
+                        data: dayValues,
                         backgroundColor: 'lightgreen',
                         borderWidth: 1
                     }],
             };
-            var options = {
-                title: {
-                    display: false,
-                },
-                maintainAspectRatio: false,
-            };
-            var _a = _this.controller, spanValues = _a.spanValues, com = _a.mid, timeSpan = _a.timeSpan;
-            var props = com.props;
             var curProp = props[_this.currentIndex];
             var label = curProp.label, name = curProp.name;
-            var left = jsx_runtime_1.jsx("div", __assign({ className: "cursor-pointer", onClick: function () { return _this.controller.prevTimeSpan(); } }, { children: jsx_runtime_1.jsx(tonva_react_1.FA, { name: "chevron-left" }, void 0) }), void 0);
+            var moveStep = function (icon, spanStep) { return jsx_runtime_1.jsx("div", __assign({ className: 'p-3 ' + (spanStep ? 'cursor-pointer' : 'text-muted'), onClick: spanStep }, { children: jsx_runtime_1.jsx(tonva_react_1.FA, { name: icon }, void 0) }), void 0); };
+            var left = moveStep('chevron-left', prevTimeSpan);
             var right = timeSpan.canNext === true ?
-                jsx_runtime_1.jsx("div", __assign({ className: "cursor-pointer", onClick: function () { return _this.controller.nextTimeSpan(); } }, { children: jsx_runtime_1.jsx(tonva_react_1.FA, { name: "chevron-right" }, void 0) }), void 0)
+                moveStep('chevron-right', nextTimeSpan)
                 :
-                    jsx_runtime_1.jsx("div", { children: jsx_runtime_1.jsx(tonva_react_1.FA, { className: "text-muted", name: "square-o" }, void 0) }, void 0);
+                    moveStep('square-o', undefined);
+            //<div><FA className="text-muted" name="square-o" /></div>;
             return jsx_runtime_1.jsxs("div", __assign({ className: "py-3" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "container" }, { children: jsx_runtime_1.jsx("div", __assign({ className: "row" }, { children: spans.map(function (v) {
                                 var cn = 'col text-center p-2 cursor-pointer ';
                                 var style = {
@@ -125,10 +129,10 @@ var VView = /** @class */ (function (_super) {
                                 }
                                 return jsx_runtime_1.jsx("div", __assign({ className: cn, style: style, onClick: function () { return _this.tabClick(v); } }, { children: _this.t(v) }), v);
                             }) }), void 0) }), void 0),
-                    jsx_runtime_1.jsx(tonva_react_1.LMR, __assign({ className: "text-center m-3", left: left, right: right }, { children: _this.controller.timeSpan.title }), void 0),
+                    jsx_runtime_1.jsx(tonva_react_1.LMR, __assign({ className: "text-center align-items-center", left: left, right: right }, { children: timeSpan.title }), void 0),
                     jsx_runtime_1.jsxs("div", __assign({ className: "mt-3 mx-3 text-center cursor-pointer", onClick: function () { return _this.onFieldHistory(name); } }, { children: [jsx_runtime_1.jsx("h4", __assign({ className: "d-inline" }, { children: label }), void 0),
                             jsx_runtime_1.jsxs("span", __assign({ className: "text-info small" }, { children: [" ", jsx_runtime_1.jsx(tonva_react_1.FA, { name: "angle-double-right" }, void 0), " \u67E5\u770B\u660E\u7EC6"] }), void 0)] }), void 0),
-                    jsx_runtime_1.jsx("div", __assign({ className: "p-3 h-12c" }, { children: jsx_runtime_1.jsx(react_chartjs_2_1.Bar, { data: data, width: 100, height: 50, options: options }, void 0) }), void 0),
+                    jsx_runtime_1.jsx("div", __assign({ className: "p-3 h-12c" }, { children: jsx_runtime_1.jsx(react_chartjs_2_1.Bar, { data: data, width: 100, height: 50, options: graphOptions }, void 0) }), void 0),
                     jsx_runtime_1.jsx("div", __assign({ className: "d-flex flex-wrap p-1" }, { children: props.map(function (v, index) {
                             var _a = v, name = _a.name, label = _a.label;
                             var sv = spanValues[name];
@@ -148,9 +152,31 @@ var VView = /** @class */ (function (_super) {
         this.controller.setTimeSpan(span);
     };
     VView.prototype.onFieldClick = function (prop, index) {
-        var _this = this;
-        mobx_1.runInAction(function () {
-            _this.currentIndex = index;
+        return __awaiter(this, void 0, void 0, function () {
+            var mid, props, curProp, name_1;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        mid = this.controller.mid;
+                        props = mid.props;
+                        if (!(this.currentIndex === index)) return [3 /*break*/, 2];
+                        curProp = props[this.currentIndex];
+                        name_1 = curProp.name;
+                        return [4 /*yield*/, this.controller.onFieldHistory(name_1)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                    case 2:
+                        mobx_1.runInAction(function () {
+                            _this.currentIndex = index;
+                            var curProp = props[_this.currentIndex];
+                            var name = curProp.name;
+                            _this.controller.setCurrentField(name);
+                        });
+                        return [2 /*return*/];
+                }
+            });
         });
     };
     VView.prototype.onFieldHistory = function (field) {

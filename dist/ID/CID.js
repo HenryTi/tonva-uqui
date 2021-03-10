@@ -71,16 +71,23 @@ var CID = /** @class */ (function (_super) {
     __extends(CID, _super);
     function CID(mid, res) {
         var _this = _super.call(this, res) || this;
-        _this.item = null;
         _this.onItemClick = function (item) {
             mobx_1.runInAction(function () {
                 _this.item = item;
                 _this.onItemView();
             });
         };
-        _this.onItemEdit = function () {
-            _this.openVPage(VEdit_1.VEdit);
-        };
+        _this.onItemEdit = function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.mid.init()];
+                    case 1:
+                        _a.sent();
+                        this.openVPage(VEdit_1.VEdit);
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         mobx_1.makeObservable(_this, {
             item: mobx_1.observable,
         });
@@ -96,7 +103,7 @@ var CID = /** @class */ (function (_super) {
                         _a = this.mid, uq = _a.uq, ID = _a.ID;
                         midIDList = new MidIDList_1.MidIDList(uq, ID);
                         midIDList.onRightClick = this.onItemEdit;
-                        midIDList.renderItem = undefined;
+                        midIDList.renderItem = this.renderItem;
                         midIDList.onItemClick = this.onItemClick;
                         midIDList.renderRight = undefined;
                         this.idList = new CIDList_1.CIDList(midIDList);
@@ -112,8 +119,19 @@ var CID = /** @class */ (function (_super) {
         this.openVPage(VView_1.VView);
     };
     CID.prototype.onItemNew = function () {
-        this.item = undefined;
-        this.openVPage(VEdit_1.VEdit);
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.item = undefined;
+                        return [4 /*yield*/, this.mid.init()];
+                    case 1:
+                        _a.sent();
+                        this.openVPage(VEdit_1.VEdit);
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     CID.prototype.saveID = function (itemProps) {
         var _a;
@@ -132,7 +150,10 @@ var CID = /** @class */ (function (_super) {
                             id = ret;
                         this.idList.update(id, item);
                         mobx_1.runInAction(function () {
-                            Object.assign(_this.item, item);
+                            if (_this.item)
+                                Object.assign(_this.item, item);
+                            else
+                                _this.item = item;
                         });
                         return [2 /*return*/, ret];
                 }

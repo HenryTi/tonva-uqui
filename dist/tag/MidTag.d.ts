@@ -16,6 +16,7 @@ export declare class MidTag extends Mid {
         [id: number]: Tag;
     };
     constructor(uq: Uq, ID: ID, IX: IX, tag: ID, type: string);
-    load(): Promise<void>;
+    init(): Promise<void>;
+    protected load(): Promise<void>;
     private buildTagTypes;
 }

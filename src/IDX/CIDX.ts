@@ -1,16 +1,16 @@
 import { makeObservable, observable, runInAction } from "mobx";
 import { Controller, PageItems } from "tonva-react";
 import { HistoryPageItems, TimeSpan } from "../tools";
-import { CIDXList, MidIDXList } from "./CIDXList";
-import { MidIDX } from "./Mid";
+import { MidIDX } from "./MidIDX";
 import { res } from "./res";
 import { VEdit } from "./VEdit";
 import { VHistory } from "./VHistory";
 import { VView } from "./VView";
 
 export class CIDX extends Controller {
-	timeSpan:TimeSpan = null;
-	spanValues: any = null;
+	timeSpan:TimeSpan;
+	spanValues: any;
+	dayValues: number[];
 	mid: MidIDX;
 	private historyPageItems: HistoryPageItems<any>
 	constructor(mid:MidIDX, res?:any) {
@@ -18,19 +18,23 @@ export class CIDX extends Controller {
 		makeObservable(this, {
 			timeSpan: observable,
 			spanValues: observable,
+			dayValues: observable,
 		});
 		this.mid = mid;
 		this.historyPageItems = new HistoryPageItems<any>(mid.historyPageItems);
 	}
 
-	protected async internalStart() {
+	protected async internalStart(item: any) {
 		this.setRes(res);
-		await this.mid.loadSchema();
+		await this.mid.init();
+		this.onItemClick(item);
+		/*
 		let {uq, ID, IDX} = this.mid;
 		let midIDXList = new MidIDXList(uq, ID, IDX);
 		midIDXList.onItemClick = this.onItemClick;
 		let idList = new CIDXList(midIDXList);
 		await idList.start();
+		*/
 	}
 
 	item:any;
@@ -48,8 +52,8 @@ export class CIDX extends Controller {
 		let timeSpan = TimeSpan.create(span);
 		runInAction(async () => {
 			this.timeSpan = timeSpan;
+			await this.loadSum(timeSpan);
 		});
-		await this.loadSum(timeSpan);
 	}
 
 	private async loadSum(timeSpan?: TimeSpan) {
@@ -61,14 +65,15 @@ export class CIDX extends Controller {
 		runInAction(() => {
 			this.spanValues = sum ?? {};
 		});
+		await this.loadDayValues();
 	}
 
-	async prevTimeSpan() {
+	prevTimeSpan = async () => {
 		this.timeSpan.prev();
 		await this.loadSum();
 	}
 
-	async nextTimeSpan() {
+	nextTimeSpan = async () => {
 		this.timeSpan.next();
 		await this.loadSum();
 	}
@@ -77,7 +82,7 @@ export class CIDX extends Controller {
 	field:string;
 	async onFieldHistory(field:string) {
 		this.field = field;
-		await this.mid.loadSchema();
+		await this.mid.init();
 		this.historyPageItems.first({
 			id: this.item.id,
 			far: this.timeSpan.far,
@@ -85,6 +90,20 @@ export class CIDX extends Controller {
 			field
 		});
 		this.openVPage(VHistory);
+	}
+
+	async loadDayValues() {
+		let {far, near} = this.timeSpan;
+		let ret = await this.mid.loadDayValues(this.item.id, this.field, far, near);
+		let dayValues = this.timeSpan.getDayValues(ret);
+		runInAction(() => {
+			this.dayValues = dayValues;
+		});
+	}
+
+	setCurrentField(field:string) {
+		this.field = field;
+		this.loadDayValues();
 	}
 
 	async saveFieldValue(field:string, t:number, value:number|string) {

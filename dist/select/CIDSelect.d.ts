@@ -1,5 +1,5 @@
 import { ID, PageItems, Uq } from "tonva-react";
-import { IDBase } from "../base";
+import { IDBase } from "../base/IDBase";
 import { CList, MidList } from "../list";
 export declare class CIDSelect<T extends IDBase, P extends MidIDSelectList<T>> extends CList<T> {
     midIDSelectList: P;

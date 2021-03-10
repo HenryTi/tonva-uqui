@@ -66,7 +66,7 @@ var CTagIDList = /** @class */ (function (_super) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.midTag.load()];
+                    case 0: return [4 /*yield*/, this.midTag.init()];
                     case 1:
                         _a.sent();
                         this.openVPage(VTags_1.VTags);
@@ -119,7 +119,7 @@ var CShowTagIDList = /** @class */ (function (_super) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.midIDList.midTag.load()];
+                    case 0: return [4 /*yield*/, this.midIDList.midTag.init()];
                     case 1:
                         _a.sent();
                         return [2 /*return*/, true];
@@ -143,7 +143,7 @@ var CShowTagIDList = /** @class */ (function (_super) {
                     case 0:
                         midTag = this.midIDList.midTag;
                         mid = new ID_1.MidID(midTag.uq, midTag.ID);
-                        return [4 /*yield*/, mid.loadSchema()];
+                        return [4 /*yield*/, mid.init()];
                     case 1:
                         _a.sent();
                         cID = new ID_1.CID(mid, this.res);

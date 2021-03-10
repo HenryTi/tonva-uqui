@@ -105,6 +105,8 @@ var CList = /** @class */ (function (_super) {
     };
     CList.prototype.renderRight = function () {
         var _a = this.midList, renderRight = _a.renderRight, onRightClick = _a.onRightClick;
+        if (!onRightClick)
+            return null;
         return (renderRight !== null && renderRight !== void 0 ? renderRight : tools_1.listRight)(onRightClick);
     };
     CList.prototype.renderItem = function (item, index) {

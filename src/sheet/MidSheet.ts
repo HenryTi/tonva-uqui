@@ -17,6 +17,9 @@ export class MidSheet<M extends Master, D extends Detail> extends Mid {
 		this.detail = detail;
 	}
 
+	async init(): Promise<void> {
+	}
+
 	async load(id:number):Promise<[M[],D[]]> {
 		return [[], []];
 	}
