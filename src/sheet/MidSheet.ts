@@ -25,7 +25,7 @@ export class MidSheet<M extends Master, D extends Detail> extends Mid {
 	}
 
 	async save(master:M, details:D[]):Promise<any> {
-		let ret = await this.uq.IDDetail({
+		let ret = await this.uq.ActDetail({
 			master: {
 				ID: this.master.ID,
 				value: master,

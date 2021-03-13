@@ -10,8 +10,8 @@ const roleCaptionMap:{[role:string]: string} = {
 export class CRoles extends Controller {
 	private uq: Uq;
 	roles: string[] = null;
-	constructor(uq:Uq, res:any) {
-		super(res);
+	constructor(uq:Uq) {
+		super();		
 		this.uq = uq;
 	}
 
@@ -27,7 +27,8 @@ export class CRoles extends Controller {
 			alert(`uq ${uqMan.name} has not defined roles`);
 			return;
 		}
-		let cRoleAdmin = new CRoleAdmin(this.res, this.uq, this.myRolesChanged, roleCaptionMap);
+		let cRoleAdmin = new CRoleAdmin(this.uq, this.myRolesChanged, roleCaptionMap);
+		cRoleAdmin.setRes(this.getRes());
 		await cRoleAdmin.start();
 	}
 

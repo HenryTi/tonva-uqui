@@ -50,17 +50,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CIDX = void 0;
+var list_1 = require("list");
 var mobx_1 = require("mobx");
 var tonva_react_1 = require("tonva-react");
 var tools_1 = require("../tools");
+var MidIDXList_1 = require("./MidIDXList");
 var res_1 = require("./res");
 var VEdit_1 = require("./VEdit");
 var VHistory_1 = require("./VHistory");
 var VView_1 = require("./VView");
 var CIDX = /** @class */ (function (_super) {
     __extends(CIDX, _super);
-    function CIDX(mid, res) {
-        var _this = _super.call(this, res) || this;
+    function CIDX(midIDX) {
+        var _this = _super.call(this) || this;
         _this.timeSpan = null;
         _this.spanValues = null;
         _this.dayValues = null;
@@ -110,22 +112,29 @@ var CIDX = /** @class */ (function (_super) {
         mobx_1.makeObservable(_this, {
             timeSpan: mobx_1.observable,
             spanValues: mobx_1.observable,
-            dayValues: mobx_1.observable,
+            dayValues: mobx_1.observable.ref,
         });
-        _this.mid = mid;
-        _this.historyPageItems = new tools_1.HistoryPageItems(mid.historyPageItems);
+        _this.setRes(res_1.res);
+        _this.setRes(midIDX.res);
+        _this.midIDX = midIDX;
+        _this.historyPageItems = new tools_1.HistoryPageItems(midIDX.historyPageItems);
         return _this;
     }
-    CIDX.prototype.internalStart = function (item) {
+    CIDX.prototype.internalStart = function () {
         return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.setRes(res_1.res);
-                        return [4 /*yield*/, this.mid.init()];
+            var _a, uq, ID, IDX, midIDXList, cList;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.midIDX.init()];
                     case 1:
-                        _a.sent();
-                        this.onItemClick(item);
+                        _b.sent();
+                        _a = this.midIDX, uq = _a.uq, ID = _a.ID, IDX = _a.IDX;
+                        midIDXList = new MidIDXList_1.MidIDXList(uq, ID, IDX);
+                        midIDXList.onItemClick = this.onItemClick;
+                        cList = new list_1.CList(midIDXList);
+                        return [4 /*yield*/, cList.start()];
+                    case 2:
+                        _b.sent();
                         return [2 /*return*/];
                 }
             });
@@ -161,7 +170,7 @@ var CIDX = /** @class */ (function (_super) {
                 switch (_b.label) {
                     case 0:
                         _a = timeSpan !== null && timeSpan !== void 0 ? timeSpan : this.timeSpan, far = _a.far, near = _a.near;
-                        return [4 /*yield*/, this.mid.loadSum(this.item.id, far, near)];
+                        return [4 /*yield*/, this.midIDX.loadSum(this.item.id, far, near)];
                     case 1:
                         ret = _b.sent();
                         values = ret[0], sums = ret[1];
@@ -188,7 +197,7 @@ var CIDX = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         this.field = field;
-                        return [4 /*yield*/, this.mid.init()];
+                        return [4 /*yield*/, this.midIDX.init()];
                     case 1:
                         _a.sent();
                         this.historyPageItems.first({
@@ -211,7 +220,7 @@ var CIDX = /** @class */ (function (_super) {
                 switch (_b.label) {
                     case 0:
                         _a = this.timeSpan, far = _a.far, near = _a.near;
-                        return [4 /*yield*/, this.mid.loadDayValues(this.item.id, this.field, far, near)];
+                        return [4 /*yield*/, this.midIDX.loadDayValues(this.item.id, this.field, far, near)];
                     case 1:
                         ret = _b.sent();
                         dayValues = this.timeSpan.getDayValues(ret);
@@ -234,10 +243,10 @@ var CIDX = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         id = this.item.id;
-                        return [4 /*yield*/, this.mid.saveFieldValue(id, field, t, value)];
+                        return [4 /*yield*/, this.midIDX.saveFieldValue(id, field, t, value)];
                     case 1:
                         _a.sent();
-                        return [4 /*yield*/, this.mid.loadFieldSum(id, field, this.timeSpan)];
+                        return [4 /*yield*/, this.midIDX.loadFieldSum(id, field, this.timeSpan)];
                     case 2:
                         ret = _a.sent();
                         v = ret[field];

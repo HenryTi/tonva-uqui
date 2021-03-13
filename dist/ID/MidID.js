@@ -137,7 +137,7 @@ var MidID = /** @class */ (function (_super) {
                     case 0:
                         param = {};
                         param[this.ID.name] = [data];
-                        return [4 /*yield*/, this.uq.IDActs(param)];
+                        return [4 /*yield*/, this.uq.Acts(param)];
                     case 1:
                         ret = _a.sent();
                         id = ret[this.ID.name];

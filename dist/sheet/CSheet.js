@@ -57,7 +57,7 @@ var form_1 = require("../form");
 var CSheet = /** @class */ (function (_super) {
     __extends(CSheet, _super);
     function CSheet(mid) {
-        var _this = _super.call(this, mid.res) || this;
+        var _this = _super.call(this) || this;
         _this.master = null;
         _this.details = [];
         _this.detail = null;
@@ -120,6 +120,7 @@ var CSheet = /** @class */ (function (_super) {
             master: mobx_1.observable,
             details: mobx_1.observable,
         });
+        _this.setRes(mid.res);
         _this.mid = mid;
         return _this;
     }

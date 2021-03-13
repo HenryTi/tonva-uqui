@@ -53,22 +53,11 @@ exports.MidIXList = exports.CIXList = void 0;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 var mobx_1 = require("mobx");
 var list_1 = require("../list");
-/*
-export interface IXListProps<T extends IDBase> {
-    uq: Uq;
-    IX: IX;
-    ID: ID;
-    id: number;
-    onRightClick: ()=>any;
-    renderItem: (item:T, index:number)=>JSX.Element;
-    onItemClick: (item:T)=>any;
-    renderRight?: ()=>JSX.Element;
-}
-*/
 var CIXList = /** @class */ (function (_super) {
     __extends(CIXList, _super);
     function CIXList(midIXList) {
         var _this = _super.call(this, midIXList) || this;
+        _this.setRes(midIXList.res);
         _this.midIXList = midIXList;
         return _this;
     }

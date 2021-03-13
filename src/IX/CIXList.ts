@@ -4,22 +4,11 @@ import { ID, IX, Uq } from "tonva-react";
 import { CList, MidIDListBase } from "../list";
 import { IXBase, IDBase } from "../base";
 
-/*
-export interface IXListProps<T extends IDBase> {
-	uq: Uq;
-	IX: IX;
-	ID: ID;
-	id: number;
-	onRightClick: ()=>any;
-	renderItem: (item:T, index:number)=>JSX.Element;
-	onItemClick: (item:T)=>any;
-	renderRight?: ()=>JSX.Element;
-}
-*/
 export class CIXList<T extends IDBase, T2 extends IXBase> extends CList<T2> {
 	protected midIXList: MidIXList<T2>;
 	constructor(midIXList: MidIXList<T2>) {
 		super(midIXList);
+		this.setRes(midIXList.res);
 		this.midIXList = midIXList;
 	}
 

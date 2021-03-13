@@ -4,7 +4,7 @@ import { CID } from "./CID";
 export class VEdit extends VPage<CID<any>> {
 	header() {return 'Edit'}
 	content() {
-		let {item, mid} = this.controller;
+		let {item, midID: mid} = this.controller;
 		let {itemSchema, uiSchema} = mid;
 		return <div className="p-3">
 			<Form fieldLabelSize={2} formData={item}

@@ -8,8 +8,8 @@ export declare class MidIX extends Mid {
     init(): Promise<void>;
 }
 export declare class CIX<P extends MidIX> extends Controller {
-    protected readonly mid: P;
-    constructor(mid: P);
+    protected readonly midIX: P;
+    constructor(midIX: P);
     protected internalStart(): Promise<void>;
     private onItemEdit;
     private onItemClick;

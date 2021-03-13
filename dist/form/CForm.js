@@ -66,7 +66,8 @@ var VForm_1 = require("./VForm");
 var CForm = /** @class */ (function (_super) {
     __extends(CForm, _super);
     function CForm(props, res) {
-        var _this = _super.call(this, res) || this;
+        var _this = _super.call(this) || this;
+        _this.setRes(res);
         var label = props.label, fieldArr = props.fieldArr, fields = props.fields, onSubmit = props.onSubmit, submitCaption = props.submitCaption;
         _this.schema = _this.buildItemSchema(fieldArr);
         _this.uiSchema = _this.buildUISchema(fields);

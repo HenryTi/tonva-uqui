@@ -12,6 +12,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./CIDX"), exports);
 __exportStar(require("./MidIDX"), exports);
-__exportStar(require("./CIDXList"), exports);
 __exportStar(require("./MidIDXList"), exports);
 //# sourceMappingURL=index.js.map

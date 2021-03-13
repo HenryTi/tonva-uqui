@@ -41,7 +41,7 @@ var VView = /** @class */ (function (_super) {
     VView.prototype.content = function () {
         var _this = this;
         var V = mobx_react_1.observer(function () {
-            var _a = _this.controller, item = _a.item, mid = _a.mid;
+            var _a = _this.controller, item = _a.item, mid = _a.midID;
             var props = mid.props;
             return jsx_runtime_1.jsx("div", __assign({ className: "py-3" }, { children: jsx_runtime_1.jsx(tonva_react_1.PropGrid, { rows: props, values: item }, void 0) }), void 0);
         });

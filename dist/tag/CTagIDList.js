@@ -54,11 +54,13 @@ var tonva_react_1 = require("tonva-react");
 var tools_1 = require("../tools");
 var ID_1 = require("../ID");
 var VTags_1 = require("./VTags");
+var list_1 = require("list");
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 var CTagIDList = /** @class */ (function (_super) {
     __extends(CTagIDList, _super);
-    function CTagIDList(midTag, res) {
-        var _this = _super.call(this, res) || this;
+    function CTagIDList(midTag) {
+        var _this = _super.call(this) || this;
+        _this.setRes(midTag.res);
         _this.midTag = midTag;
         return _this;
     }
@@ -111,7 +113,7 @@ class TagIDListProps<T extends IDBase> extends MidIDList<T> {
 var CShowTagIDList = /** @class */ (function (_super) {
     __extends(CShowTagIDList, _super);
     function CShowTagIDList(midIDList) {
-        var _this = _super.call(this, undefined) || this;
+        var _this = _super.call(this, midIDList) || this;
         _this.midIDList = midIDList;
         return _this;
     }
@@ -127,14 +129,6 @@ var CShowTagIDList = /** @class */ (function (_super) {
             });
         });
     };
-    /*
-    protected createMidList(): MidTagIDList<T> {
-        let {midTag, tags} = this.midIDList;
-        
-        let {uq, ID, IX, tag} = midTag;
-        return this.midIDList = new MidTagIDList<T>(uq, tag, IX, ID, tags);
-    }
-    */
     CShowTagIDList.prototype.onItemClick = function (item) {
         return __awaiter(this, void 0, void 0, function () {
             var midTag, mid, cID;
@@ -146,7 +140,7 @@ var CShowTagIDList = /** @class */ (function (_super) {
                         return [4 /*yield*/, mid.init()];
                     case 1:
                         _a.sent();
-                        cID = new ID_1.CID(mid, this.res);
+                        cID = new ID_1.CID(mid);
                         cID.onItemClick(item);
                         return [2 /*return*/];
                 }
@@ -167,16 +161,13 @@ var CShowTagIDList = /** @class */ (function (_super) {
         //return renderItemTags(this.props, itemTags, index);
     };
     return CShowTagIDList;
-}(ID_1.CIDList));
+}(list_1.CList));
 var MidTagIDList = /** @class */ (function (_super) {
     __extends(MidTagIDList, _super);
-    //tags: number[];
-    function MidTagIDList(midTag, /*IX:IX, /*ID:ID, */ ids) {
+    function MidTagIDList(midTag, ids) {
         var _this = this;
         var uq = midTag.uq, ID = midTag.ID;
         _this = _super.call(this, uq, ID) || this;
-        //this.tag = tag;
-        //this.IX = IX;
         _this.ids = ids;
         return _this;
     }

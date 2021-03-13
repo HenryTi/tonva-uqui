@@ -12,7 +12,8 @@ export class CForm<T> extends Controller {
 	private onSubmit: (values:any) => Promise<void>;
 
 	constructor(props: FormProps, res?:any) {
-		super(res);
+		super();
+		this.setRes(res);
 		let {label, fieldArr, fields, onSubmit, submitCaption} = props;
 		this.schema = this.buildItemSchema(fieldArr);
 		this.uiSchema = this.buildUISchema(fields);

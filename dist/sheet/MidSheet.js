@@ -79,7 +79,7 @@ var MidSheet = /** @class */ (function (_super) {
             var ret;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.uq.IDDetail({
+                    case 0: return [4 /*yield*/, this.uq.ActDetail({
                             master: {
                                 ID: this.master.ID,
                                 value: master,

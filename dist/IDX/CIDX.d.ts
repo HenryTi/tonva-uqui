@@ -5,10 +5,10 @@ export declare class CIDX extends Controller {
     timeSpan: TimeSpan;
     spanValues: any;
     dayValues: number[];
-    mid: MidIDX;
+    midIDX: MidIDX;
     private historyPageItems;
-    constructor(mid: MidIDX, res?: any);
-    protected internalStart(item: any): Promise<void>;
+    constructor(midIDX: MidIDX);
+    protected internalStart(): Promise<void>;
     item: any;
     onItemClick: (item: any) => void;
     onItemEdit: () => Promise<void>;

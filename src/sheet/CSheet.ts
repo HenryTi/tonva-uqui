@@ -13,11 +13,12 @@ export abstract class CSheet<M extends Master, D extends Detail> extends Control
 	detail: D = null;
 
 	constructor(mid: MidSheet<M, D>) {
-		super(mid.res);
+		super();
 		makeObservable(this, {
 			master: observable,
 			details: observable,
 		});
+		this.setRes(mid.res);
 		this.mid = mid;
 	}
 

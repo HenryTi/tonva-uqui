@@ -76,6 +76,7 @@ var CIDSelect = /** @class */ (function (_super) {
     __extends(CIDSelect, _super);
     function CIDSelect(midIDSelectList) {
         var _this = _super.call(this, midIDSelectList) || this;
+        _this.setRes(midIDSelectList.res);
         _this.midIDSelectList = midIDSelectList;
         return _this;
     }

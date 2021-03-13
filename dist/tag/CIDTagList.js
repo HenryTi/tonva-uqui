@@ -70,6 +70,7 @@ var CIDTagList = /** @class */ (function (_super) {
     __extends(CIDTagList, _super);
     function CIDTagList(midIDTagList) {
         var _this = _super.call(this, midIDTagList) || this;
+        _this.setRes(_this.midIDTagList.res);
         _this.midIDTagList = midIDTagList;
         return _this;
     }
@@ -87,7 +88,7 @@ var CIDTagList = /** @class */ (function (_super) {
     };
     CIDTagList.prototype.onItemClick = function (item) {
         var midTag = this.midIDTagList.midTag;
-        var cSelect = new select_1.CSelect(this, item, midTag, this.res);
+        var cSelect = new select_1.CSelect(this, item, midTag);
         cSelect.start();
     };
     CIDTagList.prototype.renderItem = function (itemTags, index) {
@@ -126,14 +127,14 @@ var MidIDTagList = /** @class */ (function (_super) {
                         acts[this.midTag.tag.name] = [ix];
                         if (!(selected === true)) return [3 /*break*/, 2];
                         ix.id = itemId;
-                        return [4 /*yield*/, this.uq.IDActs(acts)];
+                        return [4 /*yield*/, this.uq.Acts(acts)];
                     case 1:
                         _a.sent();
                         this.addTag(itemTags, parent, id);
                         return [3 /*break*/, 4];
                     case 2:
                         ix.id = -itemId;
-                        return [4 /*yield*/, this.uq.IDActs(acts)];
+                        return [4 /*yield*/, this.uq.Acts(acts)];
                     case 3:
                         _a.sent();
                         this.delTag(itemTags, parent, id);

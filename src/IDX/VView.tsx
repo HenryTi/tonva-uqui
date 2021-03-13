@@ -1,4 +1,4 @@
-import { makeObservable, observable, runInAction } from "mobx";
+import { makeObservable, observable, runInAction, toJS } from "mobx";
 import { observer } from "mobx-react";
 import { CSSProperties } from "react";
 import { Bar } from "react-chartjs-2";
@@ -33,14 +33,14 @@ export class VView extends VPage<CIDX> {
 	}
 	content() {		
 		let V = observer(() => {
-			let {spanValues, mid, timeSpan, prevTimeSpan, nextTimeSpan, dayValues} = this.controller;
-			if (spanValues === undefined) return null; 
+			let {spanValues, midIDX: mid, timeSpan, prevTimeSpan, nextTimeSpan, dayValues} = this.controller;
+			if (spanValues === null) return null; 
 			let {props} = mid;
 			const data = {
 				labels: timeSpan.labels,
 				datasets: [{
 					label: '',
-					data: dayValues,
+					data: toJS(dayValues),
 					backgroundColor: 'lightgreen',
 					borderWidth: 1
 				}],
@@ -117,7 +117,7 @@ export class VView extends VPage<CIDX> {
 	}
 
 	private async onFieldClick(prop:Prop, index:number) {
-		let {mid} = this.controller;
+		let {midIDX: mid} = this.controller;
 		let {props} = mid;
 		if (this.currentIndex === index) {
 			let curProp = props[this.currentIndex] as NumberProp;

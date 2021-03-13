@@ -59,8 +59,8 @@ var roleCaptionMap = {
 };
 var CRoles = /** @class */ (function (_super) {
     __extends(CRoles, _super);
-    function CRoles(uq, res) {
-        var _this = _super.call(this, res) || this;
+    function CRoles(uq) {
+        var _this = _super.call(this) || this;
         _this.roles = null;
         _this.myRolesChanged = function (roles) {
             _this.roles = roles;
@@ -98,7 +98,8 @@ var CRoles = /** @class */ (function (_super) {
                             alert("uq " + uqMan.name + " has not defined roles");
                             return [2 /*return*/];
                         }
-                        cRoleAdmin = new roleAdmin_1.CRoleAdmin(this.res, this.uq, this.myRolesChanged, roleCaptionMap);
+                        cRoleAdmin = new roleAdmin_1.CRoleAdmin(this.uq, this.myRolesChanged, roleCaptionMap);
+                        cRoleAdmin.setRes(this.getRes());
                         return [4 /*yield*/, cRoleAdmin.start()];
                     case 1:
                         _a.sent();

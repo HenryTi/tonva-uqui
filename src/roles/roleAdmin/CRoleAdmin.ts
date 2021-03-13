@@ -19,8 +19,8 @@ export class CRoleAdmin extends Controller {
 	ixOfUsers: string[];
 	private myRolesChanged:(roles:string[])=>void;
 
-	constructor(res:any, uq:Uq, myRolesChanged?:(roles:string[])=>void, roleCaptionMap?:{[role:string]:string}) {
-		super(res);
+	constructor(uq:Uq, myRolesChanged?:(roles:string[])=>void, roleCaptionMap?:{[role:string]:string}) {
+		super();
 		makeObservable(this, {
 			meRoles: observable,
 			userRoles: observable,

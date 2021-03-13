@@ -74,13 +74,14 @@ var MidIX = /** @class */ (function (_super) {
 exports.MidIX = MidIX;
 var CIX = /** @class */ (function (_super) {
     __extends(CIX, _super);
-    function CIX(mid) {
-        var _this = _super.call(this, mid.res) || this;
+    function CIX(midIX) {
+        var _this = _super.call(this) || this;
         _this.onItemEdit = function () {
         };
         _this.onItemClick = function (item) {
         };
-        _this.mid = mid;
+        _this.setRes(midIX.res);
+        _this.midIX = midIX;
         return _this;
     }
     CIX.prototype.internalStart = function () {
@@ -89,7 +90,7 @@ var CIX = /** @class */ (function (_super) {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        _a = this.mid, uq = _a.uq, IX = _a.IX, ID = _a.ID, id = _a.id;
+                        _a = this.midIX, uq = _a.uq, IX = _a.IX, ID = _a.ID, id = _a.id;
                         midIXList = new CIXList_1.MidIXList(uq, IX, ID, id);
                         midIXList.onRightClick = this.onItemEdit;
                         midIXList.renderItem = undefined;

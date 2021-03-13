@@ -56,8 +56,8 @@ var IX_1 = require("../../IX");
 var VRoleAdmin_1 = require("./VRoleAdmin");
 var CRoleAdmin = /** @class */ (function (_super) {
     __extends(CRoleAdmin, _super);
-    function CRoleAdmin(res, uq, myRolesChanged, roleCaptionMap) {
-        var _this = _super.call(this, res) || this;
+    function CRoleAdmin(uq, myRolesChanged, roleCaptionMap) {
+        var _this = _super.call(this) || this;
         _this.meRoles = null;
         _this.userRoles = null;
         _this.ixUserBind = function (user, ixName) { return __awaiter(_this, void 0, void 0, function () {

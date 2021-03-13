@@ -73,7 +73,7 @@ var VEdit = /** @class */ (function (_super) {
     VEdit.prototype.header = function () { return 'Edit'; };
     VEdit.prototype.content = function () {
         var _this = this;
-        var mid = this.controller.mid;
+        var mid = this.controller.midIDX;
         var props = mid.props;
         return jsx_runtime_1.jsx("div", __assign({ className: "py-3" }, { children: props.map(function (v, index) {
                 var type = v.type;

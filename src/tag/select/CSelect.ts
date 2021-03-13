@@ -7,8 +7,9 @@ export class CSelect extends Controller {
 	private cIDTagList: CIDTagList<any>;
 	itemTags: any;
 	midTag: MidTag;
-	constructor(cIDTagList: CIDTagList<any>, itemTags:any, midTag: MidTag, res:any) {
-		super(res);
+	constructor(cIDTagList: CIDTagList<any>, itemTags:any, midTag: MidTag) {
+		super();
+		this.setRes(midTag.res);
 		this.cIDTagList = cIDTagList;
 		this.itemTags = itemTags;
 		this.midTag = midTag;

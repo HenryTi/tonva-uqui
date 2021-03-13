@@ -65,7 +65,7 @@ export class MidIDX extends Mid {
 	async saveID(data:any):Promise<number> {
 		let param: any = {};
 		param[this.ID.name] = [data];
-		let ret = await this.uq.IDActs(param);
+		let ret = await this.uq.Acts(param);
 		let id = ret[this.ID.name];
 		return id[0];
 	}
@@ -78,7 +78,7 @@ export class MidIDX extends Mid {
 			value,
 		}
 		param[this.IDX.name] = [val];
-		let ret = await this.uq.IDActs(param);
+		let ret = await this.uq.Acts(param);
 		return ret;
 	}
 

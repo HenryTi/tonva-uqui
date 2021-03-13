@@ -53,7 +53,7 @@ export class MidID<T extends IDBase> extends Mid {
 	async saveID(data:any):Promise<number> {
 		let param: any = {};
 		param[this.ID.name] = [data];
-		let ret = await this.uq.IDActs(param);
+		let ret = await this.uq.Acts(param);
 		let id = ret[this.ID.name];
 		if (!id) return;
 		return id[0];

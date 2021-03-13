@@ -13,7 +13,7 @@ export class VView extends VPage<CID<any>> {
 	}
 	content() {
 		let V = observer(() => {
-			let {item, mid} = this.controller;
+			let {item, midID: mid} = this.controller;
 			let {props} = mid;
 			return <div className="py-3">
 				<PropGrid rows={props}

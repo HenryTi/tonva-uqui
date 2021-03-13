@@ -158,7 +158,7 @@ var MidIDX = /** @class */ (function (_super) {
                     case 0:
                         param = {};
                         param[this.ID.name] = [data];
-                        return [4 /*yield*/, this.uq.IDActs(param)];
+                        return [4 /*yield*/, this.uq.Acts(param)];
                     case 1:
                         ret = _a.sent();
                         id = ret[this.ID.name];
@@ -180,7 +180,7 @@ var MidIDX = /** @class */ (function (_super) {
                             value: value,
                         };
                         param[this.IDX.name] = [val];
-                        return [4 /*yield*/, this.uq.IDActs(param)];
+                        return [4 /*yield*/, this.uq.Acts(param)];
                     case 1:
                         ret = _a.sent();
                         return [2 /*return*/, ret];

@@ -5,7 +5,7 @@ export declare class CSelect extends Controller {
     private cIDTagList;
     itemTags: any;
     midTag: MidTag;
-    constructor(cIDTagList: CIDTagList<any>, itemTags: any, midTag: MidTag, res: any);
+    constructor(cIDTagList: CIDTagList<any>, itemTags: any, midTag: MidTag);
     protected internalStart(): Promise<void>;
     protected onItemClick(item: any): void;
     protected renderRight(): JSX.Element;

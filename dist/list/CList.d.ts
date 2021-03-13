@@ -1,6 +1,6 @@
 import { Controller } from "tonva-react";
 import { MidList } from "./MidList";
-export declare abstract class CList<T> extends Controller {
+export declare class CList<T> extends Controller {
     protected readonly midList: MidList<T>;
     constructor(midList: MidList<T>);
     protected internalStart(): Promise<void>;

@@ -13,7 +13,7 @@ export declare class CRoleAdmin extends Controller {
     userRoles: UserRole[];
     ixOfUsers: string[];
     private myRolesChanged;
-    constructor(res: any, uq: Uq, myRolesChanged?: (roles: string[]) => void, roleCaptionMap?: {
+    constructor(uq: Uq, myRolesChanged?: (roles: string[]) => void, roleCaptionMap?: {
         [role: string]: string;
     });
     protected internalStart(): Promise<void>;

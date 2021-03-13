@@ -10,7 +10,7 @@ export interface IXEditProps extends MidIX {
 export class CIXEdit extends CIX<IXEditProps> {
 	private cIXList: CIXList<any, any>;
 	protected async internalStart() {
-		let {uq, IX, ID, id} = this.mid;
+		let {uq, IX, ID, id} = this.midIX;
 		let midIXList = new MidIXList(uq, IX, ID, id);
 		midIXList.onRightClick = this.onListRightClick;
 		midIXList.renderItem = undefined;
@@ -21,7 +21,7 @@ export class CIXEdit extends CIX<IXEditProps> {
 	}
 
 	private onListRightClick = async () => {
-		let {uq, ID, IX, id} = this.mid;
+		let {uq, ID, IX, id} = this.midIX;
 		let midIXList = new MidIXSelectList(uq, ID, IX, id);
 		midIXList.renderItem = undefined;
 		midIXList.onSelectChange = this.onSelectChange;
@@ -31,7 +31,7 @@ export class CIXEdit extends CIX<IXEditProps> {
 
 	private onSelectChange = async (item:any, isSelected:boolean) => {
 		let param:any = {};
-		let {IX, id} = this.mid;
+		let {IX, id} = this.midIX;
 		if (isSelected === false) {
 			// id negtive means delete
 			id = -id;
@@ -39,7 +39,7 @@ export class CIXEdit extends CIX<IXEditProps> {
 		let id2Item = {id, id2: item.id};
 		param[IX.name] = [id2Item];
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		let ret = await this.mid.uq.IDActs(param);
+		let ret = await this.midIX.uq.Acts(param);
 		this.cIXList.update(id2Item);
 	} 
 }

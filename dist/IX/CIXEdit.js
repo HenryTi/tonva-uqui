@@ -62,7 +62,7 @@ var CIXEdit = /** @class */ (function (_super) {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        _a = this.mid, uq = _a.uq, ID = _a.ID, IX = _a.IX, id = _a.id;
+                        _a = this.midIX, uq = _a.uq, ID = _a.ID, IX = _a.IX, id = _a.id;
                         midIXList = new select_1.MidIXSelectList(uq, ID, IX, id);
                         midIXList.renderItem = undefined;
                         midIXList.onSelectChange = this.onSelectChange;
@@ -80,14 +80,14 @@ var CIXEdit = /** @class */ (function (_super) {
                 switch (_b.label) {
                     case 0:
                         param = {};
-                        _a = this.mid, IX = _a.IX, id = _a.id;
+                        _a = this.midIX, IX = _a.IX, id = _a.id;
                         if (isSelected === false) {
                             // id negtive means delete
                             id = -id;
                         }
                         id2Item = { id: id, id2: item.id };
                         param[IX.name] = [id2Item];
-                        return [4 /*yield*/, this.mid.uq.IDActs(param)];
+                        return [4 /*yield*/, this.midIX.uq.Acts(param)];
                     case 1:
                         ret = _b.sent();
                         this.cIXList.update(id2Item);
@@ -103,7 +103,7 @@ var CIXEdit = /** @class */ (function (_super) {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        _a = this.mid, uq = _a.uq, IX = _a.IX, ID = _a.ID, id = _a.id;
+                        _a = this.midIX, uq = _a.uq, IX = _a.IX, ID = _a.ID, id = _a.id;
                         midIXList = new CIXList_1.MidIXList(uq, IX, ID, id);
                         midIXList.onRightClick = this.onListRightClick;
                         midIXList.renderItem = undefined;

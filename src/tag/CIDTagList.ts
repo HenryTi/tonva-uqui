@@ -16,6 +16,7 @@ export class CIDTagList<T extends IDBase> extends CList<ItemTags<T>> {
 	private midIDTagList: MidIDTagList<T>;
 	constructor(midIDTagList: MidIDTagList<T>) {
 		super(midIDTagList);
+		this.setRes(this.midIDTagList.res);
 		this.midIDTagList = midIDTagList;
 	}
 
@@ -26,7 +27,7 @@ export class CIDTagList<T extends IDBase> extends CList<ItemTags<T>> {
 
 	protected onItemClick(item:any):void {
 		let {midTag} = this.midIDTagList;
-		let cSelect = new CSelect(this, item, midTag, this.res);
+		let cSelect = new CSelect(this, item, midTag);
 		cSelect.start();
 	}
 
@@ -133,12 +134,12 @@ export class MidIDTagList<T extends IDBase> extends MidList<ItemTags<T>> {
 		acts[this.midTag.tag.name] = [ix];
 		if (selected === true) {
 			ix.id = itemId;
-			await this.uq.IDActs(acts);
+			await this.uq.Acts(acts);
 			this.addTag(itemTags, parent, id);
 		}
 		else {
 			ix.id = -itemId;
-			await this.uq.IDActs(acts);
+			await this.uq.Acts(acts);
 			this.delTag(itemTags, parent, id);
 		}
 	}

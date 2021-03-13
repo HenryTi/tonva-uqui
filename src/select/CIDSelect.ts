@@ -16,6 +16,7 @@ export class CIDSelect<T extends IDBase, P extends MidIDSelectList<T>> extends C
 	midIDSelectList: P;
 	constructor(midIDSelectList: P) {
 		super(midIDSelectList);
+		this.setRes(midIDSelectList.res);
 		this.midIDSelectList = midIDSelectList;
 	}
 

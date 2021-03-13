@@ -63,15 +63,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CID = void 0;
 var mobx_1 = require("mobx");
 var tonva_react_1 = require("tonva-react");
-var CIDList_1 = require("./CIDList");
+var tools_1 = require("../tools");
+var list_1 = require("../list");
 var MidIDList_1 = require("./MidIDList");
 var VEdit_1 = require("./VEdit");
 var VView_1 = require("./VView");
 var CID = /** @class */ (function (_super) {
     __extends(CID, _super);
-    function CID(mid, res) {
-        var _this = _super.call(this, res) || this;
+    function CID(midID) {
+        var _this = _super.call(this) || this;
         _this.item = null;
+        _this.renderItem = function (item, index) {
+            var ID = _this.midID.ID;
+            if (ID)
+                return ID.render(item);
+            return tools_1.renderItem(item, index);
+        };
         _this.onItemClick = function (item) {
             mobx_1.runInAction(function () {
                 _this.item = item;
@@ -81,7 +88,7 @@ var CID = /** @class */ (function (_super) {
         _this.onItemEdit = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.mid.init()];
+                    case 0: return [4 /*yield*/, this.midID.init()];
                     case 1:
                         _a.sent();
                         this.openVPage(VEdit_1.VEdit);
@@ -92,23 +99,24 @@ var CID = /** @class */ (function (_super) {
         mobx_1.makeObservable(_this, {
             item: mobx_1.observable,
         });
-        _this.mid = mid;
+        _this.setRes(midID.res);
+        _this.midID = midID;
         return _this;
     }
     CID.prototype.internalStart = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, uq, ID, midIDList;
+            var _a, uq, ID, cList;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        _a = this.mid, uq = _a.uq, ID = _a.ID;
-                        midIDList = new MidIDList_1.MidIDList(uq, ID);
-                        midIDList.onRightClick = this.onItemEdit;
-                        midIDList.renderItem = this.renderItem;
-                        midIDList.onItemClick = this.onItemClick;
-                        midIDList.renderRight = undefined;
-                        this.idList = new CIDList_1.CIDList(midIDList);
-                        return [4 /*yield*/, this.idList.start()];
+                        _a = this.midID, uq = _a.uq, ID = _a.ID;
+                        this.midIDList = new MidIDList_1.MidIDList(uq, ID);
+                        this.midIDList.onRightClick = this.onItemEdit;
+                        this.midIDList.renderItem = this.renderItem;
+                        this.midIDList.onItemClick = this.onItemClick;
+                        this.midIDList.renderRight = undefined;
+                        cList = new list_1.CList(this.midIDList);
+                        return [4 /*yield*/, cList.start()];
                     case 1:
                         _b.sent();
                         return [2 /*return*/];
@@ -125,7 +133,7 @@ var CID = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         this.item = undefined;
-                        return [4 /*yield*/, this.mid.init()];
+                        return [4 /*yield*/, this.midID.init()];
                     case 1:
                         _a.sent();
                         this.openVPage(VEdit_1.VEdit);
@@ -135,21 +143,21 @@ var CID = /** @class */ (function (_super) {
         });
     };
     CID.prototype.saveID = function (itemProps) {
-        var _a;
+        var _a, _b;
         return __awaiter(this, void 0, void 0, function () {
             var id, item, ret;
             var _this = this;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         id = (_a = this.item) === null || _a === void 0 ? void 0 : _a.id;
                         item = __assign(__assign({}, itemProps), { id: id });
-                        return [4 /*yield*/, this.mid.saveID(item)];
+                        return [4 /*yield*/, this.midID.saveID(item)];
                     case 1:
-                        ret = _b.sent();
+                        ret = _c.sent();
                         if (ret)
                             id = ret;
-                        this.idList.update(id, item);
+                        (_b = this.midIDList) === null || _b === void 0 ? void 0 : _b.update(id, item);
                         mobx_1.runInAction(function () {
                             if (_this.item)
                                 Object.assign(_this.item, item);

@@ -2,14 +2,16 @@ import { Controller } from "tonva-react";
 import { IDBase } from "../base";
 import { listRight } from "../tools";
 import { MidTag, Tag } from "./MidTag";
-import { CID, CIDList, MidID, MidIDList } from "../ID";
+import { CID, MidID, MidIDList } from "../ID";
 import { VTags } from "./VTags";
+import { CList } from "list";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export class CTagIDList<T extends IDBase> extends  Controller {
 	readonly midTag: MidTag;
-	constructor(midTag: MidTag, res?:any) {
-		super(res);
+	constructor(midTag: MidTag) {
+		super();
+		this.setRes(midTag.res);
 		this.midTag = midTag;
 	}
 
@@ -20,7 +22,6 @@ export class CTagIDList<T extends IDBase> extends  Controller {
 
 	async showID(tags: Tag[]) {
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		//let {uq, ID, IX} = this.midTag;
 		let midIDList: MidTagIDList<T> = new MidTagIDList<any>(
 			this.midTag, tags.map(v => v.id)
 		);
@@ -44,11 +45,11 @@ class TagIDListProps<T extends IDBase> extends MidIDList<T> {
 }
 */
 
-class CShowTagIDList<T extends IDBase> extends CIDList<T> {
+class CShowTagIDList<T extends IDBase> extends CList<T> {
 	//protected props: TagIDListProps<T>;
 	protected midIDList: MidTagIDList<T>;
 	constructor(midIDList: MidTagIDList<T>) {
-		super(undefined);
+		super(midIDList);
 		this.midIDList = midIDList;
 	}
 
@@ -57,20 +58,11 @@ class CShowTagIDList<T extends IDBase> extends CIDList<T> {
 		return true;
 	}
 
-	/*
-	protected createMidList(): MidTagIDList<T> {
-		let {midTag, tags} = this.midIDList;
-		
-		let {uq, ID, IX, tag} = midTag;
-		return this.midIDList = new MidTagIDList<T>(uq, tag, IX, ID, tags);
-	}
-	*/
-	
 	protected async onItemClick(item:any):Promise<void> {
 		let {midTag} = this.midIDList;
 		let mid = new MidID(midTag.uq, midTag.ID);
 		await mid.init();
-		let cID = new CID(mid, this.res);
+		let cID = new CID(mid);
 		cID.onItemClick(item);
 		//let cSelect = new CSelect(this, item, midTag, this.res);
 		//cSelect.start();
@@ -94,15 +86,10 @@ class CShowTagIDList<T extends IDBase> extends CIDList<T> {
 
 export class MidTagIDList<T extends IDBase> extends MidIDList<T> {
 	readonly midTag: MidTag;
-	//readonly tag: ID;
-	//readonly IX: IX;
 	readonly ids: number[];
-	//tags: number[];
-	constructor(midTag:MidTag, /*IX:IX, /*ID:ID, */ids:number[]) {
+	constructor(midTag:MidTag, ids:number[]) {
 		let {uq, ID} = midTag;
 		super(uq, ID);
-		//this.tag = tag;
-		//this.IX = IX;
 		this.ids = ids;
 	}
  

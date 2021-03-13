@@ -82,7 +82,7 @@ var VEdit = /** @class */ (function (_super) {
     }
     VEdit.prototype.header = function () { return 'Edit'; };
     VEdit.prototype.content = function () {
-        var _a = this.controller, item = _a.item, mid = _a.mid;
+        var _a = this.controller, item = _a.item, mid = _a.midID;
         var itemSchema = mid.itemSchema, uiSchema = mid.uiSchema;
         return jsx_runtime_1.jsx("div", __assign({ className: "p-3" }, { children: jsx_runtime_1.jsx(tonva_react_1.Form, { fieldLabelSize: 2, formData: item, schema: itemSchema, uiSchema: uiSchema, onButtonClick: this.onSubmit }, void 0) }), void 0);
     };

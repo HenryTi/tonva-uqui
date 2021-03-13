@@ -3,10 +3,11 @@ import { renderItem, listRight, renderItemContainer } from "../tools";
 import { ListPage, ListPageProps } from "./ListPage";
 import { MidList } from "./MidList";
 
-export abstract class CList<T> extends Controller {
+export class CList<T> extends Controller {
 	protected readonly midList: MidList<T>;
 	constructor(midList: MidList<T>) {
-		super(midList.res);
+		super();
+		this.setRes(midList.res);
 		this.midList = midList;
 	}
 

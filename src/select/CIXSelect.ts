@@ -4,12 +4,6 @@ import { IDBase, IXBase } from "../base";
 import { CIDSelect, MidIDSelectList } from "./CIDSelect";
 
 export class CIXSelect<T extends IXBase> extends CIDSelect<T, MidIXSelectList<T>> {
-	/*
-	protected createMidList(): MidList<T> {
-		let {uq, ID, IX, id} = this.MidIXSelectList;
-		return new MidIXSelectList(uq, ID, IX, id);
-	}
-	*/
 }
 
 export class MidIXSelectList<T extends IXBase> extends MidIDSelectList<T> {

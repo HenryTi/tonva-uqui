@@ -54,8 +54,8 @@ var tonva_react_1 = require("tonva-react");
 var VSelect_1 = require("./VSelect");
 var CSelect = /** @class */ (function (_super) {
     __extends(CSelect, _super);
-    function CSelect(cIDTagList, itemTags, midTag, res) {
-        var _this = _super.call(this, res) || this;
+    function CSelect(cIDTagList, itemTags, midTag) {
+        var _this = _super.call(this) || this;
         _this.onTagSelectChanged = function (tag, selected) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -66,6 +66,7 @@ var CSelect = /** @class */ (function (_super) {
                 }
             });
         }); };
+        _this.setRes(midTag.res);
         _this.cIDTagList = cIDTagList;
         _this.itemTags = itemTags;
         _this.midTag = midTag;

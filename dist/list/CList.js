@@ -56,7 +56,8 @@ var ListPage_1 = require("./ListPage");
 var CList = /** @class */ (function (_super) {
     __extends(CList, _super);
     function CList(midList) {
-        var _this = _super.call(this, midList.res) || this;
+        var _this = _super.call(this) || this;
+        _this.setRes(midList.res);
         _this.midList = midList;
         return _this;
     }

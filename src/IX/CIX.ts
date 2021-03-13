@@ -3,7 +3,6 @@ import { Mid } from "../base";
 import { CIXList, MidIXList } from "./CIXList";
 
 export class MidIX extends Mid {
-	//readonly uq: Uq;
 	readonly IX: IX;
 	readonly ID: ID;
 	readonly id: number;
@@ -19,15 +18,16 @@ export class MidIX extends Mid {
 }
 
 export class CIX<P extends MidIX> extends Controller {
-	protected readonly mid: P;
+	protected readonly midIX: P;
 
-	constructor(mid: P) {
-		super(mid.res);
-		this.mid = mid;
+	constructor(midIX: P) {
+		super();
+		this.setRes(midIX.res);
+		this.midIX = midIX;
 	}
 
 	protected async internalStart() {
-		let {uq, IX, ID, id} = this.mid;
+		let {uq, IX, ID, id} = this.midIX;
 		let midIXList = new MidIXList(uq, IX, ID, id);
 		midIXList.onRightClick = this.onItemEdit;
 		midIXList.renderItem = undefined;
