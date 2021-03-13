@@ -52,9 +52,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MidTagIDList = exports.CTagIDList = void 0;
 var tonva_react_1 = require("tonva-react");
 var tools_1 = require("../tools");
+var list_1 = require("../list");
 var ID_1 = require("../ID");
 var VTags_1 = require("./VTags");
-var list_1 = require("list");
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 var CTagIDList = /** @class */ (function (_super) {
     __extends(CTagIDList, _super);

@@ -50,10 +50,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CIDX = void 0;
-var list_1 = require("list");
 var mobx_1 = require("mobx");
 var tonva_react_1 = require("tonva-react");
 var tools_1 = require("../tools");
+var list_1 = require("../list");
 var MidIDXList_1 = require("./MidIDXList");
 var res_1 = require("./res");
 var VEdit_1 = require("./VEdit");

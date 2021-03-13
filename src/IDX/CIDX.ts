@@ -1,7 +1,7 @@
-import { CList } from "list";
 import { makeObservable, observable, runInAction } from "mobx";
 import { Controller, PageItems } from "tonva-react";
 import { HistoryPageItems, TimeSpan } from "../tools";
+import { CList } from "../list";
 import { MidIDX } from "./MidIDX";
 import { MidIDXList } from "./MidIDXList";
 import { res } from "./res";

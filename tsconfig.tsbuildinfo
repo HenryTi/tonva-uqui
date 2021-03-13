@@ -1497,7 +1497,7 @@
         "affectsGlobalScope": false
       },
       "./src/idx/cidx.ts": {
-        "version": "ff84f4aa15683c81e6f1d8ea9ae1a474fc618677494c08dc6b69f44133cd4b6f",
+        "version": "95b28e173a671fe8887b59166a182deb53a945e05bdb304ae43afe1c285c6a2a",
         "signature": "3e0d9a7a1208e8bfed66b818991fb03744da791dee180904fbfadee5db54f0fa",
         "affectsGlobalScope": false
       },
@@ -1632,7 +1632,7 @@
         "affectsGlobalScope": false
       },
       "./src/tag/ctagidlist.ts": {
-        "version": "eb7142d53aa4724557b979ddfd3f72bc4a38f49089eaa1ce4c9b4961e59227cd",
+        "version": "0a856fa8b041745d5ad402740f57e1b00836da67cf1c1fcce3face8a629823c1",
         "signature": "9ff1a015407359f59e7e29cb84d1f846bb97d4bee7e5fbd6dd945e00f3f9316c",
         "affectsGlobalScope": false
       },

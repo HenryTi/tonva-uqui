@@ -1,10 +1,10 @@
 import { Controller } from "tonva-react";
 import { IDBase } from "../base";
 import { listRight } from "../tools";
+import { CList } from "../list";
 import { MidTag, Tag } from "./MidTag";
 import { CID, MidID, MidIDList } from "../ID";
 import { VTags } from "./VTags";
-import { CList } from "list";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export class CTagIDList<T extends IDBase> extends  Controller {
