@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VDialog = void 0;
-var VForm_1 = require("./VForm");
+var VFormPage_1 = require("./VFormPage");
 var VDialog = /** @class */ (function (_super) {
     __extends(VDialog, _super);
     function VDialog() {
@@ -24,6 +24,6 @@ var VDialog = /** @class */ (function (_super) {
         this.controller.close();
     };
     return VDialog;
-}(VForm_1.VForm));
+}(VFormPage_1.VFormPage));
 exports.VDialog = VDialog;
 //# sourceMappingURL=VDialog.js.map

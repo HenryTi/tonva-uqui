@@ -25,28 +25,12 @@ export class CTagIDList<T extends IDBase> extends  Controller {
 		let midIDList: MidTagIDList<T> = new MidTagIDList<any>(
 			this.midTag, tags.map(v => v.id)
 		);
-		let cShowTagIDList = new CShowTagIDList(midIDList
-			/*{
-			uq,
-			ID,
-			//midTag: this.midTag,
-			tags: tags.map(v => v.id),
-			renderItem: undefined,
-			onItemClick: undefined,
-		}*/);
+		let cShowTagIDList = new CShowTagIDList(midIDList);
 		await cShowTagIDList.start();
 	}
 }
 
-/*
-class TagIDListProps<T extends IDBase> extends MidIDList<T> {
-	//midTag: MidTag;
-	tags: number[];
-}
-*/
-
 class CShowTagIDList<T extends IDBase> extends CList<T> {
-	//protected props: TagIDListProps<T>;
 	protected midIDList: MidTagIDList<T>;
 	constructor(midIDList: MidTagIDList<T>) {
 		super(midIDList);
@@ -60,7 +44,7 @@ class CShowTagIDList<T extends IDBase> extends CList<T> {
 
 	protected async onItemClick(item:any):Promise<void> {
 		let {midTag} = this.midIDList;
-		let mid = new MidID(midTag.uq, midTag.ID);
+		let mid = new MidID(midTag.uq, {ID: midTag.ID});
 		await mid.init();
 		let cID = new CID(mid);
 		cID.onItemClick(item);
@@ -101,7 +85,7 @@ export class MidTagIDList<T extends IDBase> extends MidIDList<T> {
 		let result = await this.uq.IXr<T>({
 			IX: this.midTag.IX,
 			IDX: [this.ID],
-			id: this.ids,
+			ix: this.ids,
 			page: {start:pageStart, size:pageSize},
 		});
 		return result;

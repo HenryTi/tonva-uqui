@@ -70,8 +70,7 @@ exports.CIXList = CIXList;
 var MidIXList = /** @class */ (function (_super) {
     __extends(MidIXList, _super);
     function MidIXList(uq, IX, ID, id) {
-        var _this = _super.call(this, uq) || this;
-        _this.key = function (item) { return item.id2; };
+        var _this = _super.call(this, uq, undefined) || this;
         _this.IX = IX;
         _this.ID = ID;
         _this.id = id;
@@ -89,6 +88,7 @@ var MidIXList = /** @class */ (function (_super) {
             });
         });
     };
+    //key:((item:T) => number|string) = item => item.id 2;
     MidIXList.prototype.loadPageItems = function (pageStart, pageSize) {
         return __awaiter(this, void 0, void 0, function () {
             var ret;
@@ -97,7 +97,7 @@ var MidIXList = /** @class */ (function (_super) {
                     case 0: return [4 /*yield*/, this.uq.IX({
                             IX: this.IX,
                             IDX: this.ID ? [this.ID] : undefined,
-                            id: this.id,
+                            ix: this.id,
                             page: { start: pageStart, size: pageSize },
                         })];
                     case 1:
@@ -113,16 +113,16 @@ var MidIXList = /** @class */ (function (_super) {
             var _items = _this.listPageItems._items;
             if (!_items)
                 return;
-            var id = item.id, id2 = item.id2;
+            var ix = item.ix, id = item.id;
             if (id < 0) {
-                var index = _items.findIndex(function (v) { return v.id === -id && v.id2 === id2; });
+                var index = _items.findIndex(function (v) { return v.id === -id && v.id === id; });
                 if (index >= 0)
                     _items.splice(index, 1);
             }
             else {
-                var ret = _items.find(function (v) { return v.id === id && v.id2 === id2; });
+                var ret = _items.find(function (v) { return v.id === id && v.id === id; });
                 if (!ret) {
-                    _items.unshift({ id: id, id2: id2 });
+                    _items.unshift({ ix: ix, id: id });
                 }
             }
         });

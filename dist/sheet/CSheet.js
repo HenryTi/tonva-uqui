@@ -63,17 +63,17 @@ var CSheet = /** @class */ (function (_super) {
         _this.detail = null;
         _this.serial = 1;
         _this.editDetail = function (detail) { return __awaiter(_this, void 0, void 0, function () {
-            var _a, uq, detailFormUI, ID, fields, uiForm, i, field, ID_1, cForm;
+            var _a, uq, detailFormUI, ID, fieldCustoms, uiForm, i, field, ID_1, cForm;
             var _this = this;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        _a = this.mid, uq = _a.uq, detailFormUI = _a.detail;
-                        ID = detailFormUI.ID, fields = detailFormUI.fields;
-                        uiForm = new form_1.FormProps(ID.ui, fields);
-                        if (fields) {
-                            for (i in fields) {
-                                field = fields[i];
+                        _a = this.midSheet, uq = _a.uq, detailFormUI = _a.detail;
+                        ID = detailFormUI.ID, fieldCustoms = detailFormUI.fieldCustoms;
+                        uiForm = new form_1.FormUI(ID.ui, fieldCustoms);
+                        if (fieldCustoms) {
+                            for (i in fieldCustoms) {
+                                field = fieldCustoms[i];
                                 ID_1 = field.ID;
                                 if (ID_1) {
                                     uiForm.setIDUi(i, select_1.createPickId(uq, ID_1), ID_1.render);
@@ -81,11 +81,13 @@ var CSheet = /** @class */ (function (_super) {
                             }
                         }
                         uiForm.hideField('master', 'row');
-                        uiForm.onSubmit = function (values) { return __awaiter(_this, void 0, void 0, function () {
-                            var serial, index, cForm_1;
+                        cForm = new form_1.CFormPage(uiForm, detail);
+                        cForm.onSubmit = function (name, context) { return __awaiter(_this, void 0, void 0, function () {
+                            var values, serial, index, cForm_1;
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
+                                        values = context.data;
                                         serial = values['#'];
                                         if (!serial) {
                                             values['#'] = this.serial++;
@@ -99,8 +101,8 @@ var CSheet = /** @class */ (function (_super) {
                                         }
                                         this.closePage();
                                         if (!(detail === undefined)) return [3 /*break*/, 2];
-                                        cForm_1 = new form_1.CForm(uiForm);
-                                        return [4 /*yield*/, cForm_1.start(detail)];
+                                        cForm_1 = new form_1.CFormPage(uiForm, detail);
+                                        return [4 /*yield*/, cForm_1.start()];
                                     case 1:
                                         _a.sent();
                                         _a.label = 2;
@@ -108,8 +110,7 @@ var CSheet = /** @class */ (function (_super) {
                                 }
                             });
                         }); };
-                        cForm = new form_1.CForm(uiForm);
-                        return [4 /*yield*/, cForm.start(detail)];
+                        return [4 /*yield*/, cForm.start()];
                     case 1:
                         _b.sent();
                         return [2 /*return*/];
@@ -121,7 +122,7 @@ var CSheet = /** @class */ (function (_super) {
             details: mobx_1.observable,
         });
         _this.setRes(mid.res);
-        _this.mid = mid;
+        _this.midSheet = mid;
         return _this;
     }
     CSheet.prototype.load = function (id) {
@@ -131,7 +132,7 @@ var CSheet = /** @class */ (function (_super) {
                 switch (_b.label) {
                     case 0:
                         this.id = id;
-                        return [4 /*yield*/, this.mid.load(id)];
+                        return [4 /*yield*/, this.midSheet.load(id)];
                     case 1:
                         _a = _b.sent(), master = _a[0], details = _a[1];
                         this.master = master[0];
@@ -146,7 +147,7 @@ var CSheet = /** @class */ (function (_super) {
             var ret;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.mid.save(this.master, this.details)];
+                    case 0: return [4 /*yield*/, this.midSheet.save(this.master, this.details)];
                     case 1:
                         ret = _a.sent();
                         return [2 /*return*/, ret];

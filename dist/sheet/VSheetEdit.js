@@ -71,7 +71,7 @@ var VSheetEdit = /** @class */ (function (_super) {
             _this.controller.editDetail(item);
         };
         _this.renderDetail = function (item, index) {
-            return jsx_runtime_1.jsx("div", __assign({ className: "px-3 py-2" }, { children: _this.controller.mid.detail.ID.render(item) }), void 0);
+            return jsx_runtime_1.jsx("div", __assign({ className: "px-3 py-2" }, { children: _this.controller.midSheet.detail.ID.render(item) }), void 0);
         };
         //	{JSON.stringify(item)}
         _this.saveSheet = function () { return __awaiter(_this, void 0, void 0, function () {
@@ -98,7 +98,7 @@ var VSheetEdit = /** @class */ (function (_super) {
     };
     VSheetEdit.prototype.content = function () {
         var _this = this;
-        var _a = this.controller, mid = _a.mid, master = _a.master, details = _a.details;
+        var _a = this.controller, mid = _a.midSheet, master = _a.master, details = _a.details;
         var ID = mid.master.ID;
         var right = jsx_runtime_1.jsx("button", __assign({ className: "btn btn-success btn-sm", onClick: function () { return _this.controller.editDetail(undefined); } }, { children: jsx_runtime_1.jsx(tonva_react_1.FA, { name: "plus" }, void 0) }), void 0);
         return jsx_runtime_1.jsxs("div", __assign({ className: "my-3" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "p-3" }, { children: ID.render(master) }), void 0),

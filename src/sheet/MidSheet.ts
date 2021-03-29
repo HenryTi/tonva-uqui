@@ -1,18 +1,18 @@
-import { FormUI, Uq } from "tonva-react";
+import { IDUI, Uq } from "tonva-react";
 import { Detail, Master, Mid } from "../base";
 
-export interface SheetOptions {
-	master: FormUI;
-	detail: FormUI;
+export interface SheetUI {
+	master: IDUI;
+	detail: IDUI;
 }
 
 export class MidSheet<M extends Master, D extends Detail> extends Mid {
-	readonly master: FormUI;
-	readonly detail: FormUI;
+	readonly master: IDUI;
+	readonly detail: IDUI;
 
-	constructor(uq:Uq, res:any, options: SheetOptions) {
+	constructor(uq:Uq, ui: SheetUI, res?:any) {
 		super(uq, res);
-		let {master, detail} = options;
+		let {master, detail} = ui;
 		this.master = master;
 		this.detail = detail;
 	}

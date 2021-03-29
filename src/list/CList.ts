@@ -5,6 +5,7 @@ import { MidList } from "./MidList";
 
 export class CList<T> extends Controller {
 	protected readonly midList: MidList<T>;
+	protected selectedItem: T;
 	constructor(midList: MidList<T>) {
 		super();
 		this.setRes(midList.res);
@@ -13,7 +14,7 @@ export class CList<T> extends Controller {
 
 	protected async internalStart() {
 		await this.midList.init();
-		let pageItems = this.midList.createPageItems();
+		let pageItems = this.midList.pageItems;
 		let props:ListPageProps = {
 			header: this.header,
 			pageItems,
@@ -25,11 +26,11 @@ export class CList<T> extends Controller {
 		};
 		pageItems.first(this.firstParam);
 		let page = new ListPage(props);
-		this.openPage(page.render());
+		this.openPage(page.render(), () => this.returnCall(this.selectedItem));
 	}
 
 	protected get firstParam():any {return undefined;}
-	protected get header():string|JSX.Element {return 'List'}
+	protected get header():string|JSX.Element {return this.midList.header ?? 'List'}
 	protected renderItemContainer(content:any):JSX.Element {
 		return renderItemContainer(content);
 	}

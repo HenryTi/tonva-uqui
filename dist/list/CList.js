@@ -70,7 +70,7 @@ var CList = /** @class */ (function (_super) {
                     case 0: return [4 /*yield*/, this.midList.init()];
                     case 1:
                         _a.sent();
-                        pageItems = this.midList.createPageItems();
+                        pageItems = this.midList.pageItems;
                         props = {
                             header: this.header,
                             pageItems: pageItems,
@@ -82,7 +82,7 @@ var CList = /** @class */ (function (_super) {
                         };
                         pageItems.first(this.firstParam);
                         page = new ListPage_1.ListPage(props);
-                        this.openPage(page.render());
+                        this.openPage(page.render(), function () { return _this.returnCall(_this.selectedItem); });
                         return [2 /*return*/];
                 }
             });
@@ -94,7 +94,7 @@ var CList = /** @class */ (function (_super) {
         configurable: true
     });
     Object.defineProperty(CList.prototype, "header", {
-        get: function () { return 'List'; },
+        get: function () { var _a; return (_a = this.midList.header) !== null && _a !== void 0 ? _a : 'List'; },
         enumerable: false,
         configurable: true
     });

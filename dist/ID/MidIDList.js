@@ -49,7 +49,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MidIDList = void 0;
+exports.MidIXIDList = exports.MidIDList = void 0;
 var list_1 = require("../list");
 var MidIDList = /** @class */ (function (_super) {
     __extends(MidIDList, _super);
@@ -83,9 +83,44 @@ var MidIDList = /** @class */ (function (_super) {
         });
     };
     MidIDList.prototype.update = function (id, item) {
-        this.listPageItems.update(id, item);
+        item.id = id;
+        this.listPageItems.update(item);
     };
     return MidIDList;
 }(list_1.MidIDListBase));
 exports.MidIDList = MidIDList;
+var MidIXIDList = /** @class */ (function (_super) {
+    __extends(MidIXIDList, _super);
+    function MidIXIDList(uq, ID, IX) {
+        var _this = _super.call(this, uq, ID) || this;
+        _this.IX = IX;
+        return _this;
+    }
+    MidIXIDList.prototype.loadPageItems = function (pageStart, pageSize) {
+        return __awaiter(this, void 0, void 0, function () {
+            var ret;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.uq.IX({
+                            IX: this.IX,
+                            IDX: [this.ID],
+                            ix: undefined,
+                            page: { start: pageStart, size: pageSize },
+                        })];
+                    case 1:
+                        ret = _a.sent();
+                        /*
+                        for (let item of ret) {
+                            item.id = item.id;
+                            delete item.id;
+                        }
+                        */
+                        return [2 /*return*/, ret];
+                }
+            });
+        });
+    };
+    return MidIXIDList;
+}(MidIDList));
+exports.MidIXIDList = MidIXIDList;
 //# sourceMappingURL=MidIDList.js.map

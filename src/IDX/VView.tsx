@@ -33,9 +33,9 @@ export class VView extends VPage<CIDX> {
 	}
 	content() {		
 		let V = observer(() => {
-			let {spanValues, midIDX: mid, timeSpan, prevTimeSpan, nextTimeSpan, dayValues} = this.controller;
+			let {spanValues, midIDX, timeSpan, prevTimeSpan, nextTimeSpan, dayValues} = this.controller;
 			if (spanValues === null) return null; 
-			let {props} = mid;
+			let {props} = midIDX;
 			const data = {
 				labels: timeSpan.labels,
 				datasets: [{
@@ -117,8 +117,8 @@ export class VView extends VPage<CIDX> {
 	}
 
 	private async onFieldClick(prop:Prop, index:number) {
-		let {midIDX: mid} = this.controller;
-		let {props} = mid;
+		let {midIDX} = this.controller;
+		let {props} = midIDX;
 		if (this.currentIndex === index) {
 			let curProp = props[this.currentIndex] as NumberProp;
 			let {name} = curProp;

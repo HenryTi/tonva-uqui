@@ -1,5 +1,4 @@
-import { ButtonSchema, FieldItem, FieldItemId, FieldItemString, ID, Schema, UiButton, UiSchema, Uq } from "tonva-react";
-//import { createPickId } from "../select";
+import { ButtonSchema, FieldItem, FieldItemId, FieldItemString, IDUI, IDXEntity, PickId, Prop, Schema, UI, UiButton, UiSchema, Uq } from "tonva-react";
 
 export abstract class Mid {
 	readonly uq: Uq;
@@ -11,7 +10,8 @@ export abstract class Mid {
 
 	abstract init():Promise<void>;
 
-	protected async buildItemSchema(ID: ID): Promise<Schema> {
+	protected async buildItemSchema(IDUI: IDUI): Promise<Schema> {
+		let {ID} = IDUI;
 		let ret:Schema = [];
 		let {fieldArr} = ID.ui;
 		for (let f of fieldArr) {
@@ -37,7 +37,8 @@ export abstract class Mid {
 		return ret;
 	}
 
-	protected buildUISchema(ID:ID):UiSchema {
+	protected buildUISchema(IDUI:IDUI):UiSchema {
+		let {ID} = IDUI;
 		let {fields} = ID.ui;
 		let items = {...fields as any};
 		let uiButton: UiButton = {
@@ -50,7 +51,21 @@ export abstract class Mid {
 		return ret;
 	}
 
-	protected setIDUi(fieldItem:FieldItem, pickId: () => Promise<any>, render: (values:any) => JSX.Element) {
+	protected buildGridProps(IDX: IDXEntity<any>):Prop[] {
+		let ret:Prop[] = [];
+		let {ui, t} = IDX;
+		let {fieldArr } = ui;
+		for (let f of fieldArr) {
+			let prop = {
+				...f,
+				label: t(f.label),
+			};
+			ret.push(prop as any);
+		}
+		return ret;
+	}
+	
+	protected setIDUi(fieldItem:FieldItem, pickId: PickId, render: (values:any) => JSX.Element) {
 		if (fieldItem.type !== 'id') {
 			alert(`${fieldItem.name} is not id UI`);
 			return;

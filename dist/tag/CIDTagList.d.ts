@@ -23,7 +23,7 @@ export declare class MidIDTagList<T extends IDBase> extends MidList<ItemTags<T>>
     renderTags: (types: Tag[]) => JSX.Element;
     constructor(midTag: MidTag);
     init(): Promise<void>;
-    createPageItems(): ItemTagsListPageItems<T>;
+    protected createPageItems(): ItemTagsListPageItems<T>;
     key: ((item: ItemTags<T>) => number | string);
     protected loadPageItems(pageStart: any, pageSize: number): Promise<ItemTags<T>[]>;
     private addTag;
@@ -33,5 +33,6 @@ export declare class MidIDTagList<T extends IDBase> extends MidList<ItemTags<T>>
 declare class ItemTagsListPageItems<T extends IDBase> extends ListPageItems<ItemTags<T>> {
     itemId(item: ItemTags<T>): number;
     newItem(id: number, itemTags: ItemTags<T>): ItemTags<T>;
+    update(item: ItemTags<T>): Promise<void>;
 }
 export {};

@@ -53,9 +53,9 @@ exports.MidSheet = void 0;
 var base_1 = require("../base");
 var MidSheet = /** @class */ (function (_super) {
     __extends(MidSheet, _super);
-    function MidSheet(uq, res, options) {
+    function MidSheet(uq, ui, res) {
         var _this = _super.call(this, uq, res) || this;
-        var master = options.master, detail = options.detail;
+        var master = ui.master, detail = ui.detail;
         _this.master = master;
         _this.detail = detail;
         return _this;

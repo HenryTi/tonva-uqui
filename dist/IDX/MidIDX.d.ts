@@ -9,7 +9,7 @@ export declare class MidIDX extends Mid {
     init(): Promise<void>;
     protected loadSchema(): Promise<void>;
     load(id: number): Promise<any[]>;
-    historyPageItems: (id: number, field: string, far: number, near: number, pageStart: any, pageSize: number) => Promise<any[]>;
+    historyLoader: (id: number, field: string, far: number, near: number, pageStart: any, pageSize: number) => Promise<any[]>;
     saveID(data: any): Promise<number>;
     saveFieldValue(id: number, fieldName: string, t: any, value: string | number): Promise<void>;
     loadFieldSum(id: number, field: string, timeSpan: TimeSpan): Promise<any>;

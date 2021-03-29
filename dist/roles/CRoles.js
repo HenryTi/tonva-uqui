@@ -80,6 +80,8 @@ var CRoles = /** @class */ (function (_super) {
                         return [4 /*yield*/, this.uq.$.getRoles()];
                     case 1:
                         _a.roles = _b.sent();
+                        if (!this.roles)
+                            this.roles = [];
                         this.openVPage(VRoles_1.VRoles);
                         return [2 /*return*/];
                 }

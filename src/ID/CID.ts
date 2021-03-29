@@ -1,37 +1,61 @@
 import { makeObservable, observable, runInAction } from "mobx";
-import { Controller } from "tonva-react";
+import { Context, Controller } from "tonva-react";
 import { renderItem } from "../tools";
 import { IDBase } from "../base";
 import { CList } from '../list';
+import { CFormView, FormUI } from "../form";
 import { MidID } from "./MidID";
 import { MidIDList } from "./MidIDList";
 import { VEdit } from "./VEdit";
-import { VView } from "./VView";
+import { VView, VViewRight } from "./VView";
+import { res } from "./res";
 
 export class CID<T extends IDBase> extends Controller {
 	item:T = null;
 	midID: MidID<T>;
-	//idList: CIDList<any>;
+	cFormView: CFormView<T>;
 	private midIDList: MidIDList<T>;
+	private valueChanged: boolean;
 
 	constructor(midID: MidID<T>) {
 		super();
 		makeObservable(this, {
 			item: observable,
 		});
+		this.setRes(res);
 		this.setRes(midID.res);
 		this.midID = midID;
 	}
 
 	protected async internalStart() {
-		let {uq, ID} = this.midID;
-		this.midIDList = new MidIDList<T>(uq, ID);
-		this.midIDList.onRightClick = this.onItemEdit;
+		this.valueChanged = false;
+		await this.midID.init();
+		this.createFormView();
+		this.midIDList =  this.midID.createMidIDList();
+		this.midIDList.onRightClick = this.onItemNew;
 		this.midIDList.renderItem = this.renderItem;
 		this.midIDList.onItemClick = this.onItemClick;
 		this.midIDList.renderRight = undefined;
-		let cList = new CList(this.midIDList);
-		await cList.start();
+		let cList = this.createCList();
+		await cList.call();
+		this.returnCall(this.valueChanged);
+	}
+
+	protected createFormView() {
+		let {ID, IDUI} = this.midID;
+		let {fieldCustoms} = IDUI;
+		let formUI = new FormUI(ID.ui, fieldCustoms, ID.t);
+		this.cFormView = new CFormView(formUI);
+		this.cFormView.onSubmit = this.onSubmit;
+	} 
+
+	protected createCList() {
+		return new CList(this.midIDList);
+	}
+
+	private onSubmit = async (name:string, context: Context) => {
+		await this.saveID(context.data);
+		this.closePage();
 	}
 
 	renderItem: (item:T, index:number) => JSX.Element = (item:T, index:number) => {
@@ -47,7 +71,9 @@ export class CID<T extends IDBase> extends Controller {
 	}
 
 	onItemEdit = async (): Promise<void> => {
+		this.valueChanged = false;
 		await this.midID.init();
+		this.createFormView();
 		this.openVPage(VEdit);
 	}
 
@@ -55,13 +81,15 @@ export class CID<T extends IDBase> extends Controller {
 		this.openVPage(VView);
 	}
 
-	async onItemNew(): Promise<void> {
-		this.item = undefined;
-		await this.midID.init();
-		this.openVPage(VEdit);
+	onItemNew = async (): Promise<void> => {
+		await this.cFormView.setNO(this.midID.ID);
+		runInAction(() => {
+			this.item = undefined;
+			this.openVPage(VEdit);
+		});
 	}
 
-	async saveID(itemProps:any) {		
+	async saveID(itemProps:any) {
 		let id = this.item?.id;
 		let item = {
 			...itemProps,
@@ -76,6 +104,20 @@ export class CID<T extends IDBase> extends Controller {
 			else
 				this.item = item;
 		});
+		this.valueChanged = true;
 		return ret;
+	}
+
+	get itemHeader() {
+		return (this.midID.itemHeader as string ?? this.midID.ID.ui.label as string)
+	}
+
+	get editHeader() {
+		return this.t(this.item? 'edit' : 'new') + ' ' + this.itemHeader;
+	}
+
+	renderViewRight(item?: T) {
+		if (item) this.item = item;
+		return this.renderView(VViewRight);
 	}
 }

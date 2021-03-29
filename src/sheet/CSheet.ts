@@ -1,12 +1,12 @@
 import { makeObservable, observable } from "mobx";
-import { Controller } from "tonva-react";
+import { Context, Controller } from "tonva-react";
 import { createPickId } from "../select";
-import { CForm, FormProps } from "../form";
+import { CFormPage, FormUI } from "../form";
 import { Detail, Master } from "../base";
 import { MidSheet } from "./MidSheet";
 
 export abstract class CSheet<M extends Master, D extends Detail> extends Controller {
-	readonly mid: MidSheet<M, D>;
+	readonly midSheet: MidSheet<M, D>;
 	id: number;
 	master: M = null;
 	details: D[] = [];
@@ -19,18 +19,18 @@ export abstract class CSheet<M extends Master, D extends Detail> extends Control
 			details: observable,
 		});
 		this.setRes(mid.res);
-		this.mid = mid;
+		this.midSheet = mid;
 	}
 
 	protected async load(id:number) {
 		this.id = id;
-		let [master, details] = await this.mid.load(id);
+		let [master, details] = await this.midSheet.load(id);
 		this.master = master[0];
 		this.details = details;
 	}
 
 	async saveSheet() {
-		let ret = await this.mid.save(this.master, this.details);
+		let ret = await this.midSheet.save(this.master, this.details);
 		return ret;
 	}
 	
@@ -40,12 +40,12 @@ export abstract class CSheet<M extends Master, D extends Detail> extends Control
 
 	private serial:number = 1;
 	editDetail = async (detail: D) => {
-		let {uq, detail:detailFormUI} = this.mid;
-		let {ID, fields} = detailFormUI;
-		let uiForm = new FormProps(ID.ui, fields);
-		if (fields) {
-			for (let i in fields) {
-				let field = fields[i];
+		let {uq, detail:detailFormUI} = this.midSheet;
+		let {ID, fieldCustoms} = detailFormUI;
+		let uiForm = new FormUI(ID.ui, fieldCustoms);
+		if (fieldCustoms) {
+			for (let i in fieldCustoms) {
+				let field = fieldCustoms[i];
 				let {ID} = field;
 				if (ID) {
 					uiForm.setIDUi(i, createPickId(uq, ID), ID.render);
@@ -53,7 +53,9 @@ export abstract class CSheet<M extends Master, D extends Detail> extends Control
 			}
 		}
 		uiForm.hideField('master', 'row');
-		uiForm.onSubmit = async (values) => {
+		let cForm = new CFormPage(uiForm, detail);
+		cForm.onSubmit = async (name:string, context: Context) => {
+			let values = context.data;
 			let serial = values['#'];
 			if (!serial) {
 				values['#'] = this.serial++;
@@ -67,11 +69,10 @@ export abstract class CSheet<M extends Master, D extends Detail> extends Control
 			}
 			this.closePage();
 			if (detail === undefined) {
-				let cForm = new CForm(uiForm);
-				await cForm.start(detail);
+				let cForm = new CFormPage(uiForm, detail);
+				await cForm.start();
 			}
 		}
-		let cForm = new CForm(uiForm);
-		await cForm.start(detail);
+		await cForm.start();
 	}
 }

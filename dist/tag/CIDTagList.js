@@ -70,7 +70,7 @@ var CIDTagList = /** @class */ (function (_super) {
     __extends(CIDTagList, _super);
     function CIDTagList(midIDTagList) {
         var _this = _super.call(this, midIDTagList) || this;
-        _this.setRes(_this.midIDTagList.res);
+        _this.setRes(midIDTagList.res);
         _this.midIDTagList = midIDTagList;
         return _this;
     }
@@ -112,7 +112,7 @@ exports.CIDTagList = CIDTagList;
 var MidIDTagList = /** @class */ (function (_super) {
     __extends(MidIDTagList, _super);
     function MidIDTagList(midTag) {
-        var _this = _super.call(this, midTag.uq) || this;
+        var _this = _super.call(this, midTag.uq, undefined) || this;
         _this.key = function (item) { return item.item.id; };
         _this.onTagSelectChanged = function (itemTags, tag, selected) { return __awaiter(_this, void 0, void 0, function () {
             var item, itemId, id, parent, ix, acts;
@@ -122,7 +122,7 @@ var MidIDTagList = /** @class */ (function (_super) {
                         item = itemTags.item;
                         itemId = item.id;
                         id = tag.id, parent = tag.parent;
-                        ix = { id: undefined, id2: id };
+                        ix = { ix: undefined, id: id };
                         acts = {};
                         acts[this.midTag.tag.name] = [ix];
                         if (!(selected === true)) return [3 /*break*/, 2];
@@ -144,6 +144,7 @@ var MidIDTagList = /** @class */ (function (_super) {
             });
         }); };
         _this.midTag = midTag;
+        _this.createPageItems();
         return _this;
     }
     MidIDTagList.prototype.init = function () {
@@ -160,7 +161,8 @@ var MidIDTagList = /** @class */ (function (_super) {
     };
     MidIDTagList.prototype.createPageItems = function () {
         var _this = this;
-        return this.listPageItems = new ItemTagsListPageItems(function (pageStart, pageSize) { return _this.loadPageItems(pageStart, pageSize); });
+        var listPageItems = new ItemTagsListPageItems(function (pageStart, pageSize) { return _this.loadPageItems(pageStart, pageSize); });
+        return listPageItems;
     };
     MidIDTagList.prototype.loadPageItems = function (pageStart, pageSize) {
         return __awaiter(this, void 0, void 0, function () {
@@ -253,6 +255,9 @@ var ItemTagsListPageItems = /** @class */ (function (_super) {
             typeArr: typeArr,
             typeColl: typeColl,
         };
+    };
+    ItemTagsListPageItems.prototype.update = function (item) {
+        return;
     };
     return ItemTagsListPageItems;
 }(tools_1.ListPageItems));

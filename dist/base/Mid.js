@@ -67,18 +67,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Mid = void 0;
-//import { createPickId } from "../select";
 var Mid = /** @class */ (function () {
     function Mid(uq, res) {
         this.uq = uq;
         this.res = res;
     }
-    Mid.prototype.buildItemSchema = function (ID) {
+    Mid.prototype.buildItemSchema = function (IDUI) {
         return __awaiter(this, void 0, void 0, function () {
-            var ret, fieldArr, _i, fieldArr_1, f, type, isKey, required, fieldItem, ID_1, importSelect;
+            var ID, ret, fieldArr, _i, fieldArr_1, f, type, isKey, required, fieldItem, ID_1, importSelect;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        ID = IDUI.ID;
                         ret = [];
                         fieldArr = ID.ui.fieldArr;
                         _i = 0, fieldArr_1 = fieldArr;
@@ -114,7 +114,8 @@ var Mid = /** @class */ (function () {
             });
         });
     };
-    Mid.prototype.buildUISchema = function (ID) {
+    Mid.prototype.buildUISchema = function (IDUI) {
+        var ID = IDUI.ID;
         var fields = ID.ui.fields;
         var items = __assign({}, fields);
         var uiButton = {
@@ -124,6 +125,17 @@ var Mid = /** @class */ (function () {
         };
         items['submit'] = uiButton;
         var ret = { items: items };
+        return ret;
+    };
+    Mid.prototype.buildGridProps = function (IDX) {
+        var ret = [];
+        var ui = IDX.ui, t = IDX.t;
+        var fieldArr = ui.fieldArr;
+        for (var _i = 0, fieldArr_2 = fieldArr; _i < fieldArr_2.length; _i++) {
+            var f = fieldArr_2[_i];
+            var prop = __assign(__assign({}, f), { label: t(f.label) });
+            ret.push(prop);
+        }
         return ret;
     };
     Mid.prototype.setIDUi = function (fieldItem, pickId, render) {

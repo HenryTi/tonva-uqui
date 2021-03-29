@@ -10,7 +10,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./CForm"), exports);
-__exportStar(require("./CDialog"), exports);
-__exportStar(require("./FormProps"), exports);
+__exportStar(require("./CFormView"), exports);
+__exportStar(require("./CFormPage"), exports);
+__exportStar(require("./CFormDialog"), exports);
+__exportStar(require("./FormUI"), exports);
 //# sourceMappingURL=index.js.map

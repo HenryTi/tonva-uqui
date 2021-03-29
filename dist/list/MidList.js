@@ -60,14 +60,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MidIDListBase = exports.MidList = void 0;
+exports.IDListPageItems = exports.MidIDListBase = exports.MidList = void 0;
 var mobx_1 = require("mobx");
 var tools_1 = require("../tools");
 var base_1 = require("../base");
 var MidList = /** @class */ (function (_super) {
     __extends(MidList, _super);
-    function MidList() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function MidList(uq, res) {
+        var _this = _super.call(this, uq, res) || this;
+        _this.pageItems = _this.createPageItems();
+        return _this;
     }
     MidList.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
@@ -86,9 +88,15 @@ var MidIDListBase = /** @class */ (function (_super) {
         };
         return _this;
     }
+    Object.defineProperty(MidIDListBase.prototype, "listPageItems", {
+        get: function () { return this.pageItems; },
+        enumerable: false,
+        configurable: true
+    });
     MidIDListBase.prototype.createPageItems = function () {
         var _this = this;
-        return this.listPageItems = new IDListPageItems(function (pageStart, pageSize) { return _this.loadPageItems(pageStart, pageSize); });
+        var loader = function (pageStart, pageSize) { return _this.loadPageItems(pageStart, pageSize); };
+        return new IDListPageItems(loader);
     };
     return MidIDListBase;
 }(MidList));
@@ -100,8 +108,9 @@ var IDListPageItems = /** @class */ (function (_super) {
     }
     IDListPageItems.prototype.itemId = function (item) { return item.id; };
     IDListPageItems.prototype.newItem = function (id, item) { return __assign(__assign({}, item), { id: id }); };
-    IDListPageItems.prototype.update = function (id, item) {
+    IDListPageItems.prototype.update = function (item) {
         var _this = this;
+        var id = item.id;
         var ret = this._items.find(function (v) { return _this.itemId(v) === id; });
         if (ret === undefined) {
             var data = this.newItem(id, item);
@@ -112,7 +121,9 @@ var IDListPageItems = /** @class */ (function (_super) {
                 Object.assign(ret, item);
             });
         }
+        return;
     };
     return IDListPageItems;
 }(tools_1.ListPageItems));
+exports.IDListPageItems = IDListPageItems;
 //# sourceMappingURL=MidList.js.map

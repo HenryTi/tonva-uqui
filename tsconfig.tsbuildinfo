@@ -246,6 +246,21 @@
         "signature": "af7fd2870746deed40e130fc0a3966de74e8f52a97ec114d0fbb35876ab05ca9",
         "affectsGlobalScope": false
       },
+      "./node_modules/tonva-react/dist/tool/left0.d.ts": {
+        "version": "fe5c5087e3ac0289381873958bad53d5033efca900e668e779dbcb5de27d96d4",
+        "signature": "fe5c5087e3ac0289381873958bad53d5033efca900e668e779dbcb5de27d96d4",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/tonva-react/dist/tool/user.d.ts": {
+        "version": "e98c18724fc180c2e02eeedf967694ec6f9e18d4ea995c2449801d28983f38cc",
+        "signature": "e98c18724fc180c2e02eeedf967694ec6f9e18d4ea995c2449801d28983f38cc",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/tonva-react/dist/tool/uid.d.ts": {
+        "version": "68b62e936b06e6357b02ec91948d6404dc1c86d67608df34ca8e7bac75e5b9e8",
+        "signature": "68b62e936b06e6357b02ec91948d6404dc1c86d67608df34ca8e7bac75e5b9e8",
+        "affectsGlobalScope": false
+      },
       "./node_modules/mobx/dist/utils/global.d.ts": {
         "version": "309826fb90e96f68a9939d92fdbf9393b9d18733ccfa4a963da9978ff268806f",
         "signature": "309826fb90e96f68a9939d92fdbf9393b9d18733ccfa4a963da9978ff268806f",
@@ -516,21 +531,6 @@
         "signature": "5da9f84f18e1d93715b41880192e90034b00594858c64cdaffd3310282433480",
         "affectsGlobalScope": false
       },
-      "./node_modules/tonva-react/dist/tool/left0.d.ts": {
-        "version": "fe5c5087e3ac0289381873958bad53d5033efca900e668e779dbcb5de27d96d4",
-        "signature": "fe5c5087e3ac0289381873958bad53d5033efca900e668e779dbcb5de27d96d4",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/tonva-react/dist/tool/user.d.ts": {
-        "version": "e98c18724fc180c2e02eeedf967694ec6f9e18d4ea995c2449801d28983f38cc",
-        "signature": "e98c18724fc180c2e02eeedf967694ec6f9e18d4ea995c2449801d28983f38cc",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/tonva-react/dist/tool/uid.d.ts": {
-        "version": "68b62e936b06e6357b02ec91948d6404dc1c86d67608df34ca8e7bac75e5b9e8",
-        "signature": "68b62e936b06e6357b02ec91948d6404dc1c86d67608df34ca8e7bac75e5b9e8",
-        "affectsGlobalScope": false
-      },
       "./node_modules/tonva-react/dist/tool/pageitems.d.ts": {
         "version": "c4d3cde769fb4ca03b641a07a492d87826279e8af1281b478ee49c1fac802e83",
         "signature": "c4d3cde769fb4ca03b641a07a492d87826279e8af1281b478ee49c1fac802e83",
@@ -682,8 +682,8 @@
         "affectsGlobalScope": true
       },
       "./node_modules/tonva-react/dist/components/page/tabs.d.ts": {
-        "version": "932160d6358985cf42f1f9e2e88074d7dfafd543f792bb5c3f94aa0894f95fd7",
-        "signature": "932160d6358985cf42f1f9e2e88074d7dfafd543f792bb5c3f94aa0894f95fd7",
+        "version": "a7cd393927287311761a828c627df35fb15d1b00fe947fd414a855be61a6b7cf",
+        "signature": "a7cd393927287311761a828c627df35fb15d1b00fe947fd414a855be61a6b7cf",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/page/pageheader.d.ts": {
@@ -722,8 +722,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/res/res.d.ts": {
-        "version": "1119cedea23b002c06e956c4e65b39f1af8af1f80d065fb4b57ac5f221c10d29",
-        "signature": "1119cedea23b002c06e956c4e65b39f1af8af1f80d065fb4b57ac5f221c10d29",
+        "version": "9bf7ebda41b9ef9901d599f2219c8983606b9ceaf54ecddbffb561dea0ee3f44",
+        "signature": "9bf7ebda41b9ef9901d599f2219c8983606b9ceaf54ecddbffb561dea0ee3f44",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/res/formres.d.ts": {
@@ -757,8 +757,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/form/form.d.ts": {
-        "version": "3de4c4e9019c95a1c5d0fc38e64e898a52255402aa8aae8025c0606c9f5efb9a",
-        "signature": "3de4c4e9019c95a1c5d0fc38e64e898a52255402aa8aae8025c0606c9f5efb9a",
+        "version": "124b5f2f11b41778475dafe2e5b7034d4328a228380f5f7acc7a89904dd8b413",
+        "signature": "124b5f2f11b41778475dafe2e5b7034d4328a228380f5f7acc7a89904dd8b413",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/form/field.d.ts": {
@@ -772,8 +772,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/form/widgets/widget.d.ts": {
-        "version": "8785d3a731ebf3cd144bed240d0383461789ea8aed34db52d7c04e8b716cce16",
-        "signature": "8785d3a731ebf3cd144bed240d0383461789ea8aed34db52d7c04e8b716cce16",
+        "version": "56aa406cd1e6c719a980585e31b9a59561e9f22fd0a49ff45dd8b5161a8245b4",
+        "signature": "56aa406cd1e6c719a980585e31b9a59561e9f22fd0a49ff45dd8b5161a8245b4",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/form/context.d.ts": {
@@ -787,8 +787,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/form/widgets/textwidget.d.ts": {
-        "version": "d3cc221acdbfadaff251f01141e41f0b3ed0c3a57e2ce919689bd12f53598e16",
-        "signature": "d3cc221acdbfadaff251f01141e41f0b3ed0c3a57e2ce919689bd12f53598e16",
+        "version": "680709f468a09fb27e9cfda7661c522fd1e8dbd36d3e6502cbdd035c9c09c1a3",
+        "signature": "680709f468a09fb27e9cfda7661c522fd1e8dbd36d3e6502cbdd035c9c09c1a3",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/form/widgets/textareawidget.d.ts": {
@@ -867,8 +867,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/schema/uischema.d.ts": {
-        "version": "3e8873287b08854319288e7ee93f7468611670aa36b964db87d671de6c17355c",
-        "signature": "3e8873287b08854319288e7ee93f7468611670aa36b964db87d671de6c17355c",
+        "version": "4fadf219fedc7b22783f11a22b257a7a1eece8f892c496adaba9d3f425a112df",
+        "signature": "4fadf219fedc7b22783f11a22b257a7a1eece8f892c496adaba9d3f425a112df",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/schema/touiselectitems.d.ts": {
@@ -887,8 +887,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/edit/itemedit.d.ts": {
-        "version": "9cf28ab16664570cdb9b16bcb35068881f7dd0ea8ca1a0048bf6448ddc500822",
-        "signature": "9cf28ab16664570cdb9b16bcb35068881f7dd0ea8ca1a0048bf6448ddc500822",
+        "version": "7274103d567a6e372bed28626bb7af33ca4361314cd3c10a71cb7ed9e3ce1e9e",
+        "signature": "7274103d567a6e372bed28626bb7af33ca4361314cd3c10a71cb7ed9e3ce1e9e",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/edit/edit.d.ts": {
@@ -922,8 +922,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/dropdownactions/index.d.ts": {
-        "version": "cf44d65e3432028b7dc156b307bbb205e1da128956aa8643645dfff04922b806",
-        "signature": "cf44d65e3432028b7dc156b307bbb205e1da128956aa8643645dfff04922b806",
+        "version": "1cdca6fab444ac68e4396fe59d81a522fad3a85f9175be771898b41d8e0bad0c",
+        "signature": "1cdca6fab444ac68e4396fe59d81a522fad3a85f9175be771898b41d8e0bad0c",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/easydate/index.d.ts": {
@@ -987,8 +987,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/searchbox.d.ts": {
-        "version": "67406ab54786c5294e2ccba72c598aa3601e9f77eb62764f470ca674a6dc5a78",
-        "signature": "67406ab54786c5294e2ccba72c598aa3601e9f77eb62764f470ca674a6dc5a78",
+        "version": "1804a346746ad0cf503a6716086e1d9e698e7a54e32a1a92639ff92716a3f201",
+        "signature": "1804a346746ad0cf503a6716086e1d9e698e7a54e32a1a92639ff92716a3f201",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/components/usericon.d.ts": {
@@ -1027,8 +1027,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/vm/controller.d.ts": {
-        "version": "56acdc88b77b0f7b8b07eddad8e215619a2eab501a18ed63023e4184a3a8e148",
-        "signature": "56acdc88b77b0f7b8b07eddad8e215619a2eab501a18ed63023e4184a3a8e148",
+        "version": "3cadfeed3b017523af3964ea0d76df4a20e58bc094eecf77eafdf8b6c4fd90c9",
+        "signature": "3cadfeed3b017523af3964ea0d76df4a20e58bc094eecf77eafdf8b6c4fd90c9",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/vm/components/cstringedit.d.ts": {
@@ -1182,33 +1182,33 @@
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/ui/fielditem.d.ts": {
-        "version": "4a95c03727036ebe7f3d2d0ed4e2e4f1b1d944fcfb55a0c8dc69292ce1ca5047",
-        "signature": "4a95c03727036ebe7f3d2d0ed4e2e4f1b1d944fcfb55a0c8dc69292ce1ca5047",
+        "version": "871aea53cf0eab9d4dc32d55ee35f8923da3f687f6c6ac895091885a99097633",
+        "signature": "871aea53cf0eab9d4dc32d55ee35f8923da3f687f6c6ac895091885a99097633",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/ui/ui.d.ts": {
-        "version": "2fd84e74567552633e5d9ef087901268bc5fad00b277780322cb7305876eddbd",
-        "signature": "2fd84e74567552633e5d9ef087901268bc5fad00b277780322cb7305876eddbd",
+        "version": "9e59dede8cf557947f09eab22651ba3a52f7993882e8a6e08822eda1a66e482d",
+        "signature": "9e59dede8cf557947f09eab22651ba3a52f7993882e8a6e08822eda1a66e482d",
         "affectsGlobalScope": false
       },
-      "./node_modules/tonva-react/dist/ui/formui.d.ts": {
-        "version": "91e6aada9752f68a3b605276f7b6ae2d2510f3915f8694560ec2039158d557c7",
-        "signature": "91e6aada9752f68a3b605276f7b6ae2d2510f3915f8694560ec2039158d557c7",
+      "./node_modules/tonva-react/dist/ui/idui.d.ts": {
+        "version": "7a37cf7a9b76dd59bb4d68258ec31a8960fe649adb8b0ee463bfcaa9e785f9ec",
+        "signature": "7a37cf7a9b76dd59bb4d68258ec31a8960fe649adb8b0ee463bfcaa9e785f9ec",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/ui/index.d.ts": {
-        "version": "aa4ec19fc0c9af8ecb4aefb379fbb4a17c2c81fb886f7df16560c1a06a39fa47",
-        "signature": "aa4ec19fc0c9af8ecb4aefb379fbb4a17c2c81fb886f7df16560c1a06a39fa47",
+        "version": "bd91947f1f32d394325bbcdd07a51b306155f0f1ac011eefe538f823aadc091f",
+        "signature": "bd91947f1f32d394325bbcdd07a51b306155f0f1ac011eefe538f823aadc091f",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/uq/id.d.ts": {
-        "version": "cc66919eb342c6207f49772a677a6ccb8d0438ab55cd08f57782e49180d230e6",
-        "signature": "cc66919eb342c6207f49772a677a6ccb8d0438ab55cd08f57782e49180d230e6",
+        "version": "189b6149406feb85846623cbdf170ee8bf77271618a3f5259a729b9ddf75e480",
+        "signature": "189b6149406feb85846623cbdf170ee8bf77271618a3f5259a729b9ddf75e480",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/uq/uqman.d.ts": {
-        "version": "23310fe858fbf04921b2b937652bd4f7b4049ea5a86a416b71b2c89cdd398309",
-        "signature": "23310fe858fbf04921b2b937652bd4f7b4049ea5a86a416b71b2c89cdd398309",
+        "version": "b7aa6ea39c6ce67b2353654b9c5ec5dded4ec155931c77ce3d0111eb9b897d7f",
+        "signature": "b7aa6ea39c6ce67b2353654b9c5ec5dded4ec155931c77ce3d0111eb9b897d7f",
         "affectsGlobalScope": false
       },
       "./node_modules/tonva-react/dist/uq/build/build.d.ts": {
@@ -1232,73 +1232,13 @@
         "affectsGlobalScope": false
       },
       "./src/base/idbase.ts": {
-        "version": "a672f1962d7ab24220626bce1cb9d248e1535cd70e3345e6ddb4d35bcaa0c67d",
-        "signature": "48b27cad777199d41762fedf87646f8e820a4b56e541f0d607f0d679b332a427",
-        "affectsGlobalScope": false
-      },
-      "./src/list/listpage.tsx": {
-        "version": "c287713870af4fb5020c6c735bcd1f86170572acd2baddedda1146e74f0d4e15",
-        "signature": "d2ee3aab6b839861ab8770992837c305a41c206fe60ab3df98e30e20180ede9b",
-        "affectsGlobalScope": false
-      },
-      "./src/list/midlist.ts": {
-        "version": "9ab97eb0f8ef3c298c5c28db45fa90c775738f0a12e3cb78959a733774d7d3d3",
-        "signature": "da0775e6923834adacbf36ec3d61c4ca7a45352e5f90e46419cc9037d3d1340b",
-        "affectsGlobalScope": false
-      },
-      "./src/list/clist.ts": {
-        "version": "7b6469225d6cf9b89759a6f89adb71f0b0db97862dd21814f196748cd59e8e4b",
-        "signature": "ef76e63815cb66674895a6519a71c16064b7c78ccfb781904b8253b2fa422354",
-        "affectsGlobalScope": false
-      },
-      "./src/list/index.ts": {
-        "version": "9e25962c2b82d278998146295894736a50c9e55376b1c6517890cf8bfe3990e2",
-        "signature": "9e25962c2b82d278998146295894736a50c9e55376b1c6517890cf8bfe3990e2",
-        "affectsGlobalScope": false
-      },
-      "./src/select/parts.tsx": {
-        "version": "5033737f9f31880b9f71ba71adfbed65d3a36ed598d617eb39aa92666a4c3d73",
-        "signature": "27fdee4fb825fb2a7ffb88d9efc544e5f174bda560133b553f97e2610da68f4a",
-        "affectsGlobalScope": false
-      },
-      "./src/select/cidselect.ts": {
-        "version": "e497978d6903baed3dcce875816cb6d160d58bb01e6b82ce7930242c6982d345",
-        "signature": "38bd876306d03da995f272d8868d1b384c06d76b1f7488055213e89fea7e10fd",
-        "affectsGlobalScope": false
-      },
-      "./src/select/cixselect.ts": {
-        "version": "927aab1733cd445065d0a9cd09c081067d09ac27ecd93d71d87ab398b2ee6560",
-        "signature": "54dfe974bba2d18568c91a1a6f6538d3451b0e3d43529fa340b372bc6560da87",
-        "affectsGlobalScope": false
-      },
-      "./src/select/createpickid.ts": {
-        "version": "3ea145ef561fd946521374d308a3745a5b001dcf257fc162b548c98f510b5053",
-        "signature": "0935ad441b75b1a2ab55d5c740322689e3186f2959932afbc10fdedd27e4f0c0",
-        "affectsGlobalScope": false
-      },
-      "./src/select/index.ts": {
-        "version": "98a9794c574a9fa7c539751c4d56cb03eb4703ce9ddc18e5cda1f99b34c94071",
-        "signature": "98a9794c574a9fa7c539751c4d56cb03eb4703ce9ddc18e5cda1f99b34c94071",
-        "affectsGlobalScope": false
-      },
-      "./src/base/mid.ts": {
-        "version": "75a8de1dc0b43edab8c4c51b575a5fd242f5626541304c46f8673e9790290c0c",
-        "signature": "29a3c5d07c2f1406e3f7ea8421ffa72fb0a35bd49241c65a1ad5c719ef24fe93",
-        "affectsGlobalScope": false
-      },
-      "./src/base/index.ts": {
-        "version": "62515077b60ab26434f0f25d869b511553cc7015dc97854cf1b679bf34252ac9",
-        "signature": "62515077b60ab26434f0f25d869b511553cc7015dc97854cf1b679bf34252ac9",
+        "version": "5178c4e471de1914c5ebf792b681cc8c221795bd429bc3b9c8c16f0981f01b4a",
+        "signature": "cf8b9e66642a940be792c7751bffd93b3cdf4f7e86f5e9ffb53b42c6fd379b1a",
         "affectsGlobalScope": false
       },
       "./src/tools/pageitems.ts": {
-        "version": "da0cd731baae6d9d9b0170f3848328d05f942441fe802eb799466138be4228fa",
-        "signature": "3ed5e086acdbac1b95baa0861c831f0b0bf6058a9682b1a6feaa34fde7e1cd02",
-        "affectsGlobalScope": false
-      },
-      "./src/tools/buildgridprops.ts": {
-        "version": "b4c8030ae8b5dd3972420e34070030873f1647e03d96888481f5c901a730542a",
-        "signature": "3b4a00e223e978d7df96da5dabd76669edd7def2832a602b3a2d135d8387b387",
+        "version": "8438a19ccacf7fb2fbfc2e82d9a0b57d18edd34dcb0bd801e4bf79d7a3b4fd95",
+        "signature": "eee8920cf7823b4cb14c8a38d1a610585bca1d80421ea2f50b82048c699eb980",
         "affectsGlobalScope": false
       },
       "./src/tools/timespan.ts": {
@@ -1312,23 +1252,118 @@
         "affectsGlobalScope": false
       },
       "./src/tools/index.ts": {
-        "version": "e728153449d744c8f40a4b6042d9e05353eb1aafa4f5728969d57b73e9c52b55",
-        "signature": "e728153449d744c8f40a4b6042d9e05353eb1aafa4f5728969d57b73e9c52b55",
+        "version": "2390bd048e6f99c898f2b163e2dd3164a181bf6fa0e2128e3c89b613ecf5df84",
+        "signature": "2390bd048e6f99c898f2b163e2dd3164a181bf6fa0e2128e3c89b613ecf5df84",
         "affectsGlobalScope": false
       },
-      "./src/id/midid.ts": {
-        "version": "7dbf8043f0260b91deada4f7f8e33b9e727e46dad777bbd0d39a7ab4a0a666f0",
-        "signature": "89c043a9f54eb7e53777b7d18f1e44904a1378783c0eced08d44a033fe1365f2",
+      "./src/list/listpage.tsx": {
+        "version": "c287713870af4fb5020c6c735bcd1f86170572acd2baddedda1146e74f0d4e15",
+        "signature": "d2ee3aab6b839861ab8770992837c305a41c206fe60ab3df98e30e20180ede9b",
+        "affectsGlobalScope": false
+      },
+      "./src/list/midlist.ts": {
+        "version": "a4dfba1373e657f9a5c049722235ef237940b4414c37b6a998c4783f493c1aa8",
+        "signature": "1d33ea4df3ba81c6b4f2b009727892380694e1ebc8a6363b9720ec1565b77cb2",
+        "affectsGlobalScope": false
+      },
+      "./src/list/clist.ts": {
+        "version": "f2c2d3d2cf84dd73faa6e46ae0962b8f8d8565aefe6faf056ce7eeaa87ce84df",
+        "signature": "dd11a065421b200dc1c37636de5d1588662eef9b5cf15c939a068853bbab0d88",
+        "affectsGlobalScope": false
+      },
+      "./src/list/index.ts": {
+        "version": "9e25962c2b82d278998146295894736a50c9e55376b1c6517890cf8bfe3990e2",
+        "signature": "9e25962c2b82d278998146295894736a50c9e55376b1c6517890cf8bfe3990e2",
+        "affectsGlobalScope": false
+      },
+      "./src/select/parts.tsx": {
+        "version": "5033737f9f31880b9f71ba71adfbed65d3a36ed598d617eb39aa92666a4c3d73",
+        "signature": "27fdee4fb825fb2a7ffb88d9efc544e5f174bda560133b553f97e2610da68f4a",
+        "affectsGlobalScope": false
+      },
+      "./src/select/cidselect.ts": {
+        "version": "2b81e43aac9cb2242d3f9fe30195b3c1163d647f6cbd5420a8f1d113729dfeaa",
+        "signature": "19862036874fb75aaed6d3e8d1bf593bdbd3beae6355779d8b7f1b564e8599d3",
+        "affectsGlobalScope": false
+      },
+      "./src/select/cixselect.ts": {
+        "version": "cbf8fdea152d6b4b3ced22887f0995c541c77f0ee117f391d0d96b275fddfb16",
+        "signature": "6c4ab3f4841d1b3b0177a86cc96f8b78558240ae57041b693d44d247b23851fe",
+        "affectsGlobalScope": false
+      },
+      "./src/select/createpickid.ts": {
+        "version": "9fb213916130f0262c3e36ef8ab20e6f56644bb7f0d79261216feb370d723f83",
+        "signature": "36f5fe6e25725688e8b9753ba1460dadaf0aa0767c2ad4111a2b23987967a6d4",
+        "affectsGlobalScope": false
+      },
+      "./src/select/index.ts": {
+        "version": "98a9794c574a9fa7c539751c4d56cb03eb4703ce9ddc18e5cda1f99b34c94071",
+        "signature": "98a9794c574a9fa7c539751c4d56cb03eb4703ce9ddc18e5cda1f99b34c94071",
+        "affectsGlobalScope": false
+      },
+      "./src/base/mid.ts": {
+        "version": "43cabec45079acd2e3b277f1c678944be31e63592b868fa8ee65a3a5200e5907",
+        "signature": "826c7dd38daf5f95dae4cd665bb6a4b422ef12698192c1d210c254fb3ba4f618",
+        "affectsGlobalScope": false
+      },
+      "./src/base/index.ts": {
+        "version": "62515077b60ab26434f0f25d869b511553cc7015dc97854cf1b679bf34252ac9",
+        "signature": "62515077b60ab26434f0f25d869b511553cc7015dc97854cf1b679bf34252ac9",
+        "affectsGlobalScope": false
+      },
+      "./src/form/formui.ts": {
+        "version": "f45cc18913927fb39c9dcabe9d3665ad7a6d08a9f072bf9dfda1ff56c6437d85",
+        "signature": "68277fcaffca552ab3303313456ac29d62c34e6241c9302cd35cee9cffae18c1",
+        "affectsGlobalScope": false
+      },
+      "./src/form/vformview.tsx": {
+        "version": "577a46ce047f0ed65683826ccc67c1c56da56204996652953b96808adf18047e",
+        "signature": "9d5b345aa50fb13eedadda4310c98bca08f38d208f8288bc6f4285e884e476e0",
+        "affectsGlobalScope": false
+      },
+      "./src/form/cformview.ts": {
+        "version": "5bd920f9927fbf72b83b004f0e3242bb9250fd04e04293e07a61890e2402b41f",
+        "signature": "92ea0ea214d2538a5ac1b99e6ee7018b6dc5eb986253037ed835721a18eaabf9",
+        "affectsGlobalScope": false
+      },
+      "./src/form/vformpage.tsx": {
+        "version": "6e01c6fdc1867b405b39bf2cda7bc4477f503f5995fe9fa4fd6d651751d11bcc",
+        "signature": "4394d2300ca090f037b8cfcdac5ec89ed0bc9c2745abb4062b061e2ec11d8876",
+        "affectsGlobalScope": false
+      },
+      "./src/form/cformpage.ts": {
+        "version": "106baaafe935a24174431a47e0542c31dfe68b45ecec84988768242c4940c3e6",
+        "signature": "ce82be5c110dce93a676d7a247976d39796239099012a4d57fd9001961f9fea7",
+        "affectsGlobalScope": false
+      },
+      "./src/form/vdialog.tsx": {
+        "version": "4482a6a65330b3a24bba2f626f5ca5f9aca4295f54fe1b04789c079dfe53aa0c",
+        "signature": "ab07d289b8aa2c1e5cee16753a0dbf586ed6bf5fcaef29119605d9116d255d93",
+        "affectsGlobalScope": false
+      },
+      "./src/form/cformdialog.ts": {
+        "version": "b680e7f20471f90abbec5b8e6f51ad5d0aa9a66d8744b56eed02179afffd095c",
+        "signature": "c105b5d9a616c3b61baf31525810a74305434ff982e2082278e99db2980dbdf3",
+        "affectsGlobalScope": false
+      },
+      "./src/form/index.ts": {
+        "version": "2fde5aefb4f81e0eacbe31461e7bc48fe02b30cdcec1761bcc1b84a53a2e8eac",
+        "signature": "2fde5aefb4f81e0eacbe31461e7bc48fe02b30cdcec1761bcc1b84a53a2e8eac",
         "affectsGlobalScope": false
       },
       "./src/id/mididlist.ts": {
-        "version": "996f87af024d38f28e88312ca1ee178b1c28e26fca5a52771a299f360cd20e14",
-        "signature": "29713175109b670c0eea07e56ff3e59fa6a23c35c0f4a6c86e47e37fe789c56e",
+        "version": "f70d32cf5f7bd32922d45fa6ebf32c8fee5584dcd689450d7aa89c5261256189",
+        "signature": "1478e91fee9b27c99c329a0b237769d2521fa797c917fd771ed202011f545c29",
+        "affectsGlobalScope": false
+      },
+      "./src/id/midid.ts": {
+        "version": "4d94ca8baaa649b45c69b33238d299f97f6fdae9211cdb80078a17c6d42c151f",
+        "signature": "33826408b317e62345c1c0bcccce341a9b88906ab9d3f9c6dbbb4ce89471bae3",
         "affectsGlobalScope": false
       },
       "./src/id/vedit.tsx": {
-        "version": "1d6677a102143a76a5f22afad2bfcd46dfd51f9f82902d0b77c8b1c7212834af",
-        "signature": "3f5e2c76fdf4768f4c253e54834feee36a951a30a6033fe431f7b30afd976ad2",
+        "version": "9e1f14765be74582589a745561b8e6a977a68b0cb598e5b4904f2c77e8dde63d",
+        "signature": "4c404eb80633fb993c81c98faa5e0b9efa88985f678417d93610c895705f0bca",
         "affectsGlobalScope": false
       },
       "./node_modules/mobx-react-lite/dist/utils/assertenvironment.d.ts": {
@@ -1437,13 +1472,28 @@
         "affectsGlobalScope": false
       },
       "./src/id/vview.tsx": {
-        "version": "ae0f885e1fb13c3599d922dc4f57157f8acb4e7d2afc8b85beafa8864f894558",
-        "signature": "344e3df219d35b255a874372a57bfe87fc1819e8853b828502c3bcb0f2214d19",
+        "version": "b65e7682b3598cfbb0bddd0f79ff5d183368e97e702f3c591353929ee76481c6",
+        "signature": "b59c1e2e7bca0454360db11cb431713b72cfacf0bfcd68ef5d3ce4bda7afeb9e",
+        "affectsGlobalScope": false
+      },
+      "./src/id/res/zh.ts": {
+        "version": "86332701281855a9749bc25008d1d37e70ff3fa3fdf6b39f7f129d00718056d0",
+        "signature": "430268c70b963b28ff2a69e3d291df346dd2e89ae1bf1ebc5c16d391f2451d79",
+        "affectsGlobalScope": false
+      },
+      "./src/id/res/en.ts": {
+        "version": "ddc7225075be92965333331fbffe1ec6c350d58f5a09a8afae80033ce6ece6d5",
+        "signature": "00594f062427510d5a93d7529623157041e4233c17a28da94b285ba8f77fdff7",
+        "affectsGlobalScope": false
+      },
+      "./src/id/res/index.ts": {
+        "version": "e906e9ba2bfc096de0b062fd469d01786796b43eafcf635a9b4d642ee4af462e",
+        "signature": "7bfe3e2dd91b96c17ff41010dd8e86619967a27b66274d815faab6be9c7b42f5",
         "affectsGlobalScope": false
       },
       "./src/id/cid.ts": {
-        "version": "a31e9a883da27287c9b9b7890c5efc02b0e4218346e7b55f810eba7e69e60509",
-        "signature": "ec3c86cfc791d752bb65fa427f0795c19cbbb7e7ec8fc9dfa79e2e521ce990a8",
+        "version": "dab764a47af8b3b232e02f738d086cc123f53ca2fc37fd0586a3c48480e9afb6",
+        "signature": "7dedbd6a3d1ffdf49ab71ccf041a73534194b56ab394b0fd889145950dc97256",
         "affectsGlobalScope": false
       },
       "./src/id/index.ts": {
@@ -1452,12 +1502,12 @@
         "affectsGlobalScope": false
       },
       "./src/idx/mididx.ts": {
-        "version": "1082bd6ea89d21d67c676169c39b883e4bbf2463079f9b86ce2f7623b9a7935b",
-        "signature": "e5730cfb012259f6639c6686a3a3a906bf44129a3829d12582bab069bdfe3b00",
+        "version": "f4b608f28128f880f1d4a07cd84670b7d3864e7a44fab94afc6e6410b6a3565c",
+        "signature": "1e5d2685e5f0e620dd5c6bf9b30f44b39847b2ab0f656e67a891c351609dc4ea",
         "affectsGlobalScope": false
       },
       "./src/idx/mididxlist.ts": {
-        "version": "e560164a36a84953fc16d12ffc164d85d68011dde4078eeb339b7d69c7bfa6f8",
+        "version": "34ce00c9435c011a056fee933f5030f54b05ae4eccc02d39691da455bfedfae6",
         "signature": "7c580504c64095010567eb37daa0d4b547e706fc2894eeb2619c6f36b79e03ca",
         "affectsGlobalScope": false
       },
@@ -1477,7 +1527,7 @@
         "affectsGlobalScope": false
       },
       "./src/idx/vedit.tsx": {
-        "version": "b8f6eb74a95308f6ef9a3db10e0bb9ced0178ed36fb5a6d23d579d2ae01995c3",
+        "version": "da9d78bc130b579702abe36f2b3f0e9200e6b3a9f9a4889cee303eaf93886f66",
         "signature": "307861747a2429be0a9f095f516103c8636da4eef6f312a901f06fefa2ca18ad",
         "affectsGlobalScope": false
       },
@@ -1492,12 +1542,12 @@
         "affectsGlobalScope": false
       },
       "./src/idx/vview.tsx": {
-        "version": "6f34733532427d1d0027fc5e5d6d2aab599b273265cd6c158c1c27b85b7d0ee1",
+        "version": "ee0c71ae2c4d6b9eb846e622c272973ef8b014b8954a0427c8dc0563212500da",
         "signature": "7a09b81036d9a120e50802c0f350378ac4541d0ecb6a6326861a1b68433b998f",
         "affectsGlobalScope": false
       },
       "./src/idx/cidx.ts": {
-        "version": "95b28e173a671fe8887b59166a182deb53a945e05bdb304ae43afe1c285c6a2a",
+        "version": "41562308d24ed96034fa48d5b3776a1d7041440024e1bad496fc0852a71fb8f8",
         "signature": "3e0d9a7a1208e8bfed66b818991fb03744da791dee180904fbfadee5db54f0fa",
         "affectsGlobalScope": false
       },
@@ -1507,8 +1557,8 @@
         "affectsGlobalScope": false
       },
       "./src/ix/cixlist.ts": {
-        "version": "bcea0e8a4c1dcaef88750b231aa50b1ebb72e6e4562e0f60b4ff6b64be10a1ff",
-        "signature": "abf78e3c61a9ad98197fdab29795db5955a82941b5e6b4874949beddb14145ac",
+        "version": "475edaf0343fb242f5029f0553cf7cce7e4887f4799656e27120851034799b3c",
+        "signature": "50c272913f0e02f6bb08de688d9937a359427d7c550a586b76c9c4a32471fd09",
         "affectsGlobalScope": false
       },
       "./src/ix/cix.ts": {
@@ -1517,7 +1567,7 @@
         "affectsGlobalScope": false
       },
       "./src/ix/cixedit.ts": {
-        "version": "f6fac25e76a096164488ef81e79686c11ac89b75e24c95575d925119e85fd68c",
+        "version": "fe0a98992106fc0a08f80fd23276044a80c6355003c447e294dd41ca4733f46d",
         "signature": "4f6ba876d33d520c89efd39e9995df1942c146e66034b34d47bf2f828a6c5712",
         "affectsGlobalScope": false
       },
@@ -1527,47 +1577,17 @@
         "affectsGlobalScope": false
       },
       "./src/sheet/midsheet.ts": {
-        "version": "1d0cac93e4edc6e826c3057f701a9bb1f305ee406d6588c46d178424068ac75a",
-        "signature": "21cc4044d13ee3cc1c7e1059228852208b3ee26826f4cdddd2eba64aaf3586f0",
-        "affectsGlobalScope": false
-      },
-      "./src/form/formprops.ts": {
-        "version": "ca01604d38324d766519fdc71012971f7991ed26fb02905a077d096fbe332571",
-        "signature": "19eb86c027117e690a3b0549d1a5ac44de1373e04bac22bf3c4e1f076ba85232",
-        "affectsGlobalScope": false
-      },
-      "./src/form/vform.tsx": {
-        "version": "6d4921e4427846ac0734a129560cb83784ddf814e3dca6b41f43baee9cd4537d",
-        "signature": "a04a5eac44c2e6d7b563a8f51aad0ee2a8cf097431c0e17454571ec564fe677d",
-        "affectsGlobalScope": false
-      },
-      "./src/form/cform.ts": {
-        "version": "cba9c9376d37ccd72b005abf2381a226dd4983c0eb1e1748686569fdd4bf9c88",
-        "signature": "572b2138723448c91986c6a819cb77f1d12540ac4d1660c0fae6d63e3fbb011b",
-        "affectsGlobalScope": false
-      },
-      "./src/form/vdialog.tsx": {
-        "version": "6a4193db23333c67eb8d0695d06c996bf82363e60ce94cd48a77722909e909d5",
-        "signature": "d88548ea8ac660fba54974c1d148a62a15e25f48039b892d503f480e1fbfb051",
-        "affectsGlobalScope": false
-      },
-      "./src/form/cdialog.ts": {
-        "version": "43aa5a9575ba5404e63632592d471e7652a5fe472889c4c7c2a2de00cd3da289",
-        "signature": "5417d76b6129c6f41ff1f1c3b03f0e3378a5da36fcf40e20d9714e92e49ae41a",
-        "affectsGlobalScope": false
-      },
-      "./src/form/index.ts": {
-        "version": "6ea6206a06b1c1ad7d62474aa13bf72ebbb2a4bf0b72512c71c7c96a2839e114",
-        "signature": "6ea6206a06b1c1ad7d62474aa13bf72ebbb2a4bf0b72512c71c7c96a2839e114",
+        "version": "58d6dd3ceb01f7feb2fca302312dc8611583f4ff164e4c01bde032d81b0773b9",
+        "signature": "de5a7b015f09ee9b358d7015f7eedf9341d9237ecbd0bf868021b0f7bc4e261e",
         "affectsGlobalScope": false
       },
       "./src/sheet/csheet.ts": {
-        "version": "86ae55fb8a8bdede7e394ca5796b9ddd8d438003ad404ba5bacdcf04ff229456",
-        "signature": "5d68cd3c85edeebe74a07338c886c69a545727d669277db325fdbd5465411228",
+        "version": "9323a443c0934181d530516c8eec30f4d7d23840259dbe1638116904264935cc",
+        "signature": "976d4689bd89cb318850ef9cfa428e07cd80d833b21b04a71c81745fe9adf8f7",
         "affectsGlobalScope": false
       },
       "./src/sheet/vsheetedit.tsx": {
-        "version": "0ad45575ca9a947699efdfaade904ed80662ab46dad48c50df8db0531b1c59d7",
+        "version": "c1a47d2aa936b44f09a8b2c12fc6c964f78aa5502f3b66606adb1369bca7a6c2",
         "signature": "e574964d5c074fc53aa5b549faa7f05ec588acf8dcf3027a852d3b0cdb47b970",
         "affectsGlobalScope": false
       },
@@ -1577,13 +1597,13 @@
         "affectsGlobalScope": false
       },
       "./src/sheet/csheetnew.ts": {
-        "version": "ace47797d2da44df97c0150e941b8cb537d4d71ef398f74ddc13b540f9b5ea1b",
+        "version": "0eeb7cfa37dec25d304c12af3e21c2052d89d79d46570f5ebc4e72971b28401d",
         "signature": "39ddc9f7b72572970dbd291f03d3dd9dcb6869e898fa69b8e8531646a347930e",
         "affectsGlobalScope": false
       },
       "./src/sheet/vsheetview.tsx": {
-        "version": "877b951e6006ec213109c6f4635224ed3d79574e6af29437d4da3d93a8f5c2e6",
-        "signature": "3e6161b18e1463b696b163e40552e0d7f78383975e38a395602d676f9d4f4649",
+        "version": "4714676ed8fe86d209e78e7e279d5bdd7a1a570b297a1c12a8c03ae871049ec5",
+        "signature": "d20a40081874ecdda61370db56d991a09b7e580b1460ad260320873c83286374",
         "affectsGlobalScope": false
       },
       "./src/sheet/csheetview.ts": {
@@ -1622,8 +1642,8 @@
         "affectsGlobalScope": false
       },
       "./src/tag/cidtaglist.ts": {
-        "version": "2ab575068b585e06391a91f6dfc0de7c3ee318d6ecac3af7b6198ee1db2e18bf",
-        "signature": "68e1c1b1a8a48b899540767db33f8b3f6c8cda2cd2c3595c991c8c06e6f726ed",
+        "version": "5fce85fedd5bbfb3130dc5c1e8fda5a03c4190d38c8696d6dd80f383201358aa",
+        "signature": "6a61ffcb66a2ff197db60167eec24a0e76e98876eb4d398bbc1b02bf4e5ff488",
         "affectsGlobalScope": false
       },
       "./src/tag/vtags.tsx": {
@@ -1632,7 +1652,7 @@
         "affectsGlobalScope": false
       },
       "./src/tag/ctagidlist.ts": {
-        "version": "0a856fa8b041745d5ad402740f57e1b00836da67cf1c1fcce3face8a629823c1",
+        "version": "1e8c24cd8a10ec98d37ab4899feae4228ede7250acebf691f52462f154f1c7cf",
         "signature": "9ff1a015407359f59e7e29cb84d1f846bb97d4bee7e5fbd6dd945e00f3f9316c",
         "affectsGlobalScope": false
       },
@@ -1642,7 +1662,7 @@
         "affectsGlobalScope": false
       },
       "./src/roles/vroles.tsx": {
-        "version": "9cb9f6ec50c5a403a9ff677f53e7f58a11e7ac91a6d3c756ed4782c92432b1c0",
+        "version": "dd911ae3d1046c5e469ddef81786afb24697781b17d19722de7afbdabd317aa0",
         "signature": "1b86c0f88f974ec60085bcf24292e507d9ff1a04cfb38b58fb95fe83e64c2b24",
         "affectsGlobalScope": false
       },
@@ -1667,7 +1687,7 @@
         "affectsGlobalScope": false
       },
       "./src/roles/croles.ts": {
-        "version": "7d59d0a0920ba06c7e934486ea70a4933b83ef4e7005a1d2caf2098dbc23a8f3",
+        "version": "d8e29be5fc4a721f2279d90cb401011fc8af16ba61aa8e4959a292cec41d2d9c",
         "signature": "920031be106af99312fa0eda6668a430f5992215437204ae61f60ce844725fb2",
         "affectsGlobalScope": false
       },
@@ -1677,8 +1697,28 @@
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
-        "version": "c9badc1866bace3e6bd809ce2b098f5ce64b8d448729f7c65f1cd0b4e44cd695",
-        "signature": "c9badc1866bace3e6bd809ce2b098f5ce64b8d448729f7c65f1cd0b4e44cd695",
+        "version": "771f3f23ee5a968223141a1a10107b6dcfe03ad3ca057b1a118ac6e4c9a0d241",
+        "signature": "181c590e5ac7b1158ac9eabb75c885f7c5d9bd43fdd75968d8d650b4b31b4650",
+        "affectsGlobalScope": false
+      },
+      "./src/form/formprops.ts": {
+        "version": "ca01604d38324d766519fdc71012971f7991ed26fb02905a077d096fbe332571",
+        "signature": "19eb86c027117e690a3b0549d1a5ac44de1373e04bac22bf3c4e1f076ba85232",
+        "affectsGlobalScope": false
+      },
+      "./src/form/vform.tsx": {
+        "version": "6d4921e4427846ac0734a129560cb83784ddf814e3dca6b41f43baee9cd4537d",
+        "signature": "a04a5eac44c2e6d7b563a8f51aad0ee2a8cf097431c0e17454571ec564fe677d",
+        "affectsGlobalScope": false
+      },
+      "./src/form/cform.ts": {
+        "version": "cba9c9376d37ccd72b005abf2381a226dd4983c0eb1e1748686569fdd4bf9c88",
+        "signature": "572b2138723448c91986c6a819cb77f1d12540ac4d1660c0fae6d63e3fbb011b",
+        "affectsGlobalScope": false
+      },
+      "./src/form/cdialog.ts": {
+        "version": "43aa5a9575ba5404e63632592d471e7652a5fe472889c4c7c2a2de00cd3da289",
+        "signature": "5417d76b6129c6f41ff1f1c3b03f0e3378a5da36fcf40e20d9714e92e49ae41a",
         "affectsGlobalScope": false
       },
       "./src/form/createpickid.ts": {
@@ -1694,6 +1734,11 @@
       "./src/sheet/parts.tsx": {
         "version": "b6823755c224422245a673fae0b3b75691c55c830ed98d42e1b8dcf014b95fa4",
         "signature": "e5252952ea757b7c8ebd21b0c153cbe79d08c58b67c531af8e62bb080fcc529c",
+        "affectsGlobalScope": false
+      },
+      "./src/tools/buildgridprops.ts": {
+        "version": "b4c8030ae8b5dd3972420e34070030873f1647e03d96888481f5c901a730542a",
+        "signature": "3b4a00e223e978d7df96da5dabd76669edd7def2832a602b3a2d135d8387b387",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/classnames/index.d.ts": {
@@ -2797,6 +2842,7 @@
       "./node_modules/tonva-react/dist/components/edit/itemedit.d.ts": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/index.d.ts",
         "./node_modules/tonva-react/dist/components/edit/edit.d.ts",
         "./node_modules/tonva-react/dist/components/schema/index.d.ts"
       ],
@@ -3294,7 +3340,8 @@
       ],
       "./node_modules/tonva-react/dist/res/res.d.ts": [
         "./node_modules/@types/node/base.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts"
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/index.d.ts"
       ],
       "./node_modules/tonva-react/dist/tool/62.d.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -3381,7 +3428,7 @@
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/index.d.ts"
       ],
-      "./node_modules/tonva-react/dist/ui/formui.d.ts": [
+      "./node_modules/tonva-react/dist/ui/idui.d.ts": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/tonva-react/dist/ui/fielditem.d.ts",
@@ -3392,7 +3439,7 @@
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/tonva-react/dist/ui/fielditem.d.ts",
         "./node_modules/tonva-react/dist/ui/fieldui.d.ts",
-        "./node_modules/tonva-react/dist/ui/formui.d.ts",
+        "./node_modules/tonva-react/dist/ui/idui.d.ts",
         "./node_modules/tonva-react/dist/ui/ui.d.ts"
       ],
       "./node_modules/tonva-react/dist/ui/ui.d.ts": [
@@ -3670,6 +3717,29 @@
         "./src/form/formprops.ts",
         "./src/form/vform.tsx"
       ],
+      "./src/form/cformdialog.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./src/form/cformpage.ts",
+        "./src/form/vdialog.tsx"
+      ],
+      "./src/form/cformpage.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./src/form/cformview.ts",
+        "./src/form/formui.ts",
+        "./src/form/vformpage.tsx"
+      ],
+      "./src/form/cformview.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/form/formui.ts",
+        "./src/form/vformview.tsx"
+      ],
       "./src/form/createpickid.ts": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
@@ -3683,20 +3753,28 @@
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./node_modules/tonva-react/dist/index.d.ts"
       ],
+      "./src/form/formui.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/select/index.ts"
+      ],
       "./src/form/index.ts": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
-        "./src/form/cdialog.ts",
-        "./src/form/cform.ts",
-        "./src/form/formprops.ts"
+        "./src/form/cformdialog.ts",
+        "./src/form/cformpage.ts",
+        "./src/form/cformview.ts",
+        "./src/form/formui.ts"
       ],
       "./src/form/vdialog.tsx": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
-        "./src/form/cdialog.ts",
-        "./src/form/vform.tsx"
+        "./src/form/cformdialog.ts",
+        "./src/form/vformpage.tsx"
       ],
       "./src/form/vform.tsx": [
         "./node_modules/@types/node/base.d.ts",
@@ -3705,6 +3783,20 @@
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/form/cform.ts"
       ],
+      "./src/form/vformpage.tsx": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/form/cformpage.ts"
+      ],
+      "./src/form/vformview.tsx": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/form/cformview.ts"
+      ],
       "./src/id/cid.ts": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
@@ -3712,8 +3804,10 @@
         "./node_modules/mobx/dist/mobx.d.ts",
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
+        "./src/form/index.ts",
         "./src/id/midid.ts",
         "./src/id/mididlist.ts",
+        "./src/id/res/index.ts",
         "./src/id/vedit.tsx",
         "./src/id/vview.tsx",
         "./src/list/index.ts",
@@ -3733,7 +3827,7 @@
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
-        "./src/tools/index.ts"
+        "./src/id/mididlist.ts"
       ],
       "./src/id/mididlist.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -3742,6 +3836,23 @@
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
         "./src/list/index.ts"
+      ],
+      "./src/id/res/en.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts"
+      ],
+      "./src/id/res/index.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./src/id/res/en.ts",
+        "./src/id/res/zh.ts"
+      ],
+      "./src/id/res/zh.ts": [
+        "./node_modules/@types/node/base.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/jsx-runtime.d.ts"
       ],
       "./src/id/vedit.tsx": [
         "./node_modules/@types/node/base.d.ts",
@@ -3845,11 +3956,13 @@
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
+        "./src/base/index.ts",
         "./src/form/index.ts",
         "./src/id/index.ts",
         "./src/idx/index.ts",
         "./src/ix/index.ts",
         "./src/roles/index.ts",
+        "./src/select/index.ts",
         "./src/sheet/index.ts",
         "./src/tag/index.ts"
       ],
@@ -3978,8 +4091,7 @@
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/idbase.ts",
         "./src/list/index.ts",
-        "./src/select/parts.tsx",
-        "./src/tools/index.ts"
+        "./src/select/parts.tsx"
       ],
       "./src/select/cixselect.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -3987,8 +4099,8 @@
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
-        "./src/select/cidselect.ts",
-        "./src/tools/index.ts"
+        "./src/list/index.ts",
+        "./src/select/cidselect.ts"
       ],
       "./src/select/createpickid.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -4041,7 +4153,6 @@
         "./node_modules/@types/react/jsx-runtime.d.ts",
         "./src/base/index.ts",
         "./src/form/index.ts",
-        "./src/select/index.ts",
         "./src/sheet/csheet.ts",
         "./src/sheet/vsheetedit.tsx"
       ],
@@ -4182,7 +4293,6 @@
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/jsx-runtime.d.ts",
-        "./src/tools/buildgridprops.ts",
         "./src/tools/pageitems.ts",
         "./src/tools/parts.tsx",
         "./src/tools/timespan.ts"
@@ -5182,6 +5292,7 @@
       "./node_modules/tonva-react/dist/components/edit/itemedit.d.ts": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/index.d.ts",
         "./node_modules/tonva-react/dist/components/edit/edit.d.ts",
         "./node_modules/tonva-react/dist/components/schema/index.d.ts"
       ],
@@ -5679,7 +5790,8 @@
       ],
       "./node_modules/tonva-react/dist/res/res.d.ts": [
         "./node_modules/@types/node/base.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts"
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/react/index.d.ts"
       ],
       "./node_modules/tonva-react/dist/tool/62.d.ts": [
         "./node_modules/@types/node/base.d.ts",
@@ -5766,7 +5878,7 @@
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/react/index.d.ts"
       ],
-      "./node_modules/tonva-react/dist/ui/formui.d.ts": [
+      "./node_modules/tonva-react/dist/ui/idui.d.ts": [
         "./node_modules/@types/node/base.d.ts",
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/tonva-react/dist/ui/fielditem.d.ts",
@@ -5777,7 +5889,7 @@
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/tonva-react/dist/ui/fielditem.d.ts",
         "./node_modules/tonva-react/dist/ui/fieldui.d.ts",
-        "./node_modules/tonva-react/dist/ui/formui.d.ts",
+        "./node_modules/tonva-react/dist/ui/idui.d.ts",
         "./node_modules/tonva-react/dist/ui/ui.d.ts"
       ],
       "./node_modules/tonva-react/dist/ui/ui.d.ts": [
@@ -6034,26 +6146,51 @@
       "./src/form/cform.ts": [
         "./src/form/formprops.ts"
       ],
+      "./src/form/cformdialog.ts": [
+        "./src/form/cformpage.ts"
+      ],
+      "./src/form/cformpage.ts": [
+        "./src/form/cformview.ts",
+        "./src/form/formui.ts"
+      ],
+      "./src/form/cformview.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/form/formui.ts"
+      ],
       "./src/form/createpickid.ts": [
         "./src/select/index.ts"
       ],
+      "./src/form/formui.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts"
+      ],
       "./src/form/index.ts": [
-        "./src/form/cdialog.ts",
-        "./src/form/cform.ts",
-        "./src/form/formprops.ts"
+        "./src/form/cformdialog.ts",
+        "./src/form/cformpage.ts",
+        "./src/form/cformview.ts",
+        "./src/form/formui.ts"
       ],
       "./src/form/vdialog.tsx": [
-        "./src/form/cdialog.ts",
-        "./src/form/vform.tsx"
+        "./src/form/cformdialog.ts",
+        "./src/form/vformpage.tsx"
       ],
       "./src/form/vform.tsx": [
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/form/cform.ts"
       ],
+      "./src/form/vformpage.tsx": [
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/form/cformpage.ts"
+      ],
+      "./src/form/vformview.tsx": [
+        "./node_modules/tonva-react/dist/index.d.ts",
+        "./src/form/cformview.ts"
+      ],
       "./src/id/cid.ts": [
         "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
-        "./src/id/midid.ts"
+        "./src/form/index.ts",
+        "./src/id/midid.ts",
+        "./src/list/index.ts"
       ],
       "./src/id/index.ts": [
         "./src/id/cid.ts",
@@ -6062,9 +6199,11 @@
       ],
       "./src/id/midid.ts": [
         "./node_modules/tonva-react/dist/index.d.ts",
-        "./src/base/index.ts"
+        "./src/base/index.ts",
+        "./src/id/mididlist.ts"
       ],
       "./src/id/mididlist.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
         "./src/list/index.ts"
       ],
@@ -6109,11 +6248,13 @@
         "./src/idx/cidx.ts"
       ],
       "./src/index.ts": [
+        "./src/base/index.ts",
         "./src/form/index.ts",
         "./src/id/index.ts",
         "./src/idx/index.ts",
         "./src/ix/index.ts",
         "./src/roles/index.ts",
+        "./src/select/index.ts",
         "./src/sheet/index.ts",
         "./src/tag/index.ts"
       ],
@@ -6125,6 +6266,7 @@
         "./src/ix/cix.ts"
       ],
       "./src/ix/cixlist.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
         "./src/list/index.ts"
       ],
@@ -6145,6 +6287,7 @@
         "./node_modules/tonva-react/dist/index.d.ts"
       ],
       "./src/list/midlist.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
         "./src/tools/index.ts"
       ],
@@ -6178,7 +6321,9 @@
         "./src/list/index.ts"
       ],
       "./src/select/cixselect.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
+        "./src/list/index.ts",
         "./src/select/cidselect.ts"
       ],
       "./src/select/createpickid.ts": [
@@ -6194,6 +6339,7 @@
         "./src/base/index.ts"
       ],
       "./src/sheet/csheet.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts",
         "./src/sheet/midsheet.ts"
       ],
@@ -6273,12 +6419,12 @@
         "./src/tag/ctagidlist.ts"
       ],
       "./src/tools/index.ts": [
-        "./src/tools/buildgridprops.ts",
         "./src/tools/pageitems.ts",
         "./src/tools/parts.tsx",
         "./src/tools/timespan.ts"
       ],
       "./src/tools/pageitems.ts": [
+        "./node_modules/tonva-react/dist/index.d.ts",
         "./src/base/index.ts"
       ]
     },
@@ -6535,7 +6681,7 @@
       "./node_modules/tonva-react/dist/tool/user.d.ts",
       "./node_modules/tonva-react/dist/ui/fielditem.d.ts",
       "./node_modules/tonva-react/dist/ui/fieldui.d.ts",
-      "./node_modules/tonva-react/dist/ui/formui.d.ts",
+      "./node_modules/tonva-react/dist/ui/idui.d.ts",
       "./node_modules/tonva-react/dist/ui/index.d.ts",
       "./node_modules/tonva-react/dist/ui/ui.d.ts",
       "./node_modules/tonva-react/dist/uq/action.d.ts",
@@ -6574,15 +6720,47 @@
       "./src/base/mid.ts",
       "./src/form/cdialog.ts",
       "./src/form/cform.ts",
+      "./src/form/cformdialog.ts",
+      "./src/form/cformpage.ts",
+      "./src/form/cformview.ts",
       "./src/form/createpickid.ts",
-      "./src/form/formprops.ts",
+      [
+        "./src/form/formprops.ts",
+        [
+          {
+            "file": "./src/form/formprops.ts",
+            "start": 420,
+            "length": 10,
+            "code": 2322,
+            "category": 1,
+            "messageText": {
+              "messageText": "Type 'string | Element' is not assignable to type 'string'.",
+              "category": 1,
+              "code": 2322,
+              "next": [
+                {
+                  "messageText": "Type 'Element' is not assignable to type 'string'.",
+                  "category": 1,
+                  "code": 2322
+                }
+              ]
+            }
+          }
+        ]
+      ],
+      "./src/form/formui.ts",
       "./src/form/index.ts",
       "./src/form/vdialog.tsx",
       "./src/form/vform.tsx",
+      "./src/form/vformpage.tsx",
+      "./src/form/vformview.tsx",
       "./src/id/cid.ts",
       "./src/id/index.ts",
       "./src/id/midid.ts",
       "./src/id/mididlist.ts",
+      "./src/id/res/en.ts",
+      "./src/id/res/index.ts",
+      "./src/id/res/zh.ts",
       "./src/id/vedit.tsx",
       "./src/id/vview.tsx",
       "./src/idx/cidx.ts",

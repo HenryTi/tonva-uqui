@@ -91,10 +91,10 @@ var VView = /** @class */ (function (_super) {
     VView.prototype.content = function () {
         var _this = this;
         var V = mobx_react_1.observer(function () {
-            var _a = _this.controller, spanValues = _a.spanValues, mid = _a.midIDX, timeSpan = _a.timeSpan, prevTimeSpan = _a.prevTimeSpan, nextTimeSpan = _a.nextTimeSpan, dayValues = _a.dayValues;
+            var _a = _this.controller, spanValues = _a.spanValues, midIDX = _a.midIDX, timeSpan = _a.timeSpan, prevTimeSpan = _a.prevTimeSpan, nextTimeSpan = _a.nextTimeSpan, dayValues = _a.dayValues;
             if (spanValues === null)
                 return null;
-            var props = mid.props;
+            var props = midIDX.props;
             var data = {
                 labels: timeSpan.labels,
                 datasets: [{
@@ -153,13 +153,13 @@ var VView = /** @class */ (function (_super) {
     };
     VView.prototype.onFieldClick = function (prop, index) {
         return __awaiter(this, void 0, void 0, function () {
-            var mid, props, curProp, name_1;
+            var midIDX, props, curProp, name_1;
             var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        mid = this.controller.midIDX;
-                        props = mid.props;
+                        midIDX = this.controller.midIDX;
+                        props = midIDX.props;
                         if (!(this.currentIndex === index)) return [3 /*break*/, 2];
                         curProp = props[this.currentIndex];
                         name_1 = curProp.name;

@@ -32,9 +32,9 @@ var VSheetView = /** @class */ (function (_super) {
     function VSheetView() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    VSheetView.prototype.header = function () { return this.controller.mid.master.ID.ui.label; };
+    VSheetView.prototype.header = function () { return this.controller.midSheet.master.ID.ui.label; };
     VSheetView.prototype.content = function () {
-        var _a = this.controller, mid = _a.mid, master = _a.master, details = _a.details;
+        var _a = this.controller, mid = _a.midSheet, master = _a.master;
         var ID = mid.master.ID;
         return jsx_runtime_1.jsx("div", __assign({ className: "p-3" }, { children: ID.render(master) }), void 0);
     };

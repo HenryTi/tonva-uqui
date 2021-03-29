@@ -49,14 +49,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MidID = void 0;
-var tools_1 = require("../tools");
+exports.MidIXID = exports.MidID = void 0;
 var base_1 = require("../base");
+var MidIDList_1 = require("./MidIDList");
 var MidID = /** @class */ (function (_super) {
     __extends(MidID, _super);
-    function MidID(uq, ID) {
+    function MidID(uq, IDUI) {
         var _this = _super.call(this, uq) || this;
-        _this.ID = ID;
+        _this.IDUI = IDUI;
+        _this.ID = IDUI.ID;
         return _this;
     }
     MidID.prototype.init = function () {
@@ -68,19 +69,22 @@ var MidID = /** @class */ (function (_super) {
                     case 1:
                         _b.sent();
                         _a = this;
-                        return [4 /*yield*/, this.buildItemSchema(this.ID)];
+                        return [4 /*yield*/, this.buildItemSchema(this.IDUI)];
                     case 2:
                         _a._itemSchema = _b.sent();
-                        return [4 /*yield*/, this.setDefaultNo()];
-                    case 3:
-                        _b.sent();
-                        this._uiSchema = this.buildUISchema(this.ID);
+                        this._uiSchema = this.buildUISchema(this.IDUI);
                         return [2 /*return*/];
                 }
             });
         });
     };
-    MidID.prototype.buildUISchema = function (ID) {
+    MidID.prototype.createMidIDList = function () {
+        var ret = new MidIDList_1.MidIDList(this.uq, this.ID);
+        ret.header = this.listHeader;
+        return ret;
+    };
+    MidID.prototype.buildUISchema = function (IDUI) {
+        var ID = IDUI.ID;
         var items = {};
         this._uiSchema = { items: items };
         var fields = ID.ui.fields;
@@ -170,37 +174,51 @@ var MidID = /** @class */ (function (_super) {
         get: function () {
             if (this._props !== undefined)
                 return this._props;
-            return this._props = tools_1.buildGridProps(this.ID.ui);
+            return this._props = this.buildGridProps(this.IDUI.ID);
         },
         enumerable: false,
         configurable: true
     });
-    MidID.prototype.setDefaultNo = function () {
+    return MidID;
+}(base_1.Mid));
+exports.MidID = MidID;
+var MidIXID = /** @class */ (function (_super) {
+    __extends(MidIXID, _super);
+    function MidIXID(uq, IDUI, IX) {
+        var _this = _super.call(this, uq, IDUI) || this;
+        _this.IX = IX;
+        return _this;
+    }
+    MidIXID.prototype.createMidIDList = function () {
+        var ret = new MidIDList_1.MidIXIDList(this.uq, this.ID, this.IX);
+        ret.header = this.listHeader;
+        return ret;
+    };
+    MidIXID.prototype.saveID = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var _i, _a, fieldItem, no;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var param, ret, id;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
-                        _i = 0, _a = this._itemSchema;
-                        _b.label = 1;
+                        param = {
+                            ID: this.ID,
+                            IX: this.IX,
+                            values: [
+                                { ix: undefined, id: data }
+                            ],
+                        };
+                        return [4 /*yield*/, this.uq.ActIX(param)];
                     case 1:
-                        if (!(_i < _a.length)) return [3 /*break*/, 4];
-                        fieldItem = _a[_i];
-                        if (!(fieldItem.name === 'no')) return [3 /*break*/, 3];
-                        return [4 /*yield*/, this.uq.IDNO({ ID: this.ID })];
-                    case 2:
-                        no = _b.sent();
-                        this.setNO(no, fieldItem);
-                        _b.label = 3;
-                    case 3:
-                        _i++;
-                        return [3 /*break*/, 1];
-                    case 4: return [2 /*return*/];
+                        ret = _a.sent();
+                        id = ret[0];
+                        if (!id)
+                            return [2 /*return*/];
+                        return [2 /*return*/, id];
                 }
             });
         });
     };
-    return MidID;
-}(base_1.Mid));
-exports.MidID = MidID;
+    return MidIXID;
+}(MidID));
+exports.MidIXID = MidIXID;
 //# sourceMappingURL=MidID.js.map

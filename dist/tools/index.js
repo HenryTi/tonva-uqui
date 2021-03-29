@@ -11,7 +11,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./pageItems"), exports);
-__exportStar(require("./buildGridProps"), exports);
 __exportStar(require("./timeSpan"), exports);
 __exportStar(require("./parts"), exports);
 //# sourceMappingURL=index.js.map

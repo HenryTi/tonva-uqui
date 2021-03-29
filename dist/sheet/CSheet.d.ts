@@ -2,7 +2,7 @@ import { Controller } from "tonva-react";
 import { Detail, Master } from "../base";
 import { MidSheet } from "./MidSheet";
 export declare abstract class CSheet<M extends Master, D extends Detail> extends Controller {
-    readonly mid: MidSheet<M, D>;
+    readonly midSheet: MidSheet<M, D>;
     id: number;
     master: M;
     details: D[];

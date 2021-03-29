@@ -2,6 +2,7 @@ import { Controller } from "tonva-react";
 import { MidList } from "./MidList";
 export declare class CList<T> extends Controller {
     protected readonly midList: MidList<T>;
+    protected selectedItem: T;
     constructor(midList: MidList<T>);
     protected internalStart(): Promise<void>;
     protected get firstParam(): any;

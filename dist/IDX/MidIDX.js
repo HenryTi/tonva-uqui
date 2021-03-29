@@ -50,13 +50,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MidIDX = void 0;
-var tools_1 = require("../tools");
 var base_1 = require("../base");
 var MidIDX = /** @class */ (function (_super) {
     __extends(MidIDX, _super);
     function MidIDX(uq, IDX, ID, timeZone) {
         var _this = _super.call(this, uq) || this;
-        _this.historyPageItems = function (id, field, far, near, pageStart, pageSize) { return __awaiter(_this, void 0, void 0, function () {
+        _this.historyLoader = function (id, field, far, near, pageStart, pageSize) { return __awaiter(_this, void 0, void 0, function () {
             var ret;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -98,7 +97,7 @@ var MidIDX = /** @class */ (function (_super) {
     MidIDX.prototype.loadSchema = function () {
         var _a;
         return __awaiter(this, void 0, void 0, function () {
-            var _b, exFields, _loop_1, _i, _c, prop;
+            var IDUI, _b, exFields, _loop_1, _i, _c, prop;
             return __generator(this, function (_d) {
                 switch (_d.label) {
                     case 0: return [4 /*yield*/, Promise.all([
@@ -107,12 +106,13 @@ var MidIDX = /** @class */ (function (_super) {
                         ])];
                     case 1:
                         _d.sent();
+                        IDUI = { ID: this.ID };
                         _b = this;
-                        return [4 /*yield*/, this.buildItemSchema(this.ID)];
+                        return [4 /*yield*/, this.buildItemSchema(IDUI)];
                     case 2:
                         _b._itemSchema = _d.sent();
-                        this._uiSchema = this.buildUISchema(this.ID);
-                        this._props = tools_1.buildGridProps(this.IDX.ui);
+                        this._uiSchema = this.buildUISchema(IDUI);
+                        this._props = this.buildGridProps(this.IDX);
                         exFields = this.IDX.schema.exFields;
                         _loop_1 = function (prop) {
                             var name_1 = prop.name;
@@ -229,7 +229,7 @@ var MidIDX = /** @class */ (function (_super) {
                             if (f === undefined)
                                 return "continue";
                             var name_2 = f.name, type = f.type;
-                            if (['int', 'tinyint', 'smallint', 'bigint', 'dec'].indexOf(type) < 0)
+                            if (['int', 'tinyint', 'smallint', 'bigint', 'dec', 'float', 'double'].indexOf(type) < 0)
                                 return "continue";
                             valueFields.push(name_2);
                         };

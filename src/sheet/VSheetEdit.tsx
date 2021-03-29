@@ -10,7 +10,7 @@ export class VSheetEdit extends VPage<CSheet<any, any>> {
 		</button>;
 	}
 	content() {
-		let {mid, master, details} = this.controller;
+		let {midSheet: mid, master, details} = this.controller;
 		let {ID} = mid.master;
 		let right = <button className="btn btn-success btn-sm"
 			onClick={() => this.controller.editDetail(undefined)}>
@@ -33,7 +33,7 @@ export class VSheetEdit extends VPage<CSheet<any, any>> {
 
 	private renderDetail = (item:any, index:number) => {
 		return <div className="px-3 py-2">
-			{this.controller.mid.detail.ID.render(item)}
+			{this.controller.midSheet.detail.ID.render(item)}
 		</div>
 	}
 //	{JSON.stringify(item)}

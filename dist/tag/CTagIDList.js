@@ -84,15 +84,7 @@ var CTagIDList = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         midIDList = new MidTagIDList(this.midTag, tags.map(function (v) { return v.id; }));
-                        cShowTagIDList = new CShowTagIDList(midIDList
-                        /*{
-                        uq,
-                        ID,
-                        //midTag: this.midTag,
-                        tags: tags.map(v => v.id),
-                        renderItem: undefined,
-                        onItemClick: undefined,
-                    }*/ );
+                        cShowTagIDList = new CShowTagIDList(midIDList);
                         return [4 /*yield*/, cShowTagIDList.start()];
                     case 1:
                         _a.sent();
@@ -104,12 +96,6 @@ var CTagIDList = /** @class */ (function (_super) {
     return CTagIDList;
 }(tonva_react_1.Controller));
 exports.CTagIDList = CTagIDList;
-/*
-class TagIDListProps<T extends IDBase> extends MidIDList<T> {
-    //midTag: MidTag;
-    tags: number[];
-}
-*/
 var CShowTagIDList = /** @class */ (function (_super) {
     __extends(CShowTagIDList, _super);
     function CShowTagIDList(midIDList) {
@@ -136,7 +122,7 @@ var CShowTagIDList = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         midTag = this.midIDList.midTag;
-                        mid = new ID_1.MidID(midTag.uq, midTag.ID);
+                        mid = new ID_1.MidID(midTag.uq, { ID: midTag.ID });
                         return [4 /*yield*/, mid.init()];
                     case 1:
                         _a.sent();
@@ -191,7 +177,7 @@ var MidTagIDList = /** @class */ (function (_super) {
                     case 0: return [4 /*yield*/, this.uq.IXr({
                             IX: this.midTag.IX,
                             IDX: [this.ID],
-                            id: this.ids,
+                            ix: this.ids,
                             page: { start: pageStart, size: pageSize },
                         })];
                     case 1:

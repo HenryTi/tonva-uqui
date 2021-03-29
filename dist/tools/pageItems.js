@@ -53,9 +53,9 @@ exports.HistoryPageItems = exports.ListPageItems = void 0;
 var tonva_react_1 = require("tonva-react");
 var ListPageItems = /** @class */ (function (_super) {
     __extends(ListPageItems, _super);
-    function ListPageItems(comPage) {
+    function ListPageItems(pageLoader) {
         var _this = _super.call(this, true) || this;
-        _this.comPage = comPage;
+        _this.pageLoader = pageLoader;
         return _this;
     }
     ListPageItems.prototype.loadResults = function (param, pageStart, pageSize) {
@@ -63,7 +63,7 @@ var ListPageItems = /** @class */ (function (_super) {
             var ret;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.comPage(pageStart, pageSize)];
+                    case 0: return [4 /*yield*/, this.pageLoader(pageStart, pageSize)];
                     case 1:
                         ret = _a.sent();
                         return [2 /*return*/, { $page: ret }];
@@ -76,9 +76,9 @@ var ListPageItems = /** @class */ (function (_super) {
 exports.ListPageItems = ListPageItems;
 var HistoryPageItems = /** @class */ (function (_super) {
     __extends(HistoryPageItems, _super);
-    function HistoryPageItems(comPage) {
+    function HistoryPageItems(pageLoader) {
         var _this = _super.call(this, true) || this;
-        _this.comPage = comPage;
+        _this.pageLoader = pageLoader;
         return _this;
     }
     HistoryPageItems.prototype.loadResults = function (param, pageStart, pageSize) {
@@ -88,7 +88,7 @@ var HistoryPageItems = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         id = param.id, field = param.field, far = param.far, near = param.near;
-                        return [4 /*yield*/, this.comPage(id, field, far, near, pageStart, pageSize)];
+                        return [4 /*yield*/, this.pageLoader(id, field, far, near, pageStart, pageSize)];
                     case 1:
                         ret = _a.sent();
                         return [2 /*return*/, { $page: ret }];
@@ -96,6 +96,7 @@ var HistoryPageItems = /** @class */ (function (_super) {
             });
         });
     };
+    HistoryPageItems.prototype.update = function (item) { return; };
     return HistoryPageItems;
 }(tonva_react_1.PageItems));
 exports.HistoryPageItems = HistoryPageItems;

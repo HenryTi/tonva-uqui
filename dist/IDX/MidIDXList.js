@@ -54,7 +54,7 @@ var list_1 = require("../list");
 var MidIDXList = /** @class */ (function (_super) {
     __extends(MidIDXList, _super);
     function MidIDXList(uq, ID, IDX) {
-        var _this = _super.call(this, uq) || this;
+        var _this = _super.call(this, uq, undefined) || this;
         _this.ID = ID;
         _this.IDX = IDX;
         return _this;

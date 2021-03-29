@@ -1,11 +1,11 @@
 //import { ID } from "tonva-react";
 
 export interface IDBase {
-	id: number;
+	id?: number;
 }
 
 export interface IXBase extends IDBase {
-	id2: number;
+	ix: number;
 }
 
 export interface Master {

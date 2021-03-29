@@ -117,7 +117,7 @@ var CIDX = /** @class */ (function (_super) {
         _this.setRes(res_1.res);
         _this.setRes(midIDX.res);
         _this.midIDX = midIDX;
-        _this.historyPageItems = new tools_1.HistoryPageItems(midIDX.historyPageItems);
+        _this.historyPageItems = new tools_1.HistoryPageItems(midIDX.historyLoader);
         return _this;
     }
     CIDX.prototype.internalStart = function () {

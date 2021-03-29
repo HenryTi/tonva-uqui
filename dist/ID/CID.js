@@ -65,14 +65,26 @@ var mobx_1 = require("mobx");
 var tonva_react_1 = require("tonva-react");
 var tools_1 = require("../tools");
 var list_1 = require("../list");
-var MidIDList_1 = require("./MidIDList");
+var form_1 = require("../form");
 var VEdit_1 = require("./VEdit");
 var VView_1 = require("./VView");
+var res_1 = require("./res");
 var CID = /** @class */ (function (_super) {
     __extends(CID, _super);
     function CID(midID) {
         var _this = _super.call(this) || this;
         _this.item = null;
+        _this.onSubmit = function (name, context) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.saveID(context.data)];
+                    case 1:
+                        _a.sent();
+                        this.closePage();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         _this.renderItem = function (item, index) {
             var ID = _this.midID.ID;
             if (ID)
@@ -88,10 +100,28 @@ var CID = /** @class */ (function (_super) {
         _this.onItemEdit = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.midID.init()];
+                    case 0:
+                        this.valueChanged = false;
+                        return [4 /*yield*/, this.midID.init()];
                     case 1:
                         _a.sent();
+                        this.createFormView();
                         this.openVPage(VEdit_1.VEdit);
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        _this.onItemNew = function () { return __awaiter(_this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.cFormView.setNO(this.midID.ID)];
+                    case 1:
+                        _a.sent();
+                        mobx_1.runInAction(function () {
+                            _this.item = undefined;
+                            _this.openVPage(VEdit_1.VEdit);
+                        });
                         return [2 /*return*/];
                 }
             });
@@ -99,48 +129,49 @@ var CID = /** @class */ (function (_super) {
         mobx_1.makeObservable(_this, {
             item: mobx_1.observable,
         });
+        _this.setRes(res_1.res);
         _this.setRes(midID.res);
         _this.midID = midID;
         return _this;
     }
     CID.prototype.internalStart = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, uq, ID, cList;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        _a = this.midID, uq = _a.uq, ID = _a.ID;
-                        this.midIDList = new MidIDList_1.MidIDList(uq, ID);
-                        this.midIDList.onRightClick = this.onItemEdit;
-                        this.midIDList.renderItem = this.renderItem;
-                        this.midIDList.onItemClick = this.onItemClick;
-                        this.midIDList.renderRight = undefined;
-                        cList = new list_1.CList(this.midIDList);
-                        return [4 /*yield*/, cList.start()];
-                    case 1:
-                        _b.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    CID.prototype.onItemView = function () {
-        this.openVPage(VView_1.VView);
-    };
-    CID.prototype.onItemNew = function () {
-        return __awaiter(this, void 0, void 0, function () {
+            var cList;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        this.item = undefined;
+                        this.valueChanged = false;
                         return [4 /*yield*/, this.midID.init()];
                     case 1:
                         _a.sent();
-                        this.openVPage(VEdit_1.VEdit);
+                        this.createFormView();
+                        this.midIDList = this.midID.createMidIDList();
+                        this.midIDList.onRightClick = this.onItemNew;
+                        this.midIDList.renderItem = this.renderItem;
+                        this.midIDList.onItemClick = this.onItemClick;
+                        this.midIDList.renderRight = undefined;
+                        cList = this.createCList();
+                        return [4 /*yield*/, cList.call()];
+                    case 2:
+                        _a.sent();
+                        this.returnCall(this.valueChanged);
                         return [2 /*return*/];
                 }
             });
         });
+    };
+    CID.prototype.createFormView = function () {
+        var _a = this.midID, ID = _a.ID, IDUI = _a.IDUI;
+        var fieldCustoms = IDUI.fieldCustoms;
+        var formUI = new form_1.FormUI(ID.ui, fieldCustoms, ID.t);
+        this.cFormView = new form_1.CFormView(formUI);
+        this.cFormView.onSubmit = this.onSubmit;
+    };
+    CID.prototype.createCList = function () {
+        return new list_1.CList(this.midIDList);
+    };
+    CID.prototype.onItemView = function () {
+        this.openVPage(VView_1.VView);
     };
     CID.prototype.saveID = function (itemProps) {
         var _a, _b;
@@ -164,10 +195,31 @@ var CID = /** @class */ (function (_super) {
                             else
                                 _this.item = item;
                         });
+                        this.valueChanged = true;
                         return [2 /*return*/, ret];
                 }
             });
         });
+    };
+    Object.defineProperty(CID.prototype, "itemHeader", {
+        get: function () {
+            var _a;
+            return ((_a = this.midID.itemHeader) !== null && _a !== void 0 ? _a : this.midID.ID.ui.label);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(CID.prototype, "editHeader", {
+        get: function () {
+            return this.t(this.item ? 'edit' : 'new') + ' ' + this.itemHeader;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    CID.prototype.renderViewRight = function (item) {
+        if (item)
+            this.item = item;
+        return this.renderView(VView_1.VViewRight);
     };
     return CID;
 }(tonva_react_1.Controller));

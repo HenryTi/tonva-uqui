@@ -1,8 +1,8 @@
 export interface IDBase {
-    id: number;
+    id?: number;
 }
 export interface IXBase extends IDBase {
-    id2: number;
+    ix: number;
 }
 export interface Master {
     id?: number;

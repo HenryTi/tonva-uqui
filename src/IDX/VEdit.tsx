@@ -6,8 +6,8 @@ import { CIDX } from "./CIDX";
 export class VEdit extends VPage<CIDX> {
 	header() {return 'Edit'}
 	content() {
-		let {midIDX: mid} = this.controller;
-		let {props} = mid;
+		let {midIDX} = this.controller;
+		let {props} = midIDX;
 		return <div className="py-3">
 			{props.map((v, index) => {
 				let {type} = v as any;

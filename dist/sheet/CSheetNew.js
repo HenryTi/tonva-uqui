@@ -50,7 +50,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CSheetNew = void 0;
-var select_1 = require("../select");
 var form_1 = require("../form");
 var CSheet_1 = require("./CSheet");
 var VSheetEdit_1 = require("./VSheetEdit");
@@ -61,33 +60,20 @@ var CSheetNew = /** @class */ (function (_super) {
     }
     CSheetNew.prototype.internalStart = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, uq, masterFormUI, ID, fields, formProps, no, i, field, ID_1, cDialog, master;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var masterUI, ID, fieldCustoms, formUI, cDialog, master;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
-                        _a = this.mid, uq = _a.uq, masterFormUI = _a.master;
-                        ID = masterFormUI.ID, fields = masterFormUI.fields;
-                        formProps = new form_1.FormProps(ID.ui, fields);
-                        if (!formProps.fields['no']) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.mid.uq.IDNO({ ID: ID })];
+                        masterUI = this.midSheet.master;
+                        ID = masterUI.ID, fieldCustoms = masterUI.fieldCustoms;
+                        formUI = new form_1.FormUI(ID.ui, fieldCustoms);
+                        cDialog = new form_1.CFormDialog(formUI, undefined);
+                        return [4 /*yield*/, cDialog.setNO(ID)];
                     case 1:
-                        no = _b.sent();
-                        formProps.setNO(no, 'no');
-                        _b.label = 2;
-                    case 2:
-                        if (fields) {
-                            for (i in fields) {
-                                field = fields[i];
-                                ID_1 = field.ID;
-                                if (ID_1) {
-                                    formProps.setIDUi(i, select_1.createPickId(uq, ID_1), ID_1.render);
-                                }
-                            }
-                        }
-                        cDialog = new form_1.CDialog(formProps);
+                        _a.sent();
                         return [4 /*yield*/, cDialog.call()];
-                    case 3:
-                        master = _b.sent();
+                    case 2:
+                        master = _a.sent();
                         if (master === null)
                             return [2 /*return*/];
                         this.master = master;

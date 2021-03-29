@@ -52,13 +52,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CIDSelectInPickId = exports.createPickId = void 0;
 var CIDSelect_1 = require("./CIDSelect");
 function createPickId(uq, ID) {
-    function pickId() {
+    function pickId(context, name, value) {
         return __awaiter(this, void 0, void 0, function () {
-            var mid, cIDSelect;
+            var mid, cIDSelect, ret;
             return __generator(this, function (_a) {
-                mid = new CIDSelect_1.MidIDSelectList(uq, ID);
-                cIDSelect = new CIDSelectInPickId(mid);
-                return [2 /*return*/, cIDSelect.call()];
+                switch (_a.label) {
+                    case 0:
+                        mid = new CIDSelect_1.MidIDSelectList(uq, ID);
+                        cIDSelect = new CIDSelectInPickId(mid);
+                        return [4 /*yield*/, cIDSelect.call()];
+                    case 1:
+                        ret = _a.sent();
+                        return [2 /*return*/, ret];
+                }
             });
         });
     }
@@ -70,8 +76,10 @@ var CIDSelectInPickId = /** @class */ (function (_super) {
     function CIDSelectInPickId(mid) {
         var _this = _super.call(this, mid) || this;
         _this.onSelectChange = function (item, isSelected) {
+            _this.selectedItem = item;
             _this.closePage();
-            _this.returnCall(item);
+            // closePage时，returnCall已经被调用了
+            // this.returnCall(item);
         };
         mid.onSelectChange = _this.onSelectChange;
         return _this;

@@ -75,7 +75,7 @@ var CIXEdit = /** @class */ (function (_super) {
             });
         }); };
         _this.onSelectChange = function (item, isSelected) { return __awaiter(_this, void 0, void 0, function () {
-            var param, _a, IX, id, id2Item, ret;
+            var param, _a, IX, id, idItem, ret;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -85,12 +85,12 @@ var CIXEdit = /** @class */ (function (_super) {
                             // id negtive means delete
                             id = -id;
                         }
-                        id2Item = { id: id, id2: item.id };
-                        param[IX.name] = [id2Item];
+                        idItem = { ix: id, id: item.id };
+                        param[IX.name] = [idItem];
                         return [4 /*yield*/, this.midIX.uq.Acts(param)];
                     case 1:
                         ret = _b.sent();
-                        this.cIXList.update(id2Item);
+                        this.cIXList.update(idItem);
                         return [2 /*return*/];
                 }
             });

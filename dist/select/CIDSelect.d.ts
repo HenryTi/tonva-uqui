@@ -1,6 +1,6 @@
-import { ID, PageItems, Uq } from "tonva-react";
+import { ID, Uq } from "tonva-react";
 import { IDBase } from "../base/IDBase";
-import { CList, MidList } from "../list";
+import { CList, IDListPageItems, MidList } from "../list";
 export declare class CIDSelect<T extends IDBase, P extends MidIDSelectList<T>> extends CList<T> {
     midIDSelectList: P;
     constructor(midIDSelectList: P);
@@ -15,6 +15,6 @@ export declare class MidIDSelectList<T extends IDBase> extends MidList<T> {
     constructor(uq: Uq, ID: ID);
     init(): Promise<void>;
     key: ((item: T) => number | string);
-    createPageItems(): PageItems<T>;
+    protected createPageItems(): IDListPageItems<T>;
     protected loadPageItems(pageStart: any, pageSize: number): Promise<T[]>;
 }
