@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -114,10 +116,7 @@ var VRoleAdmin = /** @class */ (function (_super) {
                 return jsx_runtime_1.jsx(VItem, { userRole: v, isMe: false }, v.user);
             }) }, void 0); });
         var MeItem = mobx_react_1.observer(function () { return jsx_runtime_1.jsx(VItem, { userRole: _this.controller.meRoles, isMe: true }, void 0); });
-        return jsx_runtime_1.jsxs("div", { children: [jsx_runtime_1.jsxs("div", __assign({ className: "mx-3 mt-3 mb-1 d-flex align-items-end" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "mr-auto" }, { children: "\u7528\u6237\u89D2\u8272" }), void 0),
-                        jsx_runtime_1.jsxs("button", __assign({ className: "btn btn-sm btn-outline-primary", onClick: function () { return _this.openVPage(VAddUser_1.VAddUser); } }, { children: [jsx_runtime_1.jsx(tonva_react_1.FA, { name: "plus" }, void 0), " \u589E\u52A0"] }), void 0)] }), void 0),
-                jsx_runtime_1.jsx(MeItem, {}, void 0),
-                jsx_runtime_1.jsx(VUserRoles, {}, void 0)] }, void 0);
+        return jsx_runtime_1.jsxs("div", { children: [jsx_runtime_1.jsxs("div", __assign({ className: "mx-3 mt-3 mb-1 d-flex align-items-end" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "mr-auto" }, { children: "\u7528\u6237\u89D2\u8272" }), void 0), jsx_runtime_1.jsxs("button", __assign({ className: "btn btn-sm btn-outline-primary", onClick: function () { return _this.openVPage(VAddUser_1.VAddUser); } }, { children: [jsx_runtime_1.jsx(tonva_react_1.FA, { name: "plus" }, void 0), " \u589E\u52A0"] }), void 0)] }), void 0), jsx_runtime_1.jsx(MeItem, {}, void 0), jsx_runtime_1.jsx(VUserRoles, {}, void 0)] }, void 0);
     };
     VRoleAdmin.prototype.onRoleChange = function (event, iRole, userRole) {
         return __awaiter(this, void 0, void 0, function () {

@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -63,14 +65,12 @@ var VSelect = /** @class */ (function (_super) {
         var _a = this.controller, midTag = _a.midTag, itemTags = _a.itemTags;
         var item = itemTags.item;
         //let {tags} = midTag;
-        return jsx_runtime_1.jsxs("div", __assign({ className: "px-3" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "my-3" }, { children: midTag.ID.render(item) }), void 0),
-                this.tagGroups.map(function (v) { return _this.renderType(v); })] }), void 0);
+        return jsx_runtime_1.jsxs("div", __assign({ className: "px-3" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "my-3" }, { children: midTag.ID.render(item) }), void 0), this.tagGroups.map(function (v) { return _this.renderType(v); })] }), void 0);
     };
     VSelect.prototype.renderType = function (group) {
         var _this = this;
         var id = group.id, name = group.name, checks = group.checks;
-        return jsx_runtime_1.jsxs("div", __assign({ className: "my-3" }, { children: [jsx_runtime_1.jsx("div", { children: jsx_runtime_1.jsx("b", { children: name }, void 0) }, void 0),
-                jsx_runtime_1.jsx("div", __assign({ className: "form-check form-check-inline mt-1" }, { children: checks.map(function (v) {
+        return jsx_runtime_1.jsxs("div", __assign({ className: "my-3" }, { children: [jsx_runtime_1.jsx("div", { children: jsx_runtime_1.jsx("b", { children: name }, void 0) }, void 0), jsx_runtime_1.jsx("div", __assign({ className: "form-check form-check-inline mt-1" }, { children: checks.map(function (v) {
                         var tag = v.tag, selected = v.selected;
                         var id = tag.id, name = tag.name;
                         return jsx_runtime_1.jsx(jsx_runtime_1.Fragment, { children: jsx_runtime_1.jsxs("label", __assign({ className: "form-check-label mr-3" }, { children: [jsx_runtime_1.jsx("input", { type: "checkbox", className: "form-check-input", onChange: function (evt) { return _this.controller.onTagSelectChanged(tag, evt.currentTarget.checked); }, defaultChecked: selected }, void 0), name] }), id) }, void 0);

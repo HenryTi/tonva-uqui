@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -165,12 +167,9 @@ var VEditNumberField = /** @class */ (function (_super) {
         var defDate = year + "-" + tonva_react_1.left0(month, 2) + "-" + tonva_react_1.left0(day, 2);
         var vDateTime;
         if (time === true) {
-            vDateTime = jsx_runtime_1.jsxs("div", __assign({ className: "input-group mb-3" }, { children: [jsx_runtime_1.jsx("span", __assign({ className: "w-8c input-group-text" }, { children: this.t('date') }), void 0),
-                    jsx_runtime_1.jsx("input", { ref: function (d) { return _this.dateInput = d; }, type: "date", className: "form-control", defaultValue: defDate }, void 0),
-                    jsx_runtime_1.jsx("input", { ref: function (t) { return _this.timeInput = t; }, type: "time", className: "form-control", defaultValue: tonva_react_1.left0(hour, 2) + ":" + tonva_react_1.left0(minute, 2) }, void 0)] }), void 0);
+            vDateTime = jsx_runtime_1.jsxs("div", __assign({ className: "input-group mb-3" }, { children: [jsx_runtime_1.jsx("span", __assign({ className: "w-8c input-group-text" }, { children: this.t('date') }), void 0), jsx_runtime_1.jsx("input", { ref: function (d) { return _this.dateInput = d; }, type: "date", className: "form-control", defaultValue: defDate }, void 0), jsx_runtime_1.jsx("input", { ref: function (t) { return _this.timeInput = t; }, type: "time", className: "form-control", defaultValue: tonva_react_1.left0(hour, 2) + ":" + tonva_react_1.left0(minute, 2) }, void 0)] }), void 0);
         }
-        return jsx_runtime_1.jsxs("div", __assign({ className: "p-3" }, { children: [vDateTime, jsx_runtime_1.jsxs("div", __assign({ className: "input-group" }, { children: [jsx_runtime_1.jsx("span", __assign({ className: "w-8c input-group-text" }, { children: this.t('value') }), void 0),
-                        jsx_runtime_1.jsx("input", { type: "number", className: "form-control", onChange: this.onValueChange }, void 0)] }), void 0)] }), void 0);
+        return jsx_runtime_1.jsxs("div", __assign({ className: "p-3" }, { children: [vDateTime, jsx_runtime_1.jsxs("div", __assign({ className: "input-group" }, { children: [jsx_runtime_1.jsx("span", __assign({ className: "w-8c input-group-text" }, { children: this.t('value') }), void 0), jsx_runtime_1.jsx("input", { type: "number", className: "form-control", onChange: this.onValueChange }, void 0)] }), void 0)] }), void 0);
     };
     return VEditNumberField;
 }(tonva_react_1.VPage));

@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -48,16 +50,13 @@ var VTags = /** @class */ (function (_super) {
         var midTag = this.controller.midTag;
         var typeArr = midTag.typeArr;
         var left = jsx_runtime_1.jsx("button", __assign({ className: "btn btn-primary", onClick: function () { return _this.controller.showID(_this.tags); } }, { children: "\u67E5\u770B" }), void 0);
-        var right = jsx_runtime_1.jsxs(jsx_runtime_1.Fragment, { children: [jsx_runtime_1.jsx("button", __assign({ className: "btn btn-sm btn-outline-primary mr-3", onClick: function () { return _this.allTags(true); } }, { children: "\u5168\u9009" }), void 0),
-                jsx_runtime_1.jsx("button", __assign({ className: "btn btn-sm btn-outline-info", onClick: function () { return _this.allTags(false); } }, { children: "\u5168\u6E05" }), void 0)] }, void 0);
-        return jsx_runtime_1.jsxs("div", __assign({ className: "px-3", id: "$all$tags$" }, { children: [typeArr.map(function (v) { return _this.renderType(v); }),
-                jsx_runtime_1.jsx("div", __assign({ className: "border-top py-3" }, { children: jsx_runtime_1.jsx(tonva_react_1.LMR, { left: left, right: right }, void 0) }), void 0)] }), void 0);
+        var right = jsx_runtime_1.jsxs(jsx_runtime_1.Fragment, { children: [jsx_runtime_1.jsx("button", __assign({ className: "btn btn-sm btn-outline-primary mr-3", onClick: function () { return _this.allTags(true); } }, { children: "\u5168\u9009" }), void 0), jsx_runtime_1.jsx("button", __assign({ className: "btn btn-sm btn-outline-info", onClick: function () { return _this.allTags(false); } }, { children: "\u5168\u6E05" }), void 0)] }, void 0);
+        return jsx_runtime_1.jsxs("div", __assign({ className: "px-3", id: "$all$tags$" }, { children: [typeArr.map(function (v) { return _this.renderType(v); }), jsx_runtime_1.jsx("div", __assign({ className: "border-top py-3" }, { children: jsx_runtime_1.jsx(tonva_react_1.LMR, { left: left, right: right }, void 0) }), void 0)] }), void 0);
     };
     VTags.prototype.renderType = function (type) {
         var _this = this;
         var id = type.id, name = type.name, sub = type.sub;
-        return jsx_runtime_1.jsxs("div", __assign({ className: "my-3" }, { children: [jsx_runtime_1.jsx("div", { children: jsx_runtime_1.jsx("b", { children: name }, void 0) }, void 0),
-                jsx_runtime_1.jsx("div", __assign({ className: "form-check form-check-inline mt-1" }, { children: sub.map(function (v) {
+        return jsx_runtime_1.jsxs("div", __assign({ className: "my-3" }, { children: [jsx_runtime_1.jsx("div", { children: jsx_runtime_1.jsx("b", { children: name }, void 0) }, void 0), jsx_runtime_1.jsx("div", __assign({ className: "form-check form-check-inline mt-1" }, { children: sub.map(function (v) {
                         var id = v.id, name = v.name;
                         return jsx_runtime_1.jsx(jsx_runtime_1.Fragment, { children: jsx_runtime_1.jsxs("label", __assign({ className: "form-check-label mr-3" }, { children: [jsx_runtime_1.jsx("input", { type: "checkbox", className: "form-check-input", onChange: function (evt) { return _this.onTagSelectChanged(evt, v); } }, void 0), name] }), id) }, void 0);
                     }) }), void 0)] }), id);

@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -74,15 +76,15 @@ var MidSheet = /** @class */ (function (_super) {
             });
         });
     };
-    MidSheet.prototype.save = function (master, details) {
+    MidSheet.prototype.save = function (main, details) {
         return __awaiter(this, void 0, void 0, function () {
             var ret;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.uq.ActDetail({
-                            master: {
+                            main: {
                                 ID: this.master.ID,
-                                value: master,
+                                value: main,
                             },
                             detail: {
                                 ID: this.detail.ID,

@@ -25,8 +25,7 @@ function renderItemTags(midIDTagList, itemTags, index) {
         //let {renderItem} = midTag;
         var ID = midTag.ID;
         var item = itemTags.item, typeArr = itemTags.typeArr;
-        return jsx_runtime_1.jsxs("div", __assign({ className: "d-block" }, { children: [jsx_runtime_1.jsx("div", { children: (renderItem !== null && renderItem !== void 0 ? renderItem : ID.render)(item, index) }, void 0),
-                jsx_runtime_1.jsx("div", __assign({ className: "text-muted mt-1" }, { children: (renderTags !== null && renderTags !== void 0 ? renderTags : defaultRenderTags)(typeArr) }), void 0)] }), void 0);
+        return jsx_runtime_1.jsxs("div", __assign({ className: "d-block" }, { children: [jsx_runtime_1.jsx("div", { children: (renderItem !== null && renderItem !== void 0 ? renderItem : ID.render)(item, index) }, void 0), jsx_runtime_1.jsx("div", __assign({ className: "text-muted mt-1" }, { children: (renderTags !== null && renderTags !== void 0 ? renderTags : defaultRenderTags)(typeArr) }), void 0)] }), void 0);
     });
     return jsx_runtime_1.jsx(V, {}, void 0);
 }

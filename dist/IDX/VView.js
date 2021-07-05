@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -128,12 +130,7 @@ var VView = /** @class */ (function (_super) {
                                     style.borderBottomColor = 'lightgray';
                                 }
                                 return jsx_runtime_1.jsx("div", __assign({ className: cn, style: style, onClick: function () { return _this.tabClick(v); } }, { children: _this.t(v) }), v);
-                            }) }), void 0) }), void 0),
-                    jsx_runtime_1.jsx(tonva_react_1.LMR, __assign({ className: "text-center align-items-center", left: left, right: right }, { children: timeSpan.title }), void 0),
-                    jsx_runtime_1.jsxs("div", __assign({ className: "mt-3 mx-3 text-center cursor-pointer", onClick: function () { return _this.onFieldHistory(name); } }, { children: [jsx_runtime_1.jsx("h4", __assign({ className: "d-inline" }, { children: label }), void 0),
-                            jsx_runtime_1.jsxs("span", __assign({ className: "text-info small" }, { children: [" ", jsx_runtime_1.jsx(tonva_react_1.FA, { name: "angle-double-right" }, void 0), " \u67E5\u770B\u660E\u7EC6"] }), void 0)] }), void 0),
-                    jsx_runtime_1.jsx("div", __assign({ className: "p-3 h-12c" }, { children: jsx_runtime_1.jsx(react_chartjs_2_1.Bar, { data: data, width: 100, height: 50, options: graphOptions }, void 0) }), void 0),
-                    jsx_runtime_1.jsx("div", __assign({ className: "d-flex flex-wrap p-1" }, { children: props.map(function (v, index) {
+                            }) }), void 0) }), void 0), jsx_runtime_1.jsx(tonva_react_1.LMR, __assign({ className: "text-center align-items-center", left: left, right: right }, { children: timeSpan.title }), void 0), jsx_runtime_1.jsxs("div", __assign({ className: "mt-3 mx-3 text-center cursor-pointer", onClick: function () { return _this.onFieldHistory(name); } }, { children: [jsx_runtime_1.jsx("h4", __assign({ className: "d-inline" }, { children: label }), void 0), jsx_runtime_1.jsxs("span", __assign({ className: "text-info small" }, { children: [" ", jsx_runtime_1.jsx(tonva_react_1.FA, { name: "angle-double-right" }, void 0), " \u67E5\u770B\u660E\u7EC6"] }), void 0)] }), void 0), jsx_runtime_1.jsx("div", __assign({ className: "p-3 h-12c" }, { children: jsx_runtime_1.jsx(react_chartjs_2_1.Bar, { data: data, width: 100, height: 50, options: graphOptions }, void 0) }), void 0), jsx_runtime_1.jsx("div", __assign({ className: "d-flex flex-wrap p-1" }, { children: props.map(function (v, index) {
                             var _a = v, name = _a.name, label = _a.label;
                             var sv = spanValues[name];
                             var val = sv ?
@@ -142,8 +139,7 @@ var VView = /** @class */ (function (_super) {
                                     jsx_runtime_1.jsx("small", __assign({ className: "text-muted" }, { children: "0" }), void 0);
                             var cn = 'm-1 w-8c h-8c d-flex flex-column align-items-center justify-content-center bg-white px-3 cursor-pointer border rounded ';
                             cn += (index === _this.currentIndex) ? ' border-primary' : ' ';
-                            return jsx_runtime_1.jsxs("div", __assign({ className: cn, onClick: function () { return _this.onFieldClick(v, index); } }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "my-3 h-4c d-flex align-items-center" }, { children: val }), void 0),
-                                    jsx_runtime_1.jsx("div", __assign({ className: "mb-3" }, { children: label }), void 0)] }), index);
+                            return jsx_runtime_1.jsxs("div", __assign({ className: cn, onClick: function () { return _this.onFieldClick(v, index); } }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "my-3 h-4c d-flex align-items-center" }, { children: val }), void 0), jsx_runtime_1.jsx("div", __assign({ className: "mb-3" }, { children: label }), void 0)] }), index);
                         }) }), void 0)] }), void 0);
         });
         return jsx_runtime_1.jsx(V, {}, void 0);

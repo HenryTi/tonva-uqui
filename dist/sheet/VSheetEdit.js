@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -83,9 +85,7 @@ var VSheetEdit = /** @class */ (function (_super) {
                     case 1:
                         ret = _a.sent();
                         this.closePage();
-                        this.openPageElement(jsx_runtime_1.jsx(tonva_react_1.Page, __assign({ header: "\u5355\u636E\u5B8C\u6210" }, { children: jsx_runtime_1.jsxs("div", __assign({ className: "p-3 text-center" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "my-3" }, { children: "\u5355\u636E\u4FDD\u5B58\u6210\u529F\uFF01" }), void 0),
-                                    jsx_runtime_1.jsx("div", __assign({ className: "my-3" }, { children: ret.master }), void 0),
-                                    jsx_runtime_1.jsx("button", __assign({ className: "btn btn-primary", onClick: function () { return _this.closePage(); } }, { children: "\u8FD4\u56DE" }), void 0)] }), void 0) }), void 0));
+                        this.openPageElement(jsx_runtime_1.jsx(tonva_react_1.Page, __assign({ header: "\u5355\u636E\u5B8C\u6210" }, { children: jsx_runtime_1.jsxs("div", __assign({ className: "p-3 text-center" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "my-3" }, { children: "\u5355\u636E\u4FDD\u5B58\u6210\u529F\uFF01" }), void 0), jsx_runtime_1.jsx("div", __assign({ className: "my-3" }, { children: ret.master }), void 0), jsx_runtime_1.jsx("button", __assign({ className: "btn btn-primary", onClick: function () { return _this.closePage(); } }, { children: "\u8FD4\u56DE" }), void 0)] }), void 0) }), void 0));
                         return [2 /*return*/];
                 }
             });
@@ -101,9 +101,7 @@ var VSheetEdit = /** @class */ (function (_super) {
         var _a = this.controller, mid = _a.midSheet, master = _a.master, details = _a.details;
         var ID = mid.master.ID;
         var right = jsx_runtime_1.jsx("button", __assign({ className: "btn btn-success btn-sm", onClick: function () { return _this.controller.editDetail(undefined); } }, { children: jsx_runtime_1.jsx(tonva_react_1.FA, { name: "plus" }, void 0) }), void 0);
-        return jsx_runtime_1.jsxs("div", __assign({ className: "my-3" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "p-3" }, { children: ID.render(master) }), void 0),
-                jsx_runtime_1.jsx("div", __assign({ className: "mt-3 pb-1 mb-1 px-3 small text-muted border-bottom" }, { children: jsx_runtime_1.jsx(tonva_react_1.LMR, __assign({ right: right, className: "align-items-end" }, { children: "\u660E\u7EC6" }), void 0) }), void 0),
-                jsx_runtime_1.jsx(tonva_react_1.List, { items: details, item: { render: this.renderDetail, onClick: this.onDetailClick } }, void 0)] }), void 0);
+        return jsx_runtime_1.jsxs("div", __assign({ className: "my-3" }, { children: [jsx_runtime_1.jsx("div", __assign({ className: "p-3" }, { children: ID.render(master) }), void 0), jsx_runtime_1.jsx("div", __assign({ className: "mt-3 pb-1 mb-1 px-3 small text-muted border-bottom" }, { children: jsx_runtime_1.jsx(tonva_react_1.LMR, __assign({ right: right, className: "align-items-end" }, { children: "\u660E\u7EC6" }), void 0) }), void 0), jsx_runtime_1.jsx(tonva_react_1.List, { items: details, item: { render: this.renderDetail, onClick: this.onDetailClick } }, void 0)] }), void 0);
     };
     return VSheetEdit;
 }(tonva_react_1.VPage));
