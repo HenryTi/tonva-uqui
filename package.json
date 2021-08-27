@@ -1,6 +1,6 @@
 {
   "name": "tonva-uqui",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "tonva ui for uq",
   "private": false,
   "main": "dist/index.js",

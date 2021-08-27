@@ -19,4 +19,5 @@ __exportStar(require("./tag"), exports);
 __exportStar(require("./form"), exports);
 __exportStar(require("./roles"), exports);
 __exportStar(require("./select"), exports);
+__exportStar(require("./tools"), exports);
 //# sourceMappingURL=index.js.map
